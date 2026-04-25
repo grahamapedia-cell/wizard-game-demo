@@ -72,7 +72,7 @@ y_sort_enabled = true
 position = Vector2(195, -21)
 
 [node name="Basic Ore" parent="Ysortedthings/Outside" instance=ExtResource("5_u5sy4")]
-position = Vector2(-189, -49)
+position = Vector2(-181, -49)
 
 [node name="Placed Item" parent="Ysortedthings/Outside" instance=ExtResource("9_kvpfn")]
 position = Vector2(72, 60)
