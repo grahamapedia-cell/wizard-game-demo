@@ -1,0 +1,127 @@
+[gd_scene load_steps=17 format=3 uid="uid://cocnls8f8f316"]
+
+[ext_resource type="Script" uid="uid://oc14mklyotmh" path="res://scripts/objects/Machines/Essence Extractor/essence_extractor.gd" id="1_63wax"]
+[ext_resource type="Texture2D" uid="uid://854l57n1iqx6" path="res://assets/sprites/Objects/Placeables/Machines/essence_extractor.png" id="1_eb8rg"]
+[ext_resource type="PackedScene" uid="uid://dvsawxbwh3awd" path="res://scenes/popup_windows.tscn" id="2_wlklx"]
+[ext_resource type="Texture2D" uid="uid://dj2yv1n2faqq8" path="res://assets/sprites/Items/blank.png" id="4_wlklx"]
+[ext_resource type="AudioStream" uid="uid://cqwnuqmlqd8c1" path="res://assets/sounds/processing/blender-37366.mp3" id="5_cfdqb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63wax"]
+atlas = ExtResource("1_eb8rg")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5sai"]
+atlas = ExtResource("1_eb8rg")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wlklx"]
+atlas = ExtResource("1_eb8rg")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfdqb"]
+atlas = ExtResource("1_eb8rg")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kw5ii"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63wax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m5sai")
+}],
+"loop": true,
+"name": &"Bottle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wlklx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cfdqb")
+}],
+"loop": true,
+"name": &"No bottle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mttm"]
+atlas = ExtResource("1_eb8rg")
+region = Rect2(0, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ltcjb"]
+atlas = ExtResource("1_eb8rg")
+region = Rect2(16, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_02dw6"]
+atlas = ExtResource("1_eb8rg")
+region = Rect2(32, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npb44"]
+atlas = ExtResource("1_eb8rg")
+region = Rect2(48, 32, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xq7hq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mttm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ltcjb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02dw6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npb44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wlklx")
+}],
+"loop": true,
+"name": &"Damage",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kjvrb"]
+size = Vector2(16, 8)
+
+[node name="Placed Item" type="Node2D"]
+
+[node name="Machines" type="Node2D" parent="."]
+
+[node name="Essence Extractor" type="RigidBody2D" parent="Machines"]
+collision_layer = 8
+input_pickable = true
+gravity_scale = 0.0
+freeze = true
+script = ExtResource("1_63wax")
+window = ExtResource("2_wlklx")
+
+[node name="Body" type="AnimatedSprite2D" parent="Machines/Essence Extractor"]
+position = Vector2(0, -4)
+sprite_frames = SubResource("SpriteFrames_kw5ii")
+animation = &"No bottle"
+offset = Vector2(0, -8)
+
+[node name="Damage" type="AnimatedSprite2D" parent="Machines/Essence Extractor"]
+position = Vector2(0, -4)
+sprite_frames = SubResource("SpriteFrames_xq7hq")
+animation = &"Damage"
+frame = 4
+frame_progress = 0.593481
+offset = Vector2(0, -8)
+
+[node name="Hitbox" type="CollisionShape2D" parent="Machines/Essence Extractor"]
+shape = SubResource("RectangleShape2D_kjvrb")
+
+[node name="EEEEE" type="AudioStreamPlayer2D" parent="Machines/Essence Extractor"]
+stream = ExtResource("5_cfdqb")
+max_distance = 500.0
+attenuation = 5.0
+
+[connection signal="mouse_entered" from="Machines/Essence Extractor" to="Machines/Essence Extractor" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Machines/Essence Extractor" to="Machines/Essence Extractor" method="_on_mouse_exited"]

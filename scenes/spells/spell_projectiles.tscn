@@ -1,0 +1,286 @@
+[gd_scene load_steps=34 format=3 uid="uid://dbrft704ppx4t"]
+
+[ext_resource type="Script" uid="uid://emgcstqgwkw4" path="res://scripts/spells/spell_projectiles.gd" id="1_5ge0c"]
+[ext_resource type="Texture2D" uid="uid://ck41h7ibwit4u" path="res://assets/sprites/Spells/Fire/Flame_Shot_placeholder.png" id="1_hfly8"]
+[ext_resource type="Script" uid="uid://dh63ak1hy8rym" path="res://scripts/spells/Fire/Flame Shot/flame_shot_projectile.gd" id="2_5ge0c"]
+[ext_resource type="Script" uid="uid://drl3pqfilr5o" path="res://scripts/spells/Lightning/Static Bolt/static_bolt_projectile.gd" id="4_df485"]
+[ext_resource type="Texture2D" uid="uid://v5plymqgl5y4" path="res://assets/sprites/Spells/Lightning/Static_Bolt.png" id="5_he47x"]
+[ext_resource type="Script" uid="uid://dy7eqa4vv2hhq" path="res://scripts/spells/Air/Wind Slice/wind_slice_projectile.gd" id="6_etqr6"]
+[ext_resource type="Texture2D" uid="uid://6gvuc1xvm2jf" path="res://assets/sprites/Spells/Air/Wind_Slice.png" id="6_he47x"]
+[ext_resource type="Script" uid="uid://dn8ak3nk3dbvt" path="res://scripts/spells/Ice/Snowball Toss/snowball_toss_projectile.gd" id="8_aladl"]
+[ext_resource type="Texture2D" uid="uid://blqi6t8dgfsbq" path="res://assets/sprites/Spells/Ice/Snowball_Toss.png" id="9_jekef"]
+[ext_resource type="Script" uid="uid://wbow3u42agj0" path="res://scripts/spells/Water/Water Gun/water_gun_projectile.gd" id="10_bjafb"]
+[ext_resource type="Texture2D" uid="uid://c4w2kgnf3vtuo" path="res://assets/sprites/Spells/Water/Water_Gun.png" id="11_l6xhu"]
+[ext_resource type="Script" uid="uid://brpyrolf43j7u" path="res://scripts/spells/Ooze/Ooze Fling/ooze_fling_projectile.gd" id="12_0un7w"]
+[ext_resource type="Texture2D" uid="uid://dunvmd2e40yim" path="res://assets/sprites/Spells/Ooze/Ooze_Fling.png" id="13_ceyr4"]
+[ext_resource type="Script" uid="uid://2vrbqsue8abw" path="res://scripts/spells/Earth/Rock Throw/rock_throw_projectile.gd" id="14_1dnwb"]
+[ext_resource type="Texture2D" uid="uid://b6emq1dcpanyx" path="res://assets/sprites/Spells/Earth/Rock_Throw.png" id="15_htp5r"]
+[ext_resource type="Script" uid="uid://4pnnh55lcbtb" path="res://scripts/spells/Metal/Steel Spike/steel_spike_projectile.gd" id="16_2dqdg"]
+[ext_resource type="Texture2D" uid="uid://wa4b0ssppvs7" path="res://assets/sprites/Spells/Metal/Steel_Spike.png" id="17_6k5a4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hbskq"]
+radius = 3.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2dqdg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hfly8")
+}],
+"loop": true,
+"name": &"Spell",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6k5a4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_he47x")
+}],
+"loop": true,
+"name": &"Spell",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_he47x"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_df485"]
+radius = 2.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_otru4"]
+radius = 2.0
+height = 8.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hngll"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_he47x")
+}],
+"loop": true,
+"name": &"Spell",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bjafb"]
+radius = 3.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l25ax"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_jekef")
+}],
+"loop": true,
+"name": &"Spell",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0un7w"]
+radius = 2.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0avgl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_l6xhu")
+}],
+"loop": true,
+"name": &"Spell",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1dnwb"]
+radius = 2.23607
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2wwdq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_ceyr4")
+}],
+"loop": true,
+"name": &"Spell",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2dqdg"]
+radius = 4.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bntp8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_htp5r")
+}],
+"loop": true,
+"name": &"Spell",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cakxg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_6k5a4")
+}],
+"loop": true,
+"name": &"Spell",
+"speed": 5.0
+}]
+
+[node name="Spell Projectiles" type="Node2D"]
+script = ExtResource("1_5ge0c")
+
+[node name="Typeless" type="Node2D" parent="."]
+
+[node name="Fire" type="Node2D" parent="."]
+
+[node name="Flame Shot" type="Area2D" parent="Fire"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("2_5ge0c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fire/Flame Shot"]
+shape = SubResource("CircleShape2D_hbskq")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Fire/Flame Shot"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_2dqdg")
+animation = &"Spell"
+offset = Vector2(-4, 0)
+
+[node name="Lightning" type="Node2D" parent="."]
+
+[node name="Static Bolt" type="Node2D" parent="Lightning"]
+
+[node name="Main Hitbox" type="Area2D" parent="Lightning/Static Bolt"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("4_df485")
+damagecolor = Color(1, 0.882353, 0, 1)
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Lightning/Static Bolt/Main Hitbox"]
+rotation = -0.0872665
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_6k5a4")
+animation = &"Spell"
+offset = Vector2(0, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lightning/Static Bolt/Main Hitbox"]
+position = Vector2(6, -2.13163e-14)
+rotation = 1.5708
+scale = Vector2(0.2, 0.2)
+shape = SubResource("CircleShape2D_he47x")
+
+[node name="Back Hitbox" type="Area2D" parent="Lightning/Static Bolt"]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lightning/Static Bolt/Back Hitbox"]
+position = Vector2(-6, 0)
+shape = SubResource("CircleShape2D_df485")
+
+[node name="Air" type="Node2D" parent="."]
+
+[node name="Wind Slice" type="Area2D" parent="Air"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("6_etqr6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Air/Wind Slice"]
+shape = SubResource("CapsuleShape2D_otru4")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Air/Wind Slice"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_hngll")
+animation = &"Spell"
+
+[node name="Ice" type="Node2D" parent="."]
+
+[node name="Snowball Toss" type="Area2D" parent="Ice"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("8_aladl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ice/Snowball Toss"]
+scale = Vector2(0.8, 0.8)
+shape = SubResource("CircleShape2D_bjafb")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Ice/Snowball Toss"]
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_l25ax")
+animation = &"Spell"
+
+[node name="Water" type="Node2D" parent="."]
+
+[node name="Water Gun" type="Area2D" parent="Water"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("10_bjafb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Water/Water Gun"]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_0un7w")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Water/Water Gun"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_0avgl")
+animation = &"Spell"
+
+[node name="Ooze" type="Node2D" parent="."]
+
+[node name="Ooze Fling" type="Area2D" parent="Ooze"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("12_0un7w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ooze/Ooze Fling"]
+shape = SubResource("CircleShape2D_1dnwb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Ooze/Ooze Fling"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_2wwdq")
+animation = &"Spell"
+
+[node name="Earth" type="Node2D" parent="."]
+
+[node name="Rock Throw" type="Area2D" parent="Earth"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("14_1dnwb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Earth/Rock Throw"]
+shape = SubResource("CircleShape2D_2dqdg")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Earth/Rock Throw"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_bntp8")
+animation = &"Spell"
+
+[node name="Metal" type="Node2D" parent="."]
+
+[node name="Steel Spike" type="Area2D" parent="Metal"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("16_2dqdg")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Metal/Steel Spike"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_cakxg")
+animation = &"Spell"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Metal/Steel Spike"]
+polygon = PackedVector2Array(3, -1, 5, -1, 8, 0.25, 5, 1.5, 3, 1.5)
+
+[connection signal="body_entered" from="Fire/Flame Shot" to="Fire/Flame Shot" method="_on_body_entered"]
+[connection signal="body_entered" from="Lightning/Static Bolt/Main Hitbox" to="Lightning/Static Bolt/Main Hitbox" method="_on_body_entered"]
+[connection signal="body_exited" from="Lightning/Static Bolt/Main Hitbox" to="Lightning/Static Bolt/Main Hitbox" method="_on_body_exited"]
+[connection signal="body_entered" from="Lightning/Static Bolt/Back Hitbox" to="Lightning/Static Bolt/Main Hitbox" method="_on_back_hitbox_body_entered"]
+[connection signal="body_entered" from="Air/Wind Slice" to="Air/Wind Slice" method="_on_body_entered"]
+[connection signal="body_entered" from="Ice/Snowball Toss" to="Ice/Snowball Toss" method="_on_body_entered"]
+[connection signal="body_entered" from="Water/Water Gun" to="Water/Water Gun" method="_on_body_entered"]
+[connection signal="body_entered" from="Ooze/Ooze Fling" to="Ooze/Ooze Fling" method="_on_body_entered"]
+[connection signal="body_entered" from="Earth/Rock Throw" to="Earth/Rock Throw" method="_on_body_entered"]
+[connection signal="body_entered" from="Metal/Steel Spike" to="Metal/Steel Spike" method="_on_body_entered"]

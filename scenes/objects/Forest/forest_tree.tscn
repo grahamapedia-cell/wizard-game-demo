@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxvdjmf6xunfe"]
+
+[ext_resource type="Script" uid="uid://qbsrf7jmvjxf" path="res://scripts/objects/Forest/forest_tree.gd" id="1_1w51q"]
+[ext_resource type="Texture2D" uid="uid://csoypm2iruu25" path="res://assets/sprites/Objects/Forest/tree.png" id="1_7cesk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1w51q"]
+size = Vector2(36, 15)
+
+[node name="Forest Tree" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 2
+freeze = true
+script = ExtResource("1_1w51q")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7cesk")
+offset = Vector2(0, -48)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5.5)
+shape = SubResource("RectangleShape2D_1w51q")

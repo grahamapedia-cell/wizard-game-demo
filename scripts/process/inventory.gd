@@ -1,0 +1,46 @@
+extends Sprite2D
+#array: [0 none, 1 hotbar, 2 inventory, 3 charms, 4 rings, 5 potions, 6 spellbooks]
+@onready var inventory = []
+@onready var hotbar = ["","","","","","","","",""]
+@onready var hotbarnumber = [0,0,0,0,0,0,0,0,0]
+@onready var hotbaralpha = [Color(1,1,1),Color(1,1,1),Color(1,1,1),Color(1,1,1),Color(1,1,1),Color(1,1,1),Color(1,1,1),Color(1,1,1),Color(1,1,1)]
+@onready var hotbardata = [[],[],[],[],[],[],[],[],[]]
+@onready var hotbarlimit = [0,0,0,0,0,0,0,0,0]
+@onready var twentyfive = ["","","","","","","","","","","","","","","","","","","","","","","","",""]
+@onready var twentyfivenumber = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+@onready var twentyfivealpha = [Color(1,1,1),Color(1,1,1),Color(1,1,1),Color(1,1,1),Color(1,1,1),Color(1,1,1),Color(1,1,1),Color(1,1,1),Color(1,1,1),Color(1,1,1),Color(1,1,1),Color(1,1,1),Color(1,1,1),Color(1,1,1),Color(1,1,1),Color(1,1,1),Color(1,1,1),Color(1,1,1),Color(1,1,1),Color(1,1,1),Color(1,1,1),Color(1,1,1),Color(1,1,1),Color(1,1,1),Color(1,1,1)]
+@onready var twentyfivedata = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
+@onready var twentyfivelimit = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+@onready var charms = ["","",""]
+@onready var charmsfull = [false,false,false]
+@onready var charmsdata = [[],[],[]]
+@onready var rings = ["",""]
+@onready var ringsfull = [false,false]
+@onready var ringsdata = [[],[]]
+@onready var hat = ""
+@onready var hatfull = false
+@onready var hatdata = []
+@onready var robes = ""
+@onready var robesfull = false
+@onready var robesdata = []
+@onready var spellbook = ""
+@onready var spellbookalpha= Color(1,1,1)
+@onready var spells = []
+@onready var spellbookfull = false
+@onready var quantity = []
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	hide()
+	print(self.get_path()) # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	inventory = [0,hotbar,twentyfive,charms,rings,hat,robes,spellbook]
+	quantity = [0,hotbarnumber,twentyfivenumber,charmsfull,ringsfull,hatfull,robesfull,spellbookfull]
+	if Input.is_action_just_pressed("test_inventory"):
+		print(inventory)
+		print(quantity)
+		print(hotbardata[0])
+	if Input.is_action_just_pressed("open_inventory"):
+		self.visible = !self.visible

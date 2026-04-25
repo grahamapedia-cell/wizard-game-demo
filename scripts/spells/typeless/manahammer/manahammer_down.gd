@@ -1,0 +1,18 @@
+extends CollisionShape2D
+
+
+func _ready() -> void:
+	hide() # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	pass
+
+
+func _on_manahammer_down() -> void:
+	show() # Replace with function body.
+
+
+func _on_manahammer_stop() -> void:
+	hide() # Replace with function body.

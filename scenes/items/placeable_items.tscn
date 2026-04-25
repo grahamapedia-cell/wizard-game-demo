@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://38aa7gdbka8f"]
+
+[ext_resource type="Script" uid="uid://drngg4qjyt1mq" path="res://scripts/items/Placeable items/placeable_items.gd" id="1_1rqx1"]
+[ext_resource type="Script" uid="uid://cfhaa2rjmd2gl" path="res://scripts/items/dropped_item.gd" id="2_j7q4w"]
+[ext_resource type="Texture2D" uid="uid://854l57n1iqx6" path="res://assets/sprites/Objects/Placeables/Machines/essence_extractor.png" id="3_p4enl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m4oda"]
+size = Vector2(6, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxci6"]
+atlas = ExtResource("3_p4enl")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q3epu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxci6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Placeable items" type="Node2D"]
+script = ExtResource("1_1rqx1")
+
+[node name="Machines" type="Node2D" parent="."]
+
+[node name="Essence Extractor" type="Area2D" parent="Machines"]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("2_j7q4w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Machines/Essence Extractor"]
+shape = SubResource("RectangleShape2D_m4oda")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Machines/Essence Extractor"]
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_q3epu")
+offset = Vector2(0, -8)

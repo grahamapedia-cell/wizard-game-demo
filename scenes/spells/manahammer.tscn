@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://qvgd88wc71re"]
+
+[ext_resource type="Texture2D" uid="uid://h8pi056lllcu" path="res://assets/sprites/justalilguy.png" id="1_hc6d8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i7m8a"]
+size = Vector2(8, 20)
+
+[node name="Area2D" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_hc6d8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 19)
+shape = SubResource("RectangleShape2D_i7m8a")

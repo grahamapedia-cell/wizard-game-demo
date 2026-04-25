@@ -1,0 +1,1633 @@
+[gd_scene load_steps=96 format=3 uid="uid://cb2155646r14c"]
+
+[ext_resource type="Script" uid="uid://bcs783ev3h1wh" path="res://scripts/process/gui.gd" id="1_rga7q"]
+[ext_resource type="Texture2D" uid="uid://cpt2tut7xbp1j" path="res://assets/sprites/GUI/cooler_inventory.png" id="1_w7kh3"]
+[ext_resource type="Script" uid="uid://5em8sl0l8fb1" path="res://scripts/process/inventory.gd" id="2_4wyf3"]
+[ext_resource type="Script" uid="uid://4oalifm825oj" path="res://scripts/process/Millions of inventory/inventory_things.gd" id="2_6oujy"]
+[ext_resource type="Texture2D" uid="uid://dv6lefotpa3o" path="res://assets/sprites/GUI/Hotbar.png" id="3_4wyf3"]
+[ext_resource type="Texture2D" uid="uid://cl6ehluw2qxxi" path="res://assets/sprites/GUI/hotbarnumbers.png" id="3_i7141"]
+[ext_resource type="Script" uid="uid://c46nao2ximwe8" path="res://scripts/process/inventory_numbers.gd" id="4_4mrxx"]
+[ext_resource type="Script" uid="uid://btr4pcy4asscw" path="res://scripts/process/hotbar.gd" id="4_k0juu"]
+[ext_resource type="AudioStream" uid="uid://c75ddlb2y0obb" path="res://assets/sounds/pop-402323.mp3" id="5_4wdv8"]
+[ext_resource type="Script" uid="uid://bbs3jx8p8eicb" path="res://scripts/process/hotbar_numbers.gd" id="7_7r4gi"]
+[ext_resource type="Script" uid="uid://b14jmei4bcfd6" path="res://scripts/process/Millions of inventory/h_1.gd" id="8_4mrxx"]
+[ext_resource type="Texture2D" uid="uid://ca4olwsei73xt" path="res://assets/sprites/GUI/hotbarselector.png" id="9_w7kh3"]
+[ext_resource type="Script" uid="uid://cfmufkcw1trtf" path="res://scripts/process/Inventory_selector.gd" id="10_e3hyu"]
+[ext_resource type="PackedScene" uid="uid://bkn46l16qt01r" path="res://scenes/Numbers/generic_number.tscn" id="11_jhx03"]
+[ext_resource type="Texture2D" uid="uid://0g6r5pcv4q6r" path="res://assets/sprites/Items/Materials/Crops/basic_crops.png" id="12_4kbfs"]
+[ext_resource type="Script" uid="uid://bgk13cc57ro1q" path="res://scripts/process/Millions of inventory/bars.gd" id="13_jhx03"]
+[ext_resource type="Texture2D" uid="uid://dbrvs1u2kd0ir" path="res://assets/sprites/Items/Materials/Metals/real_metal_ore.png" id="13_rup4s"]
+[ext_resource type="Texture2D" uid="uid://cnvntw3felw4" path="res://assets/sprites/Items/Spellbooks/real_spellbook_generic.png" id="14_4kbfs"]
+[ext_resource type="Texture2D" uid="uid://dj2yv1n2faqq8" path="res://assets/sprites/Items/blank.png" id="14_dss4m"]
+[ext_resource type="Texture2D" uid="uid://cdkpw7dg6w5x7" path="res://assets/sprites/Items/Consumables/potion_bottle.png" id="15_8u370"]
+[ext_resource type="Script" uid="uid://hvxasdrn08mi" path="res://scripts/process/cursor.gd" id="15_xo05s"]
+[ext_resource type="Script" uid="uid://dtixi5dq8dm60" path="res://scripts/process/hotbar_selector.gd" id="16_7t5mc"]
+[ext_resource type="Texture2D" uid="uid://bncphk22vqool" path="res://assets/sprites/Items/Materials/Stone/real_stone_item.png" id="16_f17e3"]
+[ext_resource type="Script" uid="uid://c2tj5kxpfpqkj" path="res://scripts/process/Millions of inventory/inventory_bg.gd" id="17_pm21f"]
+[ext_resource type="Texture2D" uid="uid://854l57n1iqx6" path="res://assets/sprites/Objects/Placeables/Machines/essence_extractor.png" id="17_rup4s"]
+[ext_resource type="Texture2D" uid="uid://deh22apwvxhjj" path="res://assets/sprites/GUI/matteblack.png" id="18_2lf6f"]
+[ext_resource type="Script" uid="uid://k1rv0a5f7cu1" path="res://scripts/process/Millions of inventory/equipboxes.gd" id="18_37qwj"]
+[ext_resource type="Texture2D" uid="uid://drd2x1lxmsatc" path="res://assets/sprites/Items/Spellbooks/spell_holders.png" id="18_eo1xk"]
+[ext_resource type="Texture2D" uid="uid://blh0xdo7gvnfj" path="res://assets/sprites/GUI/inventorytabs.png" id="19_7iits"]
+[ext_resource type="PackedScene" uid="uid://d1cyup4fming" path="res://scenes/items/materials.tscn" id="20_2lf6f"]
+[ext_resource type="Script" uid="uid://cr7wd77k3aw8n" path="res://scripts/process/inventory_sidebar.gd" id="20_oo54l"]
+[ext_resource type="Texture2D" uid="uid://dnrheunicuhbe" path="res://assets/sprites/GUI/Inventory_book.png" id="21_kpybi"]
+[ext_resource type="Script" uid="uid://dm41mi4vv834d" path="res://scripts/process/spellbook.gd" id="23_xgqkh"]
+[ext_resource type="AudioStream" uid="uid://cb1vt2gfobvio" path="res://assets/sounds/Equip/paper-flutter-5933.mp3" id="24_d46x8"]
+[ext_resource type="PackedScene" uid="uid://b7rk4su4yjw4a" path="res://scenes/spells/spell_icons.tscn" id="24_munwf"]
+[ext_resource type="Texture2D" uid="uid://b684vqj5ha4oc" path="res://assets/sprites/GUI/Spell icons/icon_selector.png" id="25_ts3gi"]
+[ext_resource type="Texture2D" uid="uid://bqlyh6sokw0pf" path="res://assets/sprites/GUI/Inventory_book_cover.png" id="28_navra"]
+[ext_resource type="Texture2D" uid="uid://bfhtfulxyvlaq" path="res://assets/sprites/Objects/Test/test_daycounter.png" id="31_ggc52"]
+[ext_resource type="PackedScene" uid="uid://cb4112i3t0yo2" path="res://scenes/items/spellbooks.tscn" id="32_4kbfs"]
+[ext_resource type="Script" uid="uid://b5crodq6nptl7" path="res://scripts/process/Day cycle/daycounter.gd" id="32_l8ah6"]
+[ext_resource type="Texture2D" uid="uid://c37ceaubqpkh1" path="res://assets/sprites/Objects/Test/test_clock_hands.png" id="33_e75v4"]
+[ext_resource type="PackedScene" uid="uid://38aa7gdbka8f" path="res://scenes/items/placeable_items.tscn" id="33_f17e3"]
+[ext_resource type="PackedScene" uid="uid://cocnls8f8f316" path="res://scenes/objects/placed_item.tscn" id="35_f17e3"]
+[ext_resource type="PackedScene" uid="uid://bhvmpmu7d5muw" path="res://scenes/Numbers/lettersarejustsillynumbers.tscn" id="38_18clu"]
+[ext_resource type="Script" uid="uid://c4ccvha2vtg7g" path="res://scripts/process/Day cycle/time.gd" id="38_e75v4"]
+[ext_resource type="Script" uid="uid://c7jj5l5pk4118" path="res://scripts/process/Space/area.gd" id="39_l8ah6"]
+[ext_resource type="Script" uid="uid://dmd13t3qaphpf" path="res://scripts/process/hp.gd" id="45_1jxku"]
+[ext_resource type="Texture2D" uid="uid://b2vxbqbklqlpl" path="res://assets/sprites/solid_color.png" id="45_18clu"]
+[ext_resource type="Script" uid="uid://dkplxcj7q4gx0" path="res://scripts/process/area stuff/fade_to_black.gd" id="45_eo1xk"]
+[ext_resource type="Texture2D" uid="uid://bmfiybchxgpk" path="res://assets/sprites/GUI/Tutorial/tutorial.png" id="49_3l05q"]
+[ext_resource type="Script" uid="uid://myply2cgji4s" path="res://scripts/process/tutorial.gd" id="49_x28ej"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i7141"]
+size = Vector2(14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f17e3"]
+atlas = ExtResource("12_4kbfs")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_817gm"]
+atlas = ExtResource("17_rup4s")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ggc52"]
+atlas = ExtResource("12_4kbfs")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8ah6"]
+atlas = ExtResource("12_4kbfs")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iexy4"]
+atlas = ExtResource("15_8u370")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6ckp"]
+atlas = ExtResource("18_eo1xk")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvg0v"]
+atlas = ExtResource("18_eo1xk")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e75v4"]
+atlas = ExtResource("12_4kbfs")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o8fc1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f17e3")
+}],
+"loop": true,
+"name": &"Air Berry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_817gm")
+}],
+"loop": true,
+"name": &"Essence Extractor",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_rup4s")
+}],
+"loop": true,
+"name": &"Metal Ore",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ggc52")
+}],
+"loop": true,
+"name": &"Pepper",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8ah6")
+}],
+"loop": true,
+"name": &"Potato",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iexy4")
+}],
+"loop": true,
+"name": &"Potion",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6ckp")
+}],
+"loop": true,
+"name": &"Scroll",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mvg0v")
+}],
+"loop": true,
+"name": &"Spellbook",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_f17e3")
+}],
+"loop": true,
+"name": &"Stone",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e75v4")
+}],
+"loop": true,
+"name": &"Watermelon",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_dss4m")
+}],
+"loop": true,
+"name": &"empty",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npbic"]
+atlas = ExtResource("15_8u370")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3odw"]
+atlas = ExtResource("18_eo1xk")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hl1e"]
+atlas = ExtResource("18_eo1xk")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xgqkh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npbic")
+}],
+"loop": true,
+"name": &"bottle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_dss4m")
+}],
+"loop": true,
+"name": &"empty",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3odw")
+}],
+"loop": true,
+"name": &"pages",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5hl1e")
+}],
+"loop": true,
+"name": &"paper",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7r4gi"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e3hyu"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_navra"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7iits"]
+size = Vector2(141, 261.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oo54l"]
+size = Vector2(181, 69.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_munwf"]
+size = Vector2(28, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ts3gi"]
+size = Vector2(28, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8u370"]
+atlas = ExtResource("33_e75v4")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rga7q"]
+atlas = ExtResource("33_e75v4")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6oujy"]
+atlas = ExtResource("33_e75v4")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hi6a0"]
+atlas = ExtResource("33_e75v4")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eo1xk"]
+atlas = ExtResource("33_e75v4")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18clu"]
+atlas = ExtResource("33_e75v4")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wdv8"]
+atlas = ExtResource("33_e75v4")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d46x8"]
+atlas = ExtResource("33_e75v4")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3l05q"]
+atlas = ExtResource("33_e75v4")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x28ej"]
+atlas = ExtResource("33_e75v4")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jxku"]
+atlas = ExtResource("33_e75v4")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1dgkn"]
+atlas = ExtResource("33_e75v4")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e68xj"]
+atlas = ExtResource("33_e75v4")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hglh"]
+atlas = ExtResource("33_e75v4")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qg546"]
+atlas = ExtResource("33_e75v4")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pf35h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8u370")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rga7q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6oujy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hi6a0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eo1xk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_18clu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wdv8")
+}],
+"loop": true,
+"name": &"Hours",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d46x8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3l05q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x28ej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jxku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1dgkn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e68xj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5hglh")
+}],
+"loop": true,
+"name": &"Minutes",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qg546")
+}],
+"loop": true,
+"name": &"Word",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pf35h"]
+atlas = ExtResource("14_4kbfs")
+region = Rect2(16, 9, 1, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iexy4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pf35h")
+}],
+"loop": true,
+"name": &"Daylight",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66tox"]
+atlas = ExtResource("49_3l05q")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pq8jk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66tox")
+}],
+"loop": true,
+"name": &"Big Arrow",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pq8jk"]
+atlas = ExtResource("49_3l05q")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q57r8"]
+atlas = ExtResource("49_3l05q")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4kmvx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pq8jk")
+}],
+"loop": true,
+"name": &"E",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q57r8")
+}],
+"loop": true,
+"name": &"Right Click",
+"speed": 5.0
+}]
+
+[node name="World" type="Node2D"]
+
+[node name="GUI" type="Node2D" parent="."]
+script = ExtResource("1_rga7q")
+
+[node name="Inventory_things" type="Control" parent="GUI"]
+z_index = 20
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_6oujy")
+
+[node name="Inventory" type="Sprite2D" parent="GUI/Inventory_things"]
+z_index = 6
+texture = ExtResource("1_w7kh3")
+script = ExtResource("2_4wyf3")
+
+[node name="Pickup" type="AudioStreamPlayer2D" parent="GUI/Inventory_things/Inventory"]
+stream = ExtResource("5_4wdv8")
+max_polyphony = 5
+
+[node name="Inventory_Selector" type="Sprite2D" parent="GUI/Inventory_things"]
+self_modulate = Color(1, 1, 1, 0.196078)
+z_index = 8
+texture = ExtResource("9_w7kh3")
+script = ExtResource("10_e3hyu")
+
+[node name="Inventory_Numbers" type="Sprite2D" parent="GUI/Inventory_things"]
+z_index = 9
+position = Vector2(0, -50)
+texture = ExtResource("3_i7141")
+script = ExtResource("4_4mrxx")
+
+[node name="Hotbar" type="Sprite2D" parent="GUI/Inventory_things"]
+position = Vector2(-38, 68)
+texture = ExtResource("3_4wyf3")
+script = ExtResource("4_k0juu")
+
+[node name="Hotbar_Numbers" type="Sprite2D" parent="GUI/Inventory_things"]
+z_index = 3
+position = Vector2(-38, 68)
+texture = ExtResource("3_i7141")
+script = ExtResource("7_7r4gi")
+
+[node name="Hell" type="Node2D" parent="GUI/Inventory_things"]
+z_index = 7
+
+[node name="H1" type="Area2D" parent="GUI/Inventory_things/Hell"]
+position = Vector2(-76, -50)
+script = ExtResource("8_4mrxx")
+amount = ExtResource("11_jhx03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Hell/H1"]
+shape = SubResource("RectangleShape2D_i7141")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Hell/H1"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Hell/H1"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="H2" type="Area2D" parent="GUI/Inventory_things/Hell"]
+position = Vector2(-57, -50)
+script = ExtResource("8_4mrxx")
+amount = ExtResource("11_jhx03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Hell/H2"]
+shape = SubResource("RectangleShape2D_7r4gi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Hell/H2"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Hell/H2"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="H3" type="Area2D" parent="GUI/Inventory_things/Hell"]
+position = Vector2(-38, -50)
+script = ExtResource("8_4mrxx")
+amount = ExtResource("11_jhx03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Hell/H3"]
+shape = SubResource("RectangleShape2D_7r4gi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Hell/H3"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Hell/H3"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="H4" type="Area2D" parent="GUI/Inventory_things/Hell"]
+position = Vector2(-19, -50)
+script = ExtResource("8_4mrxx")
+amount = ExtResource("11_jhx03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Hell/H4"]
+shape = SubResource("RectangleShape2D_7r4gi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Hell/H4"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Hell/H4"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="H5" type="Area2D" parent="GUI/Inventory_things/Hell"]
+position = Vector2(0, -50)
+script = ExtResource("8_4mrxx")
+amount = ExtResource("11_jhx03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Hell/H5"]
+shape = SubResource("RectangleShape2D_7r4gi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Hell/H5"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Hell/H5"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="H6" type="Area2D" parent="GUI/Inventory_things/Hell"]
+position = Vector2(19, -50)
+script = ExtResource("8_4mrxx")
+amount = ExtResource("11_jhx03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Hell/H6"]
+shape = SubResource("RectangleShape2D_7r4gi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Hell/H6"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Hell/H6"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="H7" type="Area2D" parent="GUI/Inventory_things/Hell"]
+position = Vector2(38, -50)
+script = ExtResource("8_4mrxx")
+amount = ExtResource("11_jhx03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Hell/H7"]
+shape = SubResource("RectangleShape2D_7r4gi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Hell/H7"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Hell/H7"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="H8" type="Area2D" parent="GUI/Inventory_things/Hell"]
+position = Vector2(57, -50)
+script = ExtResource("8_4mrxx")
+amount = ExtResource("11_jhx03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Hell/H8"]
+shape = SubResource("RectangleShape2D_7r4gi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Hell/H8"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Hell/H8"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="H9" type="Area2D" parent="GUI/Inventory_things/Hell"]
+position = Vector2(76, -50)
+script = ExtResource("8_4mrxx")
+amount = ExtResource("11_jhx03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Hell/H9"]
+shape = SubResource("RectangleShape2D_7r4gi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Hell/H9"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Hell/H9"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="Iell" type="Node2D" parent="GUI/Inventory_things"]
+z_index = 7
+
+[node name="A1" type="Area2D" parent="GUI/Inventory_things/Iell"]
+position = Vector2(-76, -27)
+script = ExtResource("8_4mrxx")
+amount = ExtResource("11_jhx03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Iell/A1"]
+shape = SubResource("RectangleShape2D_e3hyu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/A1"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/A1"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="A2" type="Area2D" parent="GUI/Inventory_things/Iell"]
+position = Vector2(-57, -27)
+script = ExtResource("8_4mrxx")
+amount = ExtResource("11_jhx03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Iell/A2"]
+shape = SubResource("RectangleShape2D_e3hyu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/A2"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/A2"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="A3" type="Area2D" parent="GUI/Inventory_things/Iell"]
+position = Vector2(-38, -27)
+script = ExtResource("8_4mrxx")
+amount = ExtResource("11_jhx03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Iell/A3"]
+shape = SubResource("RectangleShape2D_e3hyu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/A3"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/A3"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="A4" type="Area2D" parent="GUI/Inventory_things/Iell"]
+position = Vector2(-19, -27)
+script = ExtResource("8_4mrxx")
+amount = ExtResource("11_jhx03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Iell/A4"]
+shape = SubResource("RectangleShape2D_e3hyu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/A4"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/A4"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="A5" type="Area2D" parent="GUI/Inventory_things/Iell"]
+position = Vector2(0, -27)
+script = ExtResource("8_4mrxx")
+amount = ExtResource("11_jhx03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Iell/A5"]
+shape = SubResource("RectangleShape2D_e3hyu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/A5"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/A5"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="B1" type="Area2D" parent="GUI/Inventory_things/Iell"]
+position = Vector2(-76, -8)
+script = ExtResource("8_4mrxx")
+amount = ExtResource("11_jhx03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Iell/B1"]
+shape = SubResource("RectangleShape2D_e3hyu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/B1"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/B1"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="B2" type="Area2D" parent="GUI/Inventory_things/Iell"]
+position = Vector2(-57, -8)
+script = ExtResource("8_4mrxx")
+amount = ExtResource("11_jhx03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Iell/B2"]
+shape = SubResource("RectangleShape2D_e3hyu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/B2"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/B2"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="B3" type="Area2D" parent="GUI/Inventory_things/Iell"]
+position = Vector2(-38, -8)
+script = ExtResource("8_4mrxx")
+amount = ExtResource("11_jhx03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Iell/B3"]
+shape = SubResource("RectangleShape2D_e3hyu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/B3"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/B3"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="B4" type="Area2D" parent="GUI/Inventory_things/Iell"]
+position = Vector2(-19, -8)
+script = ExtResource("8_4mrxx")
+amount = ExtResource("11_jhx03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Iell/B4"]
+shape = SubResource("RectangleShape2D_e3hyu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/B4"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/B4"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="B5" type="Area2D" parent="GUI/Inventory_things/Iell"]
+position = Vector2(0, -8)
+script = ExtResource("8_4mrxx")
+amount = ExtResource("11_jhx03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Iell/B5"]
+shape = SubResource("RectangleShape2D_e3hyu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/B5"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/B5"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="C1" type="Area2D" parent="GUI/Inventory_things/Iell"]
+position = Vector2(-76, 11)
+script = ExtResource("8_4mrxx")
+amount = ExtResource("11_jhx03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Iell/C1"]
+shape = SubResource("RectangleShape2D_e3hyu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/C1"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/C1"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="C2" type="Area2D" parent="GUI/Inventory_things/Iell"]
+position = Vector2(-57, 11)
+script = ExtResource("8_4mrxx")
+amount = ExtResource("11_jhx03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Iell/C2"]
+shape = SubResource("RectangleShape2D_e3hyu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/C2"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/C2"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="C3" type="Area2D" parent="GUI/Inventory_things/Iell"]
+position = Vector2(-38, 11)
+script = ExtResource("8_4mrxx")
+amount = ExtResource("11_jhx03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Iell/C3"]
+shape = SubResource("RectangleShape2D_e3hyu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/C3"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/C3"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="C4" type="Area2D" parent="GUI/Inventory_things/Iell"]
+position = Vector2(-19, 11)
+script = ExtResource("8_4mrxx")
+amount = ExtResource("11_jhx03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Iell/C4"]
+shape = SubResource("RectangleShape2D_e3hyu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/C4"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/C4"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="C5" type="Area2D" parent="GUI/Inventory_things/Iell"]
+position = Vector2(0, 11)
+script = ExtResource("8_4mrxx")
+amount = ExtResource("11_jhx03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Iell/C5"]
+shape = SubResource("RectangleShape2D_e3hyu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/C5"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/C5"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="D1" type="Area2D" parent="GUI/Inventory_things/Iell"]
+position = Vector2(-76, 30)
+script = ExtResource("8_4mrxx")
+amount = ExtResource("11_jhx03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Iell/D1"]
+shape = SubResource("RectangleShape2D_e3hyu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/D1"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/D1"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="D2" type="Area2D" parent="GUI/Inventory_things/Iell"]
+position = Vector2(-57, 30)
+script = ExtResource("8_4mrxx")
+amount = ExtResource("11_jhx03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Iell/D2"]
+shape = SubResource("RectangleShape2D_e3hyu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/D2"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/D2"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="D3" type="Area2D" parent="GUI/Inventory_things/Iell"]
+position = Vector2(-38, 30)
+script = ExtResource("8_4mrxx")
+amount = ExtResource("11_jhx03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Iell/D3"]
+shape = SubResource("RectangleShape2D_e3hyu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/D3"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/D3"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="D4" type="Area2D" parent="GUI/Inventory_things/Iell"]
+position = Vector2(-19, 30)
+script = ExtResource("8_4mrxx")
+amount = ExtResource("11_jhx03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Iell/D4"]
+shape = SubResource("RectangleShape2D_e3hyu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/D4"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/D4"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="D5" type="Area2D" parent="GUI/Inventory_things/Iell"]
+position = Vector2(0, 30)
+script = ExtResource("8_4mrxx")
+amount = ExtResource("11_jhx03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Iell/D5"]
+shape = SubResource("RectangleShape2D_e3hyu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/D5"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/D5"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="E1" type="Area2D" parent="GUI/Inventory_things/Iell"]
+position = Vector2(-76, 49)
+script = ExtResource("8_4mrxx")
+amount = ExtResource("11_jhx03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Iell/E1"]
+shape = SubResource("RectangleShape2D_e3hyu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/E1"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/E1"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="E2" type="Area2D" parent="GUI/Inventory_things/Iell"]
+position = Vector2(-57, 49)
+script = ExtResource("8_4mrxx")
+amount = ExtResource("11_jhx03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Iell/E2"]
+shape = SubResource("RectangleShape2D_e3hyu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/E2"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/E2"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="E3" type="Area2D" parent="GUI/Inventory_things/Iell"]
+position = Vector2(-38, 49)
+script = ExtResource("8_4mrxx")
+amount = ExtResource("11_jhx03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Iell/E3"]
+shape = SubResource("RectangleShape2D_e3hyu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/E3"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/E3"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="E4" type="Area2D" parent="GUI/Inventory_things/Iell"]
+position = Vector2(-19, 49)
+script = ExtResource("8_4mrxx")
+amount = ExtResource("11_jhx03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Iell/E4"]
+shape = SubResource("RectangleShape2D_e3hyu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/E4"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/E4"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="E5" type="Area2D" parent="GUI/Inventory_things/Iell"]
+position = Vector2(0, 49)
+script = ExtResource("8_4mrxx")
+amount = ExtResource("11_jhx03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Iell/E5"]
+shape = SubResource("RectangleShape2D_e3hyu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/E5"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Iell/E5"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="Hellbar" type="Node2D" parent="GUI/Inventory_things"]
+z_index = 2
+
+[node name="Bar1" type="Node2D" parent="GUI/Inventory_things/Hellbar"]
+position = Vector2(-114, 68)
+script = ExtResource("13_jhx03")
+amount = ExtResource("11_jhx03")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Hellbar/Bar1"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Hellbar/Bar1"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="Bar2" type="Node2D" parent="GUI/Inventory_things/Hellbar"]
+position = Vector2(-95, 68)
+script = ExtResource("13_jhx03")
+amount = ExtResource("11_jhx03")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Hellbar/Bar2"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Hellbar/Bar2"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="Bar3" type="Node2D" parent="GUI/Inventory_things/Hellbar"]
+position = Vector2(-76, 68)
+script = ExtResource("13_jhx03")
+amount = ExtResource("11_jhx03")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Hellbar/Bar3"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Hellbar/Bar3"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="Bar4" type="Node2D" parent="GUI/Inventory_things/Hellbar"]
+position = Vector2(-57, 68)
+script = ExtResource("13_jhx03")
+amount = ExtResource("11_jhx03")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Hellbar/Bar4"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Hellbar/Bar4"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="Bar5" type="Node2D" parent="GUI/Inventory_things/Hellbar"]
+position = Vector2(-38, 68)
+script = ExtResource("13_jhx03")
+amount = ExtResource("11_jhx03")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Hellbar/Bar5"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Hellbar/Bar5"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="Bar6" type="Node2D" parent="GUI/Inventory_things/Hellbar"]
+position = Vector2(-19, 68)
+script = ExtResource("13_jhx03")
+amount = ExtResource("11_jhx03")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Hellbar/Bar6"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Hellbar/Bar6"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="Bar7" type="Node2D" parent="GUI/Inventory_things/Hellbar"]
+position = Vector2(0, 68)
+script = ExtResource("13_jhx03")
+amount = ExtResource("11_jhx03")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Hellbar/Bar7"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Hellbar/Bar7"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="Bar8" type="Node2D" parent="GUI/Inventory_things/Hellbar"]
+position = Vector2(19, 68)
+script = ExtResource("13_jhx03")
+amount = ExtResource("11_jhx03")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Hellbar/Bar8"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Hellbar/Bar8"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="Bar9" type="Node2D" parent="GUI/Inventory_things/Hellbar"]
+position = Vector2(38, 68)
+script = ExtResource("13_jhx03")
+amount = ExtResource("11_jhx03")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Hellbar/Bar9"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Hellbar/Bar9"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="Equiphell" type="Node2D" parent="GUI/Inventory_things"]
+
+[node name="Charm1" type="Area2D" parent="GUI/Inventory_things/Equiphell"]
+z_index = 7
+position = Vector2(24, 28)
+script = ExtResource("18_37qwj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Equiphell/Charm1"]
+shape = SubResource("RectangleShape2D_navra")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Equiphell/Charm1"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Equiphell/Charm1"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="Equip" type="AudioStreamPlayer2D" parent="GUI/Inventory_things/Equiphell/Charm1"]
+
+[node name="Charm2" type="Area2D" parent="GUI/Inventory_things/Equiphell"]
+z_index = 7
+position = Vector2(22, 8)
+script = ExtResource("18_37qwj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Equiphell/Charm2"]
+shape = SubResource("RectangleShape2D_navra")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Equiphell/Charm2"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Equiphell/Charm2"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="Equip" type="AudioStreamPlayer2D" parent="GUI/Inventory_things/Equiphell/Charm2"]
+
+[node name="Charm3" type="Area2D" parent="GUI/Inventory_things/Equiphell"]
+z_index = 7
+position = Vector2(24, -12)
+script = ExtResource("18_37qwj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Equiphell/Charm3"]
+shape = SubResource("RectangleShape2D_navra")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Equiphell/Charm3"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Equiphell/Charm3"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="Equip" type="AudioStreamPlayer2D" parent="GUI/Inventory_things/Equiphell/Charm3"]
+
+[node name="Ring1" type="Area2D" parent="GUI/Inventory_things/Equiphell"]
+z_index = 7
+position = Vector2(72, 28)
+script = ExtResource("18_37qwj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Equiphell/Ring1"]
+shape = SubResource("RectangleShape2D_navra")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Equiphell/Ring1"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Equiphell/Ring1"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="Equip" type="AudioStreamPlayer2D" parent="GUI/Inventory_things/Equiphell/Ring1"]
+
+[node name="Ring2" type="Area2D" parent="GUI/Inventory_things/Equiphell"]
+z_index = 7
+position = Vector2(74, 8)
+script = ExtResource("18_37qwj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Equiphell/Ring2"]
+shape = SubResource("RectangleShape2D_navra")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Equiphell/Ring2"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Equiphell/Ring2"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="Equip" type="AudioStreamPlayer2D" parent="GUI/Inventory_things/Equiphell/Ring2"]
+
+[node name="Hat" type="Area2D" parent="GUI/Inventory_things/Equiphell"]
+z_index = 7
+position = Vector2(48, -21)
+script = ExtResource("18_37qwj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Equiphell/Hat"]
+shape = SubResource("RectangleShape2D_navra")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Equiphell/Hat"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Equiphell/Hat"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="Equip" type="AudioStreamPlayer2D" parent="GUI/Inventory_things/Equiphell/Hat"]
+
+[node name="Robes" type="Area2D" parent="GUI/Inventory_things/Equiphell"]
+z_index = 7
+position = Vector2(72, -12)
+script = ExtResource("18_37qwj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Equiphell/Robes"]
+shape = SubResource("RectangleShape2D_navra")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Equiphell/Robes"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Equiphell/Robes"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="Equip" type="AudioStreamPlayer2D" parent="GUI/Inventory_things/Equiphell/Robes"]
+
+[node name="SpellbookSlot" type="Area2D" parent="GUI/Inventory_things/Equiphell"]
+z_index = 7
+position = Vector2(24, 48)
+script = ExtResource("18_37qwj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Equiphell/SpellbookSlot"]
+shape = SubResource("RectangleShape2D_navra")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Equiphell/SpellbookSlot"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Equiphell/SpellbookSlot"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="Equip" type="AudioStreamPlayer2D" parent="GUI/Inventory_things/Equiphell/SpellbookSlot"]
+stream = ExtResource("24_d46x8")
+
+[node name="Hotbar_Selector" type="Sprite2D" parent="GUI/Inventory_things"]
+self_modulate = Color(1, 1, 1, 0.196078)
+z_index = 2
+position = Vector2(0, 68)
+texture = ExtResource("9_w7kh3")
+script = ExtResource("16_7t5mc")
+
+[node name="InventoryBG" type="Area2D" parent="GUI/Inventory_things"]
+z_index = 4
+script = ExtResource("17_pm21f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/InventoryBG"]
+position = Vector2(-157.5, -0.5)
+shape = SubResource("RectangleShape2D_7iits")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="GUI/Inventory_things/InventoryBG"]
+position = Vector2(157.5, -0.25)
+shape = SubResource("RectangleShape2D_7iits")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="GUI/Inventory_things/InventoryBG"]
+position = Vector2(0.5, -96.25)
+shape = SubResource("RectangleShape2D_oo54l")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="GUI/Inventory_things/InventoryBG"]
+position = Vector2(-1, 95)
+shape = SubResource("RectangleShape2D_oo54l")
+
+[node name="Sprite2D" type="Sprite2D" parent="GUI/Inventory_things/InventoryBG"]
+modulate = Color(1, 1, 1, 0.254902)
+position = Vector2(-2, -1)
+scale = Vector2(28.5, 16.2187)
+texture = ExtResource("18_2lf6f")
+
+[node name="Inventory_Sidebar" type="Sprite2D" parent="GUI/Inventory_things"]
+z_index = 5
+position = Vector2(96, 18)
+texture = ExtResource("19_7iits")
+script = ExtResource("20_oo54l")
+
+[node name="Spellbook" type="Sprite2D" parent="GUI/Inventory_things"]
+position = Vector2(107, 51)
+texture = ExtResource("21_kpybi")
+script = ExtResource("23_xgqkh")
+spellicon = ExtResource("24_munwf")
+
+[node name="PageL" type="Area2D" parent="GUI/Inventory_things/Spellbook"]
+position = Vector2(-20, -6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Spellbook/PageL"]
+position = Vector2(5, 11)
+shape = SubResource("RectangleShape2D_munwf")
+
+[node name="PageR" type="Area2D" parent="GUI/Inventory_things/Spellbook"]
+position = Vector2(10, -6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Inventory_things/Spellbook/PageR"]
+position = Vector2(5, 11)
+shape = SubResource("RectangleShape2D_ts3gi")
+
+[node name="SpellSelector" type="Sprite2D" parent="GUI/Inventory_things/Spellbook"]
+self_modulate = Color(1, 1, 1, 0.196078)
+z_index = 2
+position = Vector2(-20, -6)
+texture = ExtResource("25_ts3gi")
+offset = Vector2(5, 11)
+
+[node name="SpellbookCover" type="Sprite2D" parent="GUI/Inventory_things/Spellbook"]
+z_index = -1
+texture = ExtResource("28_navra")
+
+[node name="Cursor" type="Node2D" parent="GUI"]
+z_index = 32
+script = ExtResource("15_xo05s")
+amount = ExtResource("11_jhx03")
+materials = ExtResource("20_2lf6f")
+spellbooks = ExtResource("32_4kbfs")
+placeables = ExtResource("33_f17e3")
+place = ExtResource("35_f17e3")
+letter = ExtResource("38_18clu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Cursor"]
+z_index = -1
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o8fc1")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Cursor"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xgqkh")
+animation = &"empty"
+
+[node name="Daycounter" type="Sprite2D" parent="GUI"]
+z_index = 20
+position = Vector2(128, -65)
+texture = ExtResource("31_ggc52")
+script = ExtResource("32_l8ah6")
+day = ExtResource("11_jhx03")
+
+[node name="DayWord" type="AnimatedSprite2D" parent="GUI/Daycounter"]
+z_index = 3
+sprite_frames = SubResource("SpriteFrames_pf35h")
+animation = &"Word"
+
+[node name="Hourhand" type="AnimatedSprite2D" parent="GUI/Daycounter"]
+z_index = 1
+sprite_frames = SubResource("SpriteFrames_pf35h")
+animation = &"Hours"
+frame_progress = 0.829115
+
+[node name="Minutehand" type="AnimatedSprite2D" parent="GUI/Daycounter"]
+visible = false
+z_index = 2
+sprite_frames = SubResource("SpriteFrames_pf35h")
+animation = &"Minutes"
+
+[node name="HP" type="Sprite2D" parent="GUI"]
+modulate = Color(1, 0, 0, 1)
+z_index = 19
+position = Vector2(0, -72)
+scale = Vector2(6.25, 0.25)
+texture = ExtResource("45_18clu")
+script = ExtResource("45_1jxku")
+
+[node name="Time" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("38_e75v4")
+
+[node name="DayCycle" type="AnimatedSprite2D" parent="Time"]
+modulate = Color(1, 1, 1, 0)
+z_index = 19
+scale = Vector2(500, 500)
+sprite_frames = SubResource("SpriteFrames_iexy4")
+animation = &"Daylight"
+
+[node name="Area" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("39_l8ah6")
+
+[node name="Outside" type="Node2D" parent="Area"]
+
+[node name="Grassland" type="Node2D" parent="Area/Outside"]
+
+[node name="Fade To Black" type="Sprite2D" parent="Area"]
+modulate = Color(1, 1, 1, 0)
+z_index = 100
+position = Vector2(9.53674e-06, 0)
+scale = Vector2(500, 500)
+texture = ExtResource("45_18clu")
+script = ExtResource("45_eo1xk")
+
+[node name="Tutorial" type="Node2D" parent="."]
+script = ExtResource("49_x28ej")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Tutorial"]
+sprite_frames = SubResource("SpriteFrames_pq8jk")
+animation = &"Big Arrow"
+offset = Vector2(20, 0)
+
+[node name="Prompt" type="AnimatedSprite2D" parent="Tutorial"]
+visible = false
+sprite_frames = SubResource("SpriteFrames_4kmvx")
+animation = &"E"
+
+[connection signal="mouse_entered" from="GUI/Inventory_things/Hell/H1" to="GUI/Inventory_things/Hell/H1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Inventory_things/Hell/H1" to="GUI/Inventory_things/Hell/H1" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/Inventory_things/Hell/H2" to="GUI/Inventory_things/Hell/H2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Inventory_things/Hell/H2" to="GUI/Inventory_things/Hell/H2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/Inventory_things/Hell/H3" to="GUI/Inventory_things/Hell/H3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Inventory_things/Hell/H3" to="GUI/Inventory_things/Hell/H3" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/Inventory_things/Hell/H4" to="GUI/Inventory_things/Hell/H4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Inventory_things/Hell/H4" to="GUI/Inventory_things/Hell/H4" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/Inventory_things/Hell/H5" to="GUI/Inventory_things/Hell/H5" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Inventory_things/Hell/H5" to="GUI/Inventory_things/Hell/H5" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/Inventory_things/Hell/H6" to="GUI/Inventory_things/Hell/H6" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Inventory_things/Hell/H6" to="GUI/Inventory_things/Hell/H6" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/Inventory_things/Hell/H7" to="GUI/Inventory_things/Hell/H7" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Inventory_things/Hell/H7" to="GUI/Inventory_things/Hell/H7" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/Inventory_things/Hell/H8" to="GUI/Inventory_things/Hell/H8" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Inventory_things/Hell/H8" to="GUI/Inventory_things/Hell/H8" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/Inventory_things/Hell/H9" to="GUI/Inventory_things/Hell/H9" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Inventory_things/Hell/H9" to="GUI/Inventory_things/Hell/H9" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/Inventory_things/Iell/A1" to="GUI/Inventory_things/Iell/A1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Inventory_things/Iell/A1" to="GUI/Inventory_things/Iell/A1" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/Inventory_things/Iell/A2" to="GUI/Inventory_things/Iell/A2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Inventory_things/Iell/A2" to="GUI/Inventory_things/Iell/A2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/Inventory_things/Iell/A3" to="GUI/Inventory_things/Iell/A3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Inventory_things/Iell/A3" to="GUI/Inventory_things/Iell/A3" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/Inventory_things/Iell/A4" to="GUI/Inventory_things/Iell/A4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Inventory_things/Iell/A4" to="GUI/Inventory_things/Iell/A4" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/Inventory_things/Iell/A5" to="GUI/Inventory_things/Iell/A5" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Inventory_things/Iell/A5" to="GUI/Inventory_things/Iell/A5" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/Inventory_things/Iell/B1" to="GUI/Inventory_things/Iell/B1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Inventory_things/Iell/B1" to="GUI/Inventory_things/Iell/B1" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/Inventory_things/Iell/B2" to="GUI/Inventory_things/Iell/B2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Inventory_things/Iell/B2" to="GUI/Inventory_things/Iell/B2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/Inventory_things/Iell/B3" to="GUI/Inventory_things/Iell/B3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Inventory_things/Iell/B3" to="GUI/Inventory_things/Iell/B3" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/Inventory_things/Iell/B4" to="GUI/Inventory_things/Iell/B4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Inventory_things/Iell/B4" to="GUI/Inventory_things/Iell/B4" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/Inventory_things/Iell/B5" to="GUI/Inventory_things/Iell/B5" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Inventory_things/Iell/B5" to="GUI/Inventory_things/Iell/B5" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/Inventory_things/Iell/C1" to="GUI/Inventory_things/Iell/C1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Inventory_things/Iell/C1" to="GUI/Inventory_things/Iell/C1" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/Inventory_things/Iell/C2" to="GUI/Inventory_things/Iell/C2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Inventory_things/Iell/C2" to="GUI/Inventory_things/Iell/C2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/Inventory_things/Iell/C3" to="GUI/Inventory_things/Iell/C3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Inventory_things/Iell/C3" to="GUI/Inventory_things/Iell/C3" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/Inventory_things/Iell/C4" to="GUI/Inventory_things/Iell/C4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Inventory_things/Iell/C4" to="GUI/Inventory_things/Iell/C4" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/Inventory_things/Iell/C5" to="GUI/Inventory_things/Iell/C5" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Inventory_things/Iell/C5" to="GUI/Inventory_things/Iell/C5" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/Inventory_things/Iell/D1" to="GUI/Inventory_things/Iell/D1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Inventory_things/Iell/D1" to="GUI/Inventory_things/Iell/D1" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/Inventory_things/Iell/D2" to="GUI/Inventory_things/Iell/D2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Inventory_things/Iell/D2" to="GUI/Inventory_things/Iell/D2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/Inventory_things/Iell/D3" to="GUI/Inventory_things/Iell/D3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Inventory_things/Iell/D3" to="GUI/Inventory_things/Iell/D3" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/Inventory_things/Iell/D4" to="GUI/Inventory_things/Iell/D4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Inventory_things/Iell/D4" to="GUI/Inventory_things/Iell/D4" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/Inventory_things/Iell/D5" to="GUI/Inventory_things/Iell/D5" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Inventory_things/Iell/D5" to="GUI/Inventory_things/Iell/D5" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/Inventory_things/Iell/E1" to="GUI/Inventory_things/Iell/E1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Inventory_things/Iell/E1" to="GUI/Inventory_things/Iell/E1" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/Inventory_things/Iell/E2" to="GUI/Inventory_things/Iell/E2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Inventory_things/Iell/E2" to="GUI/Inventory_things/Iell/E2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/Inventory_things/Iell/E3" to="GUI/Inventory_things/Iell/E3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Inventory_things/Iell/E3" to="GUI/Inventory_things/Iell/E3" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/Inventory_things/Iell/E4" to="GUI/Inventory_things/Iell/E4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Inventory_things/Iell/E4" to="GUI/Inventory_things/Iell/E4" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/Inventory_things/Iell/E5" to="GUI/Inventory_things/Iell/E5" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Inventory_things/Iell/E5" to="GUI/Inventory_things/Iell/E5" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/Inventory_things/Equiphell/SpellbookSlot" to="GUI/Inventory_things/Inventory_Selector" method="_on_spellbook_slot_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Inventory_things/Equiphell/SpellbookSlot" to="GUI/Inventory_things/Inventory_Selector" method="_on_spellbook_slot_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/Inventory_things/InventoryBG" to="GUI/Inventory_things/InventoryBG" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Inventory_things/InventoryBG" to="GUI/Inventory_things/InventoryBG" method="_on_mouse_exited"]

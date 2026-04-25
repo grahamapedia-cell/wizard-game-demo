@@ -1,0 +1,89 @@
+[gd_scene load_steps=15 format=3 uid="uid://bkn46l16qt01r"]
+
+[ext_resource type="Texture2D" uid="uid://b0xc4ykd4bofa" path="res://assets/sprites/GUI/genericnumbers.png" id="1_s2hew"]
+[ext_resource type="Script" uid="uid://bnix4ps7ewcib" path="res://scripts/process/generic_number.gd" id="2_i560v"]
+[ext_resource type="PackedScene" uid="uid://dl655wdd8ang" path="res://scenes/Numbers/baby_number.tscn" id="3_i560v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j03uw"]
+atlas = ExtResource("1_s2hew")
+region = Rect2(0, 0, 4, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qvfs"]
+atlas = ExtResource("1_s2hew")
+region = Rect2(4, 0, 4, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qg302"]
+atlas = ExtResource("1_s2hew")
+region = Rect2(8, 0, 4, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jh1xp"]
+atlas = ExtResource("1_s2hew")
+region = Rect2(12, 0, 4, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ilp05"]
+atlas = ExtResource("1_s2hew")
+region = Rect2(16, 0, 4, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhdut"]
+atlas = ExtResource("1_s2hew")
+region = Rect2(20, 0, 4, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5e117"]
+atlas = ExtResource("1_s2hew")
+region = Rect2(24, 0, 4, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ge1qx"]
+atlas = ExtResource("1_s2hew")
+region = Rect2(28, 0, 4, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1u0c"]
+atlas = ExtResource("1_s2hew")
+region = Rect2(32, 0, 4, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68myc"]
+atlas = ExtResource("1_s2hew")
+region = Rect2(36, 0, 4, 5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_duy85"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j03uw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5qvfs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qg302")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jh1xp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ilp05")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uhdut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5e117")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ge1qx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1u0c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68myc")
+}],
+"loop": true,
+"name": &"Numbers",
+"speed": 5.0
+}]
+
+[node name="GenericNumber" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_duy85")
+animation = &"Numbers"
+script = ExtResource("2_i560v")
+second = ExtResource("3_i560v")

@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://ckeokgrrn2odj"]
+
+[ext_resource type="Script" uid="uid://s7vj2larw7ta" path="res://scripts/objects/basic_ore.gd" id="1_np7dr"]
+[ext_resource type="PackedScene" uid="uid://d1cyup4fming" path="res://scenes/items/materials.tscn" id="2_7a02i"]
+[ext_resource type="PackedScene" uid="uid://bkn46l16qt01r" path="res://scenes/Numbers/generic_number.tscn" id="3_7a02i"]
+[ext_resource type="Texture2D" uid="uid://b027ifd1qcame" path="res://assets/sprites/Objects/basic_orechunk.png" id="3_r6srw"]
+[ext_resource type="Texture2D" uid="uid://ceb7fumbl6otu" path="res://assets/sprites/Objects/Test/crop_dirt.png" id="5_l484l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejgas"]
+size = Vector2(12, 6)
+
+[node name="Basic Ore" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 14
+gravity_scale = 0.0
+freeze = true
+script = ExtResource("1_np7dr")
+drop_One = ExtResource("2_7a02i")
+amount = ExtResource("3_7a02i")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ejgas")
+
+[node name="BasicOrechunk" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+texture = ExtResource("3_r6srw")
+offset = Vector2(0, -10)
+
+[node name="Dirt" type="Sprite2D" parent="."]
+z_index = -2
+scale = Vector2(2, 2)
+texture = ExtResource("5_l484l")
+
+[connection signal="defeat" from="." to="." method="_on_defeat"]
+[connection signal="hit" from="." to="." method="_on_hit"]

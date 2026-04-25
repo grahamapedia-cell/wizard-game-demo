@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://15bxeip6dg58"]
+
+[ext_resource type="Script" uid="uid://dhypf5rpyvhl8" path="res://scripts/objects/Machines/Bed/bed.gd" id="1_jx3i1"]
+[ext_resource type="Texture2D" uid="uid://coi112p245upj" path="res://assets/sprites/Objects/Test/test_bed.png" id="2_g5a0r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahlc3"]
+size = Vector2(32, 16)
+
+[node name="Bed" type="RigidBody2D"]
+disable_mode = 1
+collision_layer = 8
+input_pickable = true
+gravity_scale = 0.0
+freeze = true
+script = ExtResource("1_jx3i1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_g5a0r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ahlc3")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

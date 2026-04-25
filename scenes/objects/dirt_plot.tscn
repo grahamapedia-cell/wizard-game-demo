@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ck7emu0q1hmph"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/dirt_plot.png" id="1_nvweo"]
+
+[node name="Area2D" type="Sprite2D"]
+texture = ExtResource("1_nvweo")

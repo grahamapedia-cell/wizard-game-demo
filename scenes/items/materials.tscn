@@ -1,0 +1,213 @@
+[gd_scene load_steps=25 format=3 uid="uid://d1cyup4fming"]
+
+[ext_resource type="Script" uid="uid://d132em5vbtiqr" path="res://scripts/items/items.gd" id="1_03wir"]
+[ext_resource type="Script" uid="uid://cqyivctf68gqw" path="res://scripts/items/Materials/material_item.gd" id="2_y4mne"]
+[ext_resource type="Texture2D" uid="uid://dbrvs1u2kd0ir" path="res://assets/sprites/Items/Materials/Metals/real_metal_ore.png" id="3_5thq0"]
+[ext_resource type="Texture2D" uid="uid://854l57n1iqx6" path="res://assets/sprites/Objects/Placeables/Machines/essence_extractor.png" id="4_7x2gi"]
+[ext_resource type="Texture2D" uid="uid://bncphk22vqool" path="res://assets/sprites/Items/Materials/Stone/real_stone_item.png" id="5_6cbkc"]
+[ext_resource type="Texture2D" uid="uid://cdkpw7dg6w5x7" path="res://assets/sprites/Items/Consumables/potion_bottle.png" id="6_65y58"]
+[ext_resource type="Texture2D" uid="uid://0g6r5pcv4q6r" path="res://assets/sprites/Items/Materials/Crops/basic_crops.png" id="6_gwer5"]
+[ext_resource type="Texture2D" uid="uid://drd2x1lxmsatc" path="res://assets/sprites/Items/Spellbooks/spell_holders.png" id="7_irl48"]
+[ext_resource type="Texture2D" uid="uid://b0y6mrifm6ie2" path="res://assets/sprites/Items/Materials/Crops/seeds.png" id="8_glfck"]
+[ext_resource type="Texture2D" uid="uid://dj2yv1n2faqq8" path="res://assets/sprites/Items/blank.png" id="9_lhdog"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6cbkc"]
+size = Vector2(8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f17e3"]
+atlas = ExtResource("6_gwer5")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_817gm"]
+atlas = ExtResource("4_7x2gi")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ggc52"]
+atlas = ExtResource("6_gwer5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8ah6"]
+atlas = ExtResource("6_gwer5")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iexy4"]
+atlas = ExtResource("6_65y58")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6ckp"]
+atlas = ExtResource("7_irl48")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvg0v"]
+atlas = ExtResource("7_irl48")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e75v4"]
+atlas = ExtResource("6_gwer5")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_60rbn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f17e3")
+}],
+"loop": true,
+"name": &"Air Berry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_817gm")
+}],
+"loop": true,
+"name": &"Essence Extractor",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_5thq0")
+}],
+"loop": true,
+"name": &"Metal Ore",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ggc52")
+}],
+"loop": true,
+"name": &"Pepper",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8ah6")
+}],
+"loop": true,
+"name": &"Potato",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iexy4")
+}],
+"loop": true,
+"name": &"Potion",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6ckp")
+}],
+"loop": true,
+"name": &"Scroll",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_glfck")
+}],
+"loop": true,
+"name": &"Seeds",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mvg0v")
+}],
+"loop": true,
+"name": &"Spellbook",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_6cbkc")
+}],
+"loop": true,
+"name": &"Stone",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e75v4")
+}],
+"loop": true,
+"name": &"Watermelon",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_lhdog")
+}],
+"loop": true,
+"name": &"empty",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npbic"]
+atlas = ExtResource("6_65y58")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3odw"]
+atlas = ExtResource("7_irl48")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hl1e"]
+atlas = ExtResource("7_irl48")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0b8pn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npbic")
+}],
+"loop": true,
+"name": &"bottle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_lhdog")
+}],
+"loop": true,
+"name": &"empty",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3odw")
+}],
+"loop": true,
+"name": &"pages",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5hl1e")
+}],
+"loop": true,
+"name": &"paper",
+"speed": 5.0
+}]
+
+[node name="Materials" type="Node2D"]
+z_index = -1
+script = ExtResource("1_03wir")
+
+[node name="Item" type="Area2D" parent="."]
+script = ExtResource("2_y4mne")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Item"]
+shape = SubResource("RectangleShape2D_6cbkc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Item"]
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_60rbn")
+animation = &"Seeds"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="Item"]
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_0b8pn")
+animation = &"empty"

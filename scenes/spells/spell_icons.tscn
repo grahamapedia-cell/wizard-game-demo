@@ -1,0 +1,188 @@
+[gd_scene load_steps=24 format=3 uid="uid://b7rk4su4yjw4a"]
+
+[ext_resource type="Script" uid="uid://trrapgtgijjs" path="res://scripts/process/Spell Icons/icon_control.gd" id="1_sw8hr"]
+[ext_resource type="Texture2D" uid="uid://dkbbuwasqpjjc" path="res://assets/sprites/GUI/Spell icons/empty_spell.png" id="2_4qcqk"]
+[ext_resource type="Script" uid="uid://ceuqwlgbwi3vd" path="res://scripts/process/Spell Icons/the_actual_icons.gd" id="2_vvpv7"]
+[ext_resource type="Texture2D" uid="uid://s42m5fkdcxdu" path="res://assets/sprites/GUI/Spell icons/Typeless/Manablade_Icon.png" id="4_0kks0"]
+[ext_resource type="Texture2D" uid="uid://g4lailvvu7hv" path="res://assets/sprites/GUI/Spell icons/Typeless/Manahammer_icon.png" id="5_8qlmg"]
+[ext_resource type="Texture2D" uid="uid://c1ulw0ccossu5" path="res://assets/sprites/GUI/Spell icons/Fire/Flame_Shot_Icon.png" id="6_0kks0"]
+[ext_resource type="Texture2D" uid="uid://blprshig7kigb" path="res://assets/sprites/GUI/Spell icons/Lightning/Static_Bolt.png" id="7_8qlmg"]
+[ext_resource type="Texture2D" uid="uid://btvdas73x7s0v" path="res://assets/sprites/GUI/Spell icons/Air/Wind_Slice_Icon.png" id="8_xid54"]
+[ext_resource type="Texture2D" uid="uid://rvp6gh48h4up" path="res://assets/sprites/GUI/Spell icons/Ice/Snowball_Toss_icon.png" id="9_vdj5b"]
+[ext_resource type="Texture2D" uid="uid://ns844o5kht5u" path="res://assets/sprites/GUI/Spell icons/Water/Water_Gun_Icon.png" id="10_v8ynx"]
+[ext_resource type="Texture2D" uid="uid://batrxe27xrlua" path="res://assets/sprites/GUI/Spell icons/Ooze/Ooze_fling_icon.png" id="11_s0lgx"]
+[ext_resource type="Texture2D" uid="uid://byu8coc52762s" path="res://assets/sprites/GUI/Spell icons/Earth/Rock_Throw_projectile.png" id="12_ouxvl"]
+[ext_resource type="Texture2D" uid="uid://bw6wvv4vtw3yc" path="res://assets/sprites/GUI/Spell icons/Metal/Steel_Spike_icon.png" id="13_13cpw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xid54"]
+resource_name = "Empty"
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4qcqk")
+}],
+"loop": true,
+"name": &"Empty",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vdj5b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_0kks0")
+}],
+"loop": true,
+"name": &"Manablade",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_8qlmg")
+}],
+"loop": true,
+"name": &"Manahammer",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8qlmg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_0kks0")
+}],
+"loop": true,
+"name": &"Flame Shot",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v8ynx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_8qlmg")
+}],
+"loop": true,
+"name": &"Static Bolt",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s0lgx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_xid54")
+}],
+"loop": true,
+"name": &"Wind Slice",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ouxvl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_vdj5b")
+}],
+"loop": true,
+"name": &"Snowball Toss",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_13cpw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_v8ynx")
+}],
+"loop": true,
+"name": &"Water Gun",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e56yy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_s0lgx")
+}],
+"loop": true,
+"name": &"Ooze Fling",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iqyfm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_ouxvl")
+}],
+"loop": true,
+"name": &"Rock Throw",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v5erk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_13cpw")
+}],
+"loop": true,
+"name": &"Steel Spike",
+"speed": 5.0
+}]
+
+[node name="Spell Icons" type="Node2D"]
+script = ExtResource("1_sw8hr")
+
+[node name="Empty" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xid54")
+animation = &"Empty"
+script = ExtResource("2_vvpv7")
+
+[node name="Typeless" type="AnimatedSprite2D" parent="."]
+z_index = 1
+sprite_frames = SubResource("SpriteFrames_vdj5b")
+animation = &"Manahammer"
+script = ExtResource("2_vvpv7")
+
+[node name="Fire" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8qlmg")
+animation = &"Flame Shot"
+script = ExtResource("2_vvpv7")
+
+[node name="Lightning" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_v8ynx")
+animation = &"Static Bolt"
+script = ExtResource("2_vvpv7")
+
+[node name="Air" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_s0lgx")
+animation = &"Wind Slice"
+script = ExtResource("2_vvpv7")
+
+[node name="Ice" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ouxvl")
+animation = &"Snowball Toss"
+script = ExtResource("2_vvpv7")
+
+[node name="Water" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_13cpw")
+animation = &"Water Gun"
+script = ExtResource("2_vvpv7")
+
+[node name="Ooze" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_e56yy")
+animation = &"Ooze Fling"
+script = ExtResource("2_vvpv7")
+
+[node name="Earth" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_iqyfm")
+animation = &"Rock Throw"
+script = ExtResource("2_vvpv7")
+
+[node name="Metal" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_v5erk")
+animation = &"Steel Spike"
+script = ExtResource("2_vvpv7")

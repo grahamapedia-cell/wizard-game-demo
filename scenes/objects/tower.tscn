@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=3 uid="uid://imy7bw16bhao"]
+
+[ext_resource type="Texture2D" uid="uid://to1m1a1jtync" path="res://assets/sprites/Big thing/wizard_tower.png" id="1_rsihh"]
+[ext_resource type="Script" uid="uid://d3hmr4owdnpwa" path="res://scripts/objects/tower.gd" id="1_viofu"]
+[ext_resource type="Script" uid="uid://dikq62xm0fdma" path="res://scripts/objects/dooropen.gd" id="2_wp63b"]
+[ext_resource type="Texture2D" uid="uid://bbx01nakwtk1n" path="res://assets/sprites/Big thing/tower_door.png" id="3_wp63b"]
+[ext_resource type="Texture2D" uid="uid://c7jhqm1i0m7js" path="res://assets/sprites/Big thing/tower_dirt.png" id="5_d2h4s"]
+[ext_resource type="AudioStream" uid="uid://cpcus2jmrnhfl" path="res://assets/sounds/Door/opening-door-450444.mp3" id="5_xguvm"]
+[ext_resource type="AudioStream" uid="uid://hk02qavncmp5" path="res://assets/sounds/Door/close-door-382723.mp3" id="6_2jocw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2h4s"]
+size = Vector2(24, 41)
+
+[node name="Tower" type="Node2D"]
+script = ExtResource("1_viofu")
+
+[node name="Tower" type="RigidBody2D" parent="."]
+collision_layer = 16
+gravity_scale = 0.0
+freeze = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Tower"]
+position = Vector2(0, -215)
+texture = ExtResource("1_rsihh")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tower"]
+position = Vector2(-64, 0)
+polygon = PackedVector2Array(0, 0, 12, 20, 24, 30, 36, 36, 52, 40, 52, 2, 56, -1, 72, -1, 76, 2, 76, 40, 92, 36, 104, 30, 116, 20, 128, 0, 128, -10, 116, -30, 104, -40, 92, -46, 76, -50, 52, -50, 36, -46, 24, -40, 12, -30, 0, -10)
+
+[node name="Door" type="Area2D" parent="."]
+position = Vector2(0, 40)
+script = ExtResource("2_wp63b")
+
+[node name="Dooropen" type="CollisionShape2D" parent="Door"]
+position = Vector2(0, -20.5)
+shape = SubResource("RectangleShape2D_d2h4s")
+
+[node name="Sprite2D" type="Sprite2D" parent="Door"]
+position = Vector2(0, -20.5)
+texture = ExtResource("3_wp63b")
+
+[node name="Open" type="AudioStreamPlayer2D" parent="Door"]
+stream = ExtResource("5_xguvm")
+
+[node name="Close" type="AudioStreamPlayer2D" parent="Door"]
+stream = ExtResource("6_2jocw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -2
+texture = ExtResource("5_d2h4s")

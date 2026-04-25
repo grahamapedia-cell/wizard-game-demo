@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddj8ihfu3b2ih"]
+
+[ext_resource type="Script" uid="uid://b2f4sb823n1r3" path="res://scripts/objects/test/testrock.gd" id="1_086uf"]
+[ext_resource type="Texture2D" uid="uid://c3pcg3lfpexym" path="res://assets/sprites/testrock.png" id="1_wc07p"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7avvc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_75ykt"]
+size = Vector2(24, 4)
+
+[node name="Testrock" type="StaticBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_7avvc")
+script = ExtResource("1_086uf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wc07p")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 10)
+shape = SubResource("RectangleShape2D_75ykt")

@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://bo70gln4c37v7"]
+
+[ext_resource type="Script" uid="uid://c7n5wdpmkwbfl" path="res://scripts/enemies/mean_rock.gd" id="1_ude4q"]
+[ext_resource type="PackedScene" uid="uid://d1cyup4fming" path="res://scenes/items/materials.tscn" id="2_g783y"]
+[ext_resource type="Texture2D" uid="uid://dv6bcvpm7ke8f" path="res://assets/sprites/Enemies/rock_dummy.png" id="2_ude4q"]
+[ext_resource type="PackedScene" uid="uid://bkn46l16qt01r" path="res://scenes/Numbers/generic_number.tscn" id="3_1tnkt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cwsbl"]
+size = Vector2(24, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rr55u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ude4q")
+}],
+"loop": true,
+"name": &"Move_rock_dummy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ude4q")
+}],
+"loop": true,
+"name": &"defeated",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ude4q")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Mean rock" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 14
+gravity_scale = 0.0
+freeze = true
+script = ExtResource("1_ude4q")
+drop_One = ExtResource("2_g783y")
+amount = ExtResource("3_1tnkt")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 3)
+shape = SubResource("RectangleShape2D_cwsbl")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+rect = Rect2(-14, -6, 24, 18)
+
+[node name="Mean rock animations" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rr55u")
+animation = &"Move_rock_dummy"

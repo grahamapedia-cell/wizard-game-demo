@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://cv2s2fq53cd5g"]
+
+[ext_resource type="Script" uid="uid://ckmalsvwlan2x" path="res://scripts/items/metal_ore.gd" id="1_qlrc6"]
+[ext_resource type="Script" uid="uid://d132em5vbtiqr" path="res://scripts/items/items.gd" id="1_yhsa3"]
+[ext_resource type="Texture2D" uid="uid://dxjcllsqepyyk" path="res://assets/sprites/Items/iron_ore.png" id="2_qlrc6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tu0c6"]
+size = Vector2(7, 5)
+
+[node name="Items" type="Node2D"]
+z_index = -1
+script = ExtResource("1_yhsa3")
+
+[node name="Building_materials" type="Node2D" parent="."]
+
+[node name="Metals" type="Node2D" parent="Building_materials"]
+
+[node name="Metal Ore" type="Area2D" parent="Building_materials/Metals"]
+script = ExtResource("1_qlrc6")
+
+[node name="IronOre" type="Sprite2D" parent="Building_materials/Metals/Metal Ore"]
+position = Vector2(-0.5, -1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_qlrc6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building_materials/Metals/Metal Ore"]
+shape = SubResource("RectangleShape2D_tu0c6")

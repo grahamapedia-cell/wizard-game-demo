@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://ckgepsg4m5ytn"]
+
+[ext_resource type="Script" uid="uid://bsrruvqdeh6me" path="res://scenes/enemies/evil_projectiles.gd" id="1_1s4ep"]
+[ext_resource type="Script" uid="uid://cbwwtuxorhlbc" path="res://scenes/enemies/Forest/Projectiles/rock.gd" id="2_6x17d"]
+[ext_resource type="Texture2D" uid="uid://bncphk22vqool" path="res://assets/sprites/Items/Materials/Stone/real_stone_item.png" id="3_1s4ep"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fucfo"]
+radius = 4.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n7sll"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1s4ep")
+}],
+"loop": true,
+"name": &"Spell",
+"speed": 5.0
+}]
+
+[node name="evil_projectiles" type="Node2D"]
+script = ExtResource("1_1s4ep")
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Forest" type="Node2D" parent="Enemies"]
+
+[node name="Rock" type="Area2D" parent="Enemies/Forest"]
+collision_layer = 2
+script = ExtResource("2_6x17d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Forest/Rock"]
+shape = SubResource("CircleShape2D_fucfo")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Enemies/Forest/Rock"]
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_n7sll")
+animation = &"Spell"
+
+[connection signal="body_entered" from="Enemies/Forest/Rock" to="Enemies/Forest/Rock" method="_on_body_entered"]

@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://5j8pl2s03u4x"]
+
+[ext_resource type="Script" uid="uid://cn76vrwgu67x" path="res://scenes/spells/manablade.gd" id="1_3ofsb"]
+[ext_resource type="Texture2D" uid="uid://c3on6sn3hqihs" path="res://assets/sprites/manablade_placeholder.png" id="2_3ofsb"]
+[ext_resource type="Script" uid="uid://b5ha834duf6nm" path="res://scenes/spells/sprite_2d.gd" id="3_jupep"]
+[ext_resource type="Script" uid="uid://kvshgbvnp60k" path="res://scenes/spells/collision_shape_2d.gd" id="4_8h0a7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jupep"]
+size = Vector2(20.25, 15.9375)
+
+[node name="Manablade" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_3ofsb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 0)
+texture = ExtResource("2_3ofsb")
+script = ExtResource("3_jupep")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jupep")
+script = ExtResource("4_8h0a7")
+
+[connection signal="guysletsgo" from="." to="Sprite2D" method="_on_manablade_guysletsgo"]
+[connection signal="guysletsgo" from="." to="CollisionShape2D" method="_on_manablade_guysletsgo"]

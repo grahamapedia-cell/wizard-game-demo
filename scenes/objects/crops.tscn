@@ -1,0 +1,283 @@
+[gd_scene load_steps=27 format=3 uid="uid://cgjv7higsgkx8"]
+
+[ext_resource type="Script" uid="uid://c64caqrqy8i4v" path="res://scripts/objects/crops.gd" id="1_yo8bn"]
+[ext_resource type="Script" uid="uid://5tj0552jnr0y" path="res://scripts/objects/letsgrow.gd" id="2_blf6l"]
+[ext_resource type="Texture2D" uid="uid://cp040uek8a6cj" path="res://assets/sprites/Objects/Test/test_crops.png" id="3_a4m88"]
+[ext_resource type="PackedScene" uid="uid://d1cyup4fming" path="res://scenes/items/materials.tscn" id="3_blf6l"]
+[ext_resource type="Texture2D" uid="uid://0g6r5pcv4q6r" path="res://assets/sprites/Items/Materials/Crops/basic_crops.png" id="4_3g1yg"]
+[ext_resource type="Texture2D" uid="uid://854l57n1iqx6" path="res://assets/sprites/Objects/Placeables/Machines/essence_extractor.png" id="6_lhnj5"]
+[ext_resource type="Texture2D" uid="uid://dbrvs1u2kd0ir" path="res://assets/sprites/Items/Materials/Metals/real_metal_ore.png" id="7_rv23c"]
+[ext_resource type="Texture2D" uid="uid://cnvntw3felw4" path="res://assets/sprites/Items/Spellbooks/real_spellbook_generic.png" id="8_wv45l"]
+[ext_resource type="Texture2D" uid="uid://bncphk22vqool" path="res://assets/sprites/Items/Materials/Stone/real_stone_item.png" id="9_l8ior"]
+[ext_resource type="Texture2D" uid="uid://dj2yv1n2faqq8" path="res://assets/sprites/Items/blank.png" id="10_4fwa1"]
+[ext_resource type="Texture2D" uid="uid://ceb7fumbl6otu" path="res://assets/sprites/Objects/Test/crop_dirt.png" id="11_rv23c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qs7gm"]
+atlas = ExtResource("3_a4m88")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhnj5"]
+atlas = ExtResource("3_a4m88")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rv23c"]
+atlas = ExtResource("3_a4m88")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wv45l"]
+atlas = ExtResource("3_a4m88")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8ior"]
+atlas = ExtResource("3_a4m88")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4fwa1"]
+atlas = ExtResource("3_a4m88")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l8ior"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qs7gm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhnj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rv23c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wv45l")
+}],
+"loop": true,
+"name": &"Crop",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8ior")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4fwa1")
+}],
+"loop": true,
+"name": &"Demo_Crop",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f17e3"]
+atlas = ExtResource("4_3g1yg")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_817gm"]
+atlas = ExtResource("6_lhnj5")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ggc52"]
+atlas = ExtResource("4_3g1yg")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8ah6"]
+atlas = ExtResource("4_3g1yg")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e75v4"]
+atlas = ExtResource("4_3g1yg")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ljn1w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f17e3")
+}],
+"loop": true,
+"name": &"Air Berry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_817gm")
+}],
+"loop": true,
+"name": &"Essence Extractor",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_rv23c")
+}],
+"loop": true,
+"name": &"Metal Ore",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ggc52")
+}],
+"loop": true,
+"name": &"Pepper",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8ah6")
+}],
+"loop": true,
+"name": &"Potato",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_wv45l")
+}],
+"loop": true,
+"name": &"Spellbook",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_l8ior")
+}],
+"loop": true,
+"name": &"Stone",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e75v4")
+}],
+"loop": true,
+"name": &"Watermelon",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_4fwa1")
+}],
+"loop": true,
+"name": &"empty",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lhnj5"]
+size = Vector2(8, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rv23c"]
+size = Vector2(12, 14)
+
+[node name="Crops" type="Node2D"]
+script = ExtResource("1_yo8bn")
+
+[node name="Fire" type="Node2D" parent="."]
+
+[node name="Pepper" type="Area2D" parent="Fire"]
+input_pickable = false
+script = ExtResource("2_blf6l")
+crop = ExtResource("3_blf6l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fire/Pepper"]
+sprite_frames = SubResource("SpriteFrames_l8ior")
+animation = &"Demo_Crop"
+offset = Vector2(0, -8)
+
+[node name="Finalcrop" type="AnimatedSprite2D" parent="Fire/Pepper"]
+position = Vector2(0, -8)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_ljn1w")
+animation = &"Pepper"
+
+[node name="Hitbox" type="CollisionShape2D" parent="Fire/Pepper"]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_lhnj5")
+
+[node name="Dirt" type="Sprite2D" parent="Fire/Pepper"]
+z_index = -2
+texture = ExtResource("11_rv23c")
+
+[node name="Air" type="Node2D" parent="."]
+
+[node name="Air Berry" type="Area2D" parent="Air"]
+input_pickable = false
+script = ExtResource("2_blf6l")
+crop = ExtResource("3_blf6l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Air/Air Berry"]
+sprite_frames = SubResource("SpriteFrames_l8ior")
+animation = &"Demo_Crop"
+offset = Vector2(0, -8)
+
+[node name="Finalcrop" type="AnimatedSprite2D" parent="Air/Air Berry"]
+position = Vector2(0, -8)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_ljn1w")
+animation = &"Air Berry"
+
+[node name="Hitbox" type="CollisionShape2D" parent="Air/Air Berry"]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_lhnj5")
+
+[node name="Dirt" type="Sprite2D" parent="Air/Air Berry"]
+z_index = -2
+texture = ExtResource("11_rv23c")
+
+[node name="Water" type="Node2D" parent="."]
+
+[node name="Watermelon" type="Area2D" parent="Water"]
+script = ExtResource("2_blf6l")
+crop = ExtResource("3_blf6l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Water/Watermelon"]
+sprite_frames = SubResource("SpriteFrames_l8ior")
+animation = &"Demo_Crop"
+offset = Vector2(0, -8)
+
+[node name="Finalcrop" type="AnimatedSprite2D" parent="Water/Watermelon"]
+position = Vector2(0, -8)
+scale = Vector2(0.375, 0.375)
+sprite_frames = SubResource("SpriteFrames_ljn1w")
+animation = &"Watermelon"
+
+[node name="Hitbox" type="CollisionShape2D" parent="Water/Watermelon"]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_rv23c")
+
+[node name="Dirt" type="Sprite2D" parent="Water/Watermelon"]
+z_index = -2
+texture = ExtResource("11_rv23c")
+
+[node name="Earth" type="Node2D" parent="."]
+
+[node name="Potato" type="Area2D" parent="Earth"]
+script = ExtResource("2_blf6l")
+crop = ExtResource("3_blf6l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Earth/Potato"]
+sprite_frames = SubResource("SpriteFrames_l8ior")
+animation = &"Demo_Crop"
+offset = Vector2(0, -8)
+
+[node name="Finalcrop" type="AnimatedSprite2D" parent="Earth/Potato"]
+position = Vector2(0, -8)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_ljn1w")
+animation = &"Potato"
+
+[node name="Hitbox" type="CollisionShape2D" parent="Earth/Potato"]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_lhnj5")
+
+[node name="Dirt" type="Sprite2D" parent="Earth/Potato"]
+z_index = -2
+texture = ExtResource("11_rv23c")
+
+[connection signal="mouse_entered" from="Fire/Pepper" to="Fire/Pepper" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Fire/Pepper" to="Fire/Pepper" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Air/Air Berry" to="Air/Air Berry" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Air/Air Berry" to="Air/Air Berry" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Water/Watermelon" to="Water/Watermelon" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Water/Watermelon" to="Water/Watermelon" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Earth/Potato" to="Earth/Potato" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Earth/Potato" to="Earth/Potato" method="_on_mouse_exited"]

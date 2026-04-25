@@ -1,0 +1,473 @@
+[gd_scene load_steps=42 format=3 uid="uid://dvsawxbwh3awd"]
+
+[ext_resource type="Script" uid="uid://cjfffyhtd6jwk" path="res://scripts/process/popup_windows.gd" id="1_bnpn1"]
+[ext_resource type="Texture2D" uid="uid://bbu16j2b30c5o" path="res://assets/sprites/GUI/Machine windows/Essence_Extractor_Window.png" id="1_o8qmn"]
+[ext_resource type="Script" uid="uid://wrpy20fpiyas" path="res://scripts/objects/Machines/Essence Extractor/essence_extractor_window.gd" id="2_otjd0"]
+[ext_resource type="Script" uid="uid://b70qb5tr2ufck" path="res://scripts/objects/Machines/Essence Extractor/input.gd" id="3_5evmp"]
+[ext_resource type="Texture2D" uid="uid://0g6r5pcv4q6r" path="res://assets/sprites/Items/Materials/Crops/basic_crops.png" id="3_hfint"]
+[ext_resource type="Texture2D" uid="uid://854l57n1iqx6" path="res://assets/sprites/Objects/Placeables/Machines/essence_extractor.png" id="4_5evmp"]
+[ext_resource type="PackedScene" uid="uid://bkn46l16qt01r" path="res://scenes/Numbers/generic_number.tscn" id="5_4nlkp"]
+[ext_resource type="Texture2D" uid="uid://dbrvs1u2kd0ir" path="res://assets/sprites/Items/Materials/Metals/real_metal_ore.png" id="5_bnpn1"]
+[ext_resource type="Texture2D" uid="uid://cnvntw3felw4" path="res://assets/sprites/Items/Spellbooks/real_spellbook_generic.png" id="6_efg48"]
+[ext_resource type="Texture2D" uid="uid://bncphk22vqool" path="res://assets/sprites/Items/Materials/Stone/real_stone_item.png" id="7_4nlkp"]
+[ext_resource type="Texture2D" uid="uid://dj2yv1n2faqq8" path="res://assets/sprites/Items/blank.png" id="8_4h5en"]
+[ext_resource type="Texture2D" uid="uid://cdkpw7dg6w5x7" path="res://assets/sprites/Items/Consumables/potion_bottle.png" id="9_jtlpk"]
+[ext_resource type="Texture2D" uid="uid://dvjcfhihc6j4u" path="res://assets/sprites/Items/Spellbooks/real_spellbook_pages.png" id="10_refxg"]
+[ext_resource type="Texture2D" uid="uid://drd2x1lxmsatc" path="res://assets/sprites/Items/Spellbooks/spell_holders.png" id="10_sfrl6"]
+[ext_resource type="Script" uid="uid://dre3qjflgd3f0" path="res://scripts/objects/Machines/Essence Extractor/output.gd" id="13_efg48"]
+[ext_resource type="Texture2D" uid="uid://22p3fwf38sql" path="res://assets/sprites/Objects/Placeables/Machines/essence_extractor_arrow.png" id="14_efg48"]
+[ext_resource type="Texture2D" uid="uid://b5xxfsfsicq8o" path="res://assets/sprites/GUI/Machine windows/Orb_Window.png" id="16_refxg"]
+[ext_resource type="Script" uid="uid://xynnubn7fs3b" path="res://scripts/objects/Machines/Orb/orb_window.gd" id="17_ielcd"]
+[ext_resource type="Script" uid="uid://ccn327t2jnpfx" path="res://scripts/objects/Machines/Orb/input.gd" id="18_sfrl6"]
+[ext_resource type="Script" uid="uid://cbpbofoh6ru6o" path="res://scripts/objects/Machines/Orb/output.gd" id="19_ielcd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ielcd"]
+size = Vector2(14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f17e3"]
+atlas = ExtResource("3_hfint")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_817gm"]
+atlas = ExtResource("4_5evmp")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ggc52"]
+atlas = ExtResource("3_hfint")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8ah6"]
+atlas = ExtResource("3_hfint")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfrl6"]
+atlas = ExtResource("9_jtlpk")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjgim"]
+atlas = ExtResource("10_sfrl6")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e75v4"]
+atlas = ExtResource("3_hfint")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yvtrf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f17e3")
+}],
+"loop": true,
+"name": &"Air Berry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_817gm")
+}],
+"loop": true,
+"name": &"Essence Extractor",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_bnpn1")
+}],
+"loop": true,
+"name": &"Metal Ore",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ggc52")
+}],
+"loop": true,
+"name": &"Pepper",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8ah6")
+}],
+"loop": true,
+"name": &"Potato",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sfrl6")
+}],
+"loop": true,
+"name": &"Potion",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjgim")
+}],
+"loop": true,
+"name": &"Scroll",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_efg48")
+}],
+"loop": true,
+"name": &"Spellbook",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_4nlkp")
+}],
+"loop": true,
+"name": &"Stone",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e75v4")
+}],
+"loop": true,
+"name": &"Watermelon",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_4h5en")
+}],
+"loop": true,
+"name": &"empty",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5slom"]
+atlas = ExtResource("9_jtlpk")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ltti"]
+atlas = ExtResource("10_sfrl6")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pqics"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5slom")
+}],
+"loop": true,
+"name": &"bottle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_4h5en")
+}],
+"loop": true,
+"name": &"empty",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_refxg")
+}],
+"loop": true,
+"name": &"pages",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ltti")
+}],
+"loop": true,
+"name": &"paper",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4nlkp"]
+atlas = ExtResource("14_efg48")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4h5en"]
+atlas = ExtResource("14_efg48")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtlpk"]
+atlas = ExtResource("14_efg48")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_refxg"]
+atlas = ExtResource("14_efg48")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ielcd"]
+atlas = ExtResource("14_efg48")
+region = Rect2(0, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvtrf"]
+atlas = ExtResource("14_efg48")
+region = Rect2(16, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqics"]
+atlas = ExtResource("14_efg48")
+region = Rect2(32, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aao1v"]
+atlas = ExtResource("14_efg48")
+region = Rect2(48, 32, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bjgim"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4nlkp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4h5en")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jtlpk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_refxg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ielcd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yvtrf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqics")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aao1v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Popup windows" type="Node2D"]
+script = ExtResource("1_bnpn1")
+
+[node name="Machines" type="Node2D" parent="."]
+
+[node name="Essence extractor" type="Sprite2D" parent="Machines"]
+z_index = 10
+texture = ExtResource("1_o8qmn")
+script = ExtResource("2_otjd0")
+
+[node name="Input" type="Area2D" parent="Machines/Essence extractor"]
+position = Vector2(49, -8)
+script = ExtResource("3_5evmp")
+amount = ExtResource("5_4nlkp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Machines/Essence extractor/Input"]
+shape = SubResource("RectangleShape2D_ielcd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Machines/Essence extractor/Input"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_yvtrf")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="Machines/Essence extractor/Input"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_pqics")
+animation = &"empty"
+
+[node name="Output" type="Area2D" parent="Machines/Essence extractor"]
+position = Vector2(42, 38)
+script = ExtResource("13_efg48")
+amount = ExtResource("5_4nlkp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Machines/Essence extractor/Output"]
+shape = SubResource("RectangleShape2D_ielcd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Machines/Essence extractor/Output"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_yvtrf")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="Machines/Essence extractor/Output"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_pqics")
+animation = &"empty"
+
+[node name="Progress Arrow" type="AnimatedSprite2D" parent="Machines/Essence extractor"]
+position = Vector2(48, 16)
+sprite_frames = SubResource("SpriteFrames_bjgim")
+frame = 1
+frame_progress = 0.205892
+
+[node name="Orb" type="Sprite2D" parent="Machines"]
+z_index = 10
+texture = ExtResource("16_refxg")
+script = ExtResource("17_ielcd")
+
+[node name="Input" type="Area2D" parent="Machines/Orb"]
+position = Vector2(57, -25)
+script = ExtResource("18_sfrl6")
+amount = ExtResource("5_4nlkp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Machines/Orb/Input"]
+shape = SubResource("RectangleShape2D_ielcd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Machines/Orb/Input"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_yvtrf")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="Machines/Orb/Input"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_pqics")
+animation = &"empty"
+
+[node name="Input2" type="Area2D" parent="Machines/Orb"]
+position = Vector2(57, -4)
+script = ExtResource("18_sfrl6")
+amount = ExtResource("5_4nlkp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Machines/Orb/Input2"]
+shape = SubResource("RectangleShape2D_ielcd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Machines/Orb/Input2"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_yvtrf")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="Machines/Orb/Input2"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_pqics")
+animation = &"empty"
+
+[node name="Input3" type="Area2D" parent="Machines/Orb"]
+position = Vector2(57, 17)
+script = ExtResource("18_sfrl6")
+amount = ExtResource("5_4nlkp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Machines/Orb/Input3"]
+shape = SubResource("RectangleShape2D_ielcd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Machines/Orb/Input3"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_yvtrf")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="Machines/Orb/Input3"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_pqics")
+animation = &"empty"
+
+[node name="Input4" type="Area2D" parent="Machines/Orb"]
+position = Vector2(57, 38)
+script = ExtResource("18_sfrl6")
+amount = ExtResource("5_4nlkp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Machines/Orb/Input4"]
+shape = SubResource("RectangleShape2D_ielcd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Machines/Orb/Input4"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_yvtrf")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="Machines/Orb/Input4"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_pqics")
+animation = &"empty"
+
+[node name="Output" type="Area2D" parent="Machines/Orb"]
+position = Vector2(74, -25)
+script = ExtResource("19_ielcd")
+amount = ExtResource("5_4nlkp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Machines/Orb/Output"]
+shape = SubResource("RectangleShape2D_ielcd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Machines/Orb/Output"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_yvtrf")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="Machines/Orb/Output"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_pqics")
+animation = &"empty"
+
+[node name="Output2" type="Area2D" parent="Machines/Orb"]
+position = Vector2(74, -4)
+script = ExtResource("19_ielcd")
+amount = ExtResource("5_4nlkp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Machines/Orb/Output2"]
+shape = SubResource("RectangleShape2D_ielcd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Machines/Orb/Output2"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_yvtrf")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="Machines/Orb/Output2"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_pqics")
+animation = &"empty"
+
+[node name="Output3" type="Area2D" parent="Machines/Orb"]
+position = Vector2(74, 17)
+script = ExtResource("19_ielcd")
+amount = ExtResource("5_4nlkp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Machines/Orb/Output3"]
+shape = SubResource("RectangleShape2D_ielcd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Machines/Orb/Output3"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_yvtrf")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="Machines/Orb/Output3"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_pqics")
+animation = &"empty"
+
+[node name="Output4" type="Area2D" parent="Machines/Orb"]
+position = Vector2(74, 38)
+script = ExtResource("19_ielcd")
+amount = ExtResource("5_4nlkp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Machines/Orb/Output4"]
+shape = SubResource("RectangleShape2D_ielcd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Machines/Orb/Output4"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_yvtrf")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="Machines/Orb/Output4"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_pqics")
+animation = &"empty"
+
+[connection signal="mouse_entered" from="Machines/Essence extractor/Input" to="Machines/Essence extractor/Input" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Machines/Essence extractor/Input" to="Machines/Essence extractor/Input" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Machines/Essence extractor/Output" to="Machines/Essence extractor/Output" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Machines/Essence extractor/Output" to="Machines/Essence extractor/Output" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Machines/Orb/Input" to="Machines/Orb/Input" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Machines/Orb/Input" to="Machines/Orb/Input" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Machines/Orb/Input2" to="Machines/Orb/Input2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Machines/Orb/Input2" to="Machines/Orb/Input2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Machines/Orb/Input3" to="Machines/Orb/Input3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Machines/Orb/Input3" to="Machines/Orb/Input3" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Machines/Orb/Input4" to="Machines/Orb/Input4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Machines/Orb/Input4" to="Machines/Orb/Input4" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Machines/Orb/Output" to="Machines/Orb/Output" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Machines/Orb/Output" to="Machines/Orb/Output" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Machines/Orb/Output2" to="Machines/Orb/Output2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Machines/Orb/Output2" to="Machines/Orb/Output2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Machines/Orb/Output3" to="Machines/Orb/Output3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Machines/Orb/Output3" to="Machines/Orb/Output3" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Machines/Orb/Output4" to="Machines/Orb/Output4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Machines/Orb/Output4" to="Machines/Orb/Output4" method="_on_mouse_exited"]

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dng5sb2wm47c"]
+
+[ext_resource type="Script" uid="uid://bxmxrcdljj0pq" path="res://scripts/enemies/setups/tworocks.gd" id="1_obxjo"]
+
+[node name="Enemysetups" type="Node2D"]
+
+[node name="BasicAreaIDK" type="Node2D" parent="."]
+
+[node name="Tworocks" type="Node2D" parent="BasicAreaIDK"]
+script = ExtResource("1_obxjo")

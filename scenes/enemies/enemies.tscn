@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://daejutkyehja0"]
+
+[ext_resource type="Script" uid="uid://5ukmnxi6ei2y" path="res://scripts/enemies/setups/enemies.gd" id="1_pgpww"]
+[ext_resource type="PackedScene" uid="uid://bo70gln4c37v7" path="res://scenes/enemies/mean_rock.tscn" id="2_fqt3r"]
+[ext_resource type="PackedScene" uid="uid://diisa4sma3vie" path="res://scenes/enemies/Forest/rockspitter.tscn" id="3_ayqi8"]
+
+[node name="Enemies" type="Node2D"]
+script = ExtResource("1_pgpww")
+mean_rock = ExtResource("2_fqt3r")
+rockspitter = ExtResource("3_ayqi8")

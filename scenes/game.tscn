@@ -1,0 +1,397 @@
+[gd_scene load_steps=34 format=3 uid="uid://dkk6abfqi5d8y"]
+
+[ext_resource type="Script" uid="uid://d2hpc6uc5bfjk" path="res://scripts/game.gd" id="1_gee14"]
+[ext_resource type="PackedScene" uid="uid://bws0mf5rhxycc" path="res://scenes/player.tscn" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://ddj8ihfu3b2ih" path="res://scenes/objects/testrock.tscn" id="2_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://dcxfmkw6okeos" path="res://scenes/chunk.tscn" id="3_ca42v"]
+[ext_resource type="Script" uid="uid://b3ksdy3ymer3" path="res://scripts/objects/testrock.gd" id="4_0tnpc"]
+[ext_resource type="PackedScene" uid="uid://daejutkyehja0" path="res://scenes/enemies/enemies.tscn" id="4_p57ef"]
+[ext_resource type="PackedScene" uid="uid://ckeokgrrn2odj" path="res://scenes/objects/basic_ore.tscn" id="5_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://cb4112i3t0yo2" path="res://scenes/items/spellbooks.tscn" id="6_gee14"]
+[ext_resource type="PackedScene" uid="uid://cb2155646r14c" path="res://scenes/world.tscn" id="8_gee14"]
+[ext_resource type="PackedScene" uid="uid://38aa7gdbka8f" path="res://scenes/items/placeable_items.tscn" id="8_vtaks"]
+[ext_resource type="PackedScene" uid="uid://cocnls8f8f316" path="res://scenes/objects/placed_item.tscn" id="9_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://15bxeip6dg58" path="res://scenes/objects/bed.tscn" id="10_dinhu"]
+[ext_resource type="PackedScene" uid="uid://cgjv7higsgkx8" path="res://scenes/objects/crops.tscn" id="11_kvuet"]
+[ext_resource type="Script" uid="uid://ceicj2vobysyx" path="res://scripts/camera_2d.gd" id="12_ca42v"]
+[ext_resource type="PackedScene" uid="uid://bxvdjmf6xunfe" path="res://scenes/objects/Forest/forest_tree.tscn" id="14_sww3w"]
+[ext_resource type="Script" uid="uid://bu78hi44yf0qg" path="res://scripts/objects/in_tower.gd" id="15_264po"]
+[ext_resource type="PackedScene" uid="uid://imy7bw16bhao" path="res://scenes/objects/tower.tscn" id="15_ir15t"]
+[ext_resource type="Texture2D" uid="uid://3iy7yls8p348" path="res://assets/sprites/Objects/Test/test_tower.png" id="15_rysoc"]
+[ext_resource type="PackedScene" uid="uid://d1cyup4fming" path="res://scenes/items/materials.tscn" id="15_suyxu"]
+[ext_resource type="Texture2D" uid="uid://ll1r26jvpll2" path="res://assets/sprites/Big thing/a_lone_doorframe.png" id="16_ssvqc"]
+[ext_resource type="Script" uid="uid://d2ksboh2vqsnn" path="res://scripts/objects/doorout.gd" id="17_1kice"]
+[ext_resource type="Script" uid="uid://clgb2ykyouo78" path="res://scripts/objects/towerbasetrack.gd" id="17_e1j6l"]
+[ext_resource type="AudioStream" uid="uid://de3j3my2ay7bd" path="res://assets/sounds/Music/Tower/graham stem 1.mp3" id="17_pl11u"]
+[ext_resource type="Texture2D" uid="uid://b2vxbqbklqlpl" path="res://assets/sprites/solid_color.png" id="19_5newe"]
+[ext_resource type="Script" uid="uid://4jgrghxm6slu" path="res://scripts/objects/orb_menu_track.gd" id="19_bhx41"]
+[ext_resource type="AudioStream" uid="uid://b05q5gu5628m0" path="res://assets/sounds/Music/Tower/Amped Synth Lead.mp3" id="19_qnb83"]
+[ext_resource type="Texture2D" uid="uid://6ypvk5fe1qhi" path="res://assets/sprites/Big thing/ponder_orb.png" id="20_37s47"]
+[ext_resource type="Script" uid="uid://b1gifcexoe61c" path="res://scripts/objects/Machines/Orb/orb.gd" id="20_bt5mj"]
+[ext_resource type="PackedScene" uid="uid://dvsawxbwh3awd" path="res://scenes/popup_windows.tscn" id="21_e1j6l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1kice"]
+size = Vector2(36, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5newe"]
+size = Vector2(24, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bt5mj"]
+radius = 24.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yqjtg"]
+
+[node name="Game" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_gee14")
+
+[node name="Ysortedthings" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="player" parent="Ysortedthings" instance=ExtResource("1_yqjtg")]
+y_sort_enabled = true
+collision_mask = 26
+
+[node name="AnimatedSprite2D" parent="Ysortedthings/player" index="0"]
+y_sort_enabled = true
+
+[node name="Manablade" parent="Ysortedthings/player/Spells/Typeless" index="0"]
+visible = false
+
+[node name="Outside" parent="Ysortedthings" instance=ExtResource("3_ca42v")]
+y_sort_enabled = true
+
+[node name="Testrock" parent="Ysortedthings/Outside" instance=ExtResource("2_lnu2h")]
+position = Vector2(186, -52)
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("4_0tnpc")
+
+[node name="Enemies" parent="Ysortedthings/Outside" instance=ExtResource("4_p57ef")]
+y_sort_enabled = true
+position = Vector2(195, -21)
+
+[node name="Basic Ore" parent="Ysortedthings/Outside" instance=ExtResource("5_u5sy4")]
+position = Vector2(-189, -49)
+
+[node name="Placed Item" parent="Ysortedthings/Outside" instance=ExtResource("9_kvpfn")]
+position = Vector2(72, 60)
+
+[node name="Crops" parent="Ysortedthings/Outside" instance=ExtResource("11_kvuet")]
+position = Vector2(-200, 88)
+
+[node name="Crops2" parent="Ysortedthings/Outside" instance=ExtResource("11_kvuet")]
+position = Vector2(-176, 88)
+cropname = "Air Berry"
+data = ["Materials", "Air Berry", ["Crops", "Air", 1, Color(0.509804, 1, 0.8, 1)]]
+
+[node name="Crops3" parent="Ysortedthings/Outside" instance=ExtResource("11_kvuet")]
+position = Vector2(-200, 56)
+cropname = "Watermelon"
+data = ["Materials", "Watermelon", ["Crops", "Water", 2, Color(0.101961, 0.4, 0.6, 0.509804)]]
+
+[node name="Crops4" parent="Ysortedthings/Outside" instance=ExtResource("11_kvuet")]
+position = Vector2(-176, 56)
+cropname = "Potato"
+data = ["Materials", "Potato", ["Crops", "Earth", 1, Color(0.509804, 0.301961, 0, 1)]]
+
+[node name="Spellbooks" parent="Ysortedthings/Outside" instance=ExtResource("6_gee14")]
+position = Vector2(-176, 24)
+spells = ["Manablade", "Manahammer"]
+
+[node name="Placeable items" parent="Ysortedthings/Outside" instance=ExtResource("8_vtaks")]
+position = Vector2(-119, -35)
+
+[node name="Tower" parent="Ysortedthings/Outside" instance=ExtResource("15_ir15t")]
+
+[node name="Sprite2D" type="Sprite2D" parent="Ysortedthings/Outside"]
+modulate = Color(0.113725, 0.411765, 0.211765, 1)
+z_index = -3
+scale = Vector2(60, 60)
+texture = ExtResource("19_5newe")
+
+[node name="Trees" type="Node2D" parent="Ysortedthings/Outside"]
+y_sort_enabled = true
+
+[node name="Forest Tree" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(-73, -165)
+
+[node name="Forest Tree2" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(-97, -165)
+
+[node name="Forest Tree3" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(-47, -167)
+
+[node name="Forest Tree4" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(-129, -166)
+
+[node name="Forest Tree5" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(-161, -165)
+
+[node name="Forest Tree6" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(-193, -165)
+
+[node name="Forest Tree7" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(-225, -165)
+
+[node name="Forest Tree8" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(-257, -165)
+
+[node name="Forest Tree9" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(-289, -165)
+
+[node name="Forest Tree10" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(-313, -149)
+
+[node name="Forest Tree11" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(-313, -124)
+
+[node name="Forest Tree12" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(-313, -77)
+
+[node name="Forest Tree13" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(-313, -31)
+
+[node name="Forest Tree14" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(-313, 3)
+
+[node name="Forest Tree15" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(-313, 49)
+
+[node name="Forest Tree16" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(-313, 67)
+
+[node name="Forest Tree17" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(-313, 123)
+
+[node name="Forest Tree18" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(-313, 163)
+
+[node name="Forest Tree19" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(-49, 171)
+
+[node name="Forest Tree20" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(-81, 171)
+
+[node name="Forest Tree21" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(71, -173)
+
+[node name="Forest Tree22" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(-113, 171)
+
+[node name="Forest Tree23" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(-145, 171)
+
+[node name="Forest Tree24" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(-177, 172)
+
+[node name="Forest Tree25" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(-201, 173)
+
+[node name="Forest Tree26" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(-241, 171)
+
+[node name="Forest Tree27" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(-277, 174)
+
+[node name="Forest Tree28" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(-9, 171)
+
+[node name="Forest Tree29" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(31, 171)
+
+[node name="Forest Tree30" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(111, -165)
+
+[node name="Forest Tree31" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(151, -161)
+
+[node name="Forest Tree32" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(199, -166)
+
+[node name="Forest Tree33" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(295, -29)
+
+[node name="Forest Tree34" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(303, -45)
+
+[node name="Forest Tree35" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(303, -69)
+
+[node name="Forest Tree36" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(239, -157)
+
+[node name="Forest Tree37" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(271, -165)
+
+[node name="Forest Tree38" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(303, -149)
+
+[node name="Forest Tree39" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(311, -109)
+
+[node name="Forest Tree40" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(-25, -165)
+
+[node name="Forest Tree41" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(-1, -165)
+
+[node name="Forest Tree42" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(31, -165)
+
+[node name="Forest Tree43" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(303, -5)
+
+[node name="Forest Tree44" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(55, 171)
+
+[node name="Forest Tree45" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(95, 171)
+
+[node name="Forest Tree46" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(-33, 179)
+
+[node name="Forest Tree47" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(135, 172)
+
+[node name="Forest Tree48" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(303, 27)
+
+[node name="Forest Tree49" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(303, 51)
+
+[node name="Forest Tree50" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(167, 171)
+
+[node name="Forest Tree51" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(191, 171)
+
+[node name="Forest Tree52" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(223, 170)
+
+[node name="Forest Tree53" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(310, 71)
+
+[node name="Forest Tree54" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(295, 107)
+
+[node name="Forest Tree55" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(263, 171)
+
+[node name="Forest Tree56" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(295, 179)
+
+[node name="Forest Tree57" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(311, 131)
+
+[node name="Forest Tree58" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
+position = Vector2(311, 163)
+
+[node name="Materials" parent="Ysortedthings/Outside" instance=ExtResource("15_suyxu")]
+position = Vector2(-251, -9)
+data = ["Materials", "Pepper Seeds", ["Seeds", "Fire", 1, Color(1, 0.4, 0, 1), "Pepper"]]
+
+[node name="Inside" parent="Ysortedthings" instance=ExtResource("3_ca42v")]
+y_sort_enabled = true
+
+[node name="Bed" parent="Ysortedthings/Inside" instance=ExtResource("10_dinhu")]
+position = Vector2(68, 8)
+rotation = 1.5708
+
+[node name="InTower" type="RigidBody2D" parent="Ysortedthings/Inside"]
+collision_layer = 16
+gravity_scale = 0.0
+freeze = true
+script = ExtResource("15_264po")
+
+[node name="Tower" type="Sprite2D" parent="Ysortedthings/Inside/InTower"]
+z_index = -2
+texture = ExtResource("15_rysoc")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ysortedthings/Inside/InTower"]
+polygon = PackedVector2Array(-12, 85, -12, 78, -30, 76, -50, 65, -70, 45, -80, 21, -80, 0, -70, -24, -50, -44, -30, -55, -12, -60, 12, -60, 30, -55, 50, -44, 70, -24, 80, 0, 80, 21, 70, 45, 50, 65, 30, 76, 12, 78, 12, 85, 85, 85, 85, -64, -85, -64, -85, 85)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ysortedthings/Inside/InTower"]
+position = Vector2(0, 90)
+shape = SubResource("RectangleShape2D_1kice")
+
+[node name="Hitbox" type="CollisionPolygon2D" parent="Ysortedthings/Inside/InTower"]
+polygon = PackedVector2Array(-4, -5, -19, 3, -24, 19, -13, 33, 5, 36, 20, 28, 25, 13, 16, -1)
+
+[node name="TowerBaseTrack" type="AudioStreamPlayer2D" parent="Ysortedthings/Inside/InTower"]
+stream = ExtResource("17_pl11u")
+script = ExtResource("17_e1j6l")
+
+[node name="OrbMenuTrack" type="AudioStreamPlayer2D" parent="Ysortedthings/Inside/InTower"]
+stream = ExtResource("19_qnb83")
+script = ExtResource("19_bhx41")
+
+[node name="Door" type="Area2D" parent="Ysortedthings/Inside"]
+z_index = 1
+script = ExtResource("17_1kice")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ysortedthings/Inside/Door"]
+position = Vector2(5.06639e-07, 60.25)
+scale = Vector2(1, 1.0122)
+texture = ExtResource("16_ssvqc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ysortedthings/Inside/Door"]
+position = Vector2(0, 77)
+shape = SubResource("RectangleShape2D_5newe")
+
+[node name="Bground" type="Sprite2D" parent="Ysortedthings/Inside"]
+modulate = Color(0, 0, 0, 1)
+z_index = -3
+scale = Vector2(30, 30)
+texture = ExtResource("19_5newe")
+
+[node name="ORB" type="Area2D" parent="Ysortedthings/Inside"]
+position = Vector2(0, 16)
+script = ExtResource("20_bt5mj")
+window = ExtResource("21_e1j6l")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ysortedthings/Inside/ORB"]
+texture = ExtResource("20_37s47")
+offset = Vector2(0, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ysortedthings/Inside/ORB"]
+position = Vector2(0, -16)
+shape = SubResource("CircleShape2D_bt5mj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+script = ExtResource("12_ca42v")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="Topwall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -162)
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_yqjtg")
+
+[node name="Bottomwall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 162)
+shape = SubResource("WorldBoundaryShape2D_yqjtg")
+
+[node name="Leftwall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-288, 0)
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_yqjtg")
+
+[node name="Rightwall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(288, 0)
+rotation = -1.5708
+shape = SubResource("WorldBoundaryShape2D_yqjtg")
+
+[node name="World" parent="." instance=ExtResource("8_gee14")]
+
+[connection signal="body_entered" from="Ysortedthings/player/Spells/Typeless/Manablade" to="Ysortedthings/player/Spells/Typeless/Manablade" method="_on_body_entered"]
+[connection signal="body_entered" from="Ysortedthings/Inside/Door" to="Ysortedthings/Inside/Door" method="_on_body_entered"]
+[connection signal="mouse_entered" from="Ysortedthings/Inside/ORB" to="Ysortedthings/Inside/ORB" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Ysortedthings/Inside/ORB" to="Ysortedthings/Inside/ORB" method="_on_mouse_exited"]
+
+[editable path="Ysortedthings/player"]
+[editable path="Ysortedthings/Outside/Enemies"]
+[editable path="World"]
