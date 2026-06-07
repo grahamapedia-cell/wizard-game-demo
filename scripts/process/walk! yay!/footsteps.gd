@@ -10,7 +10,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if get_node("../AnimatedSprite2D").frame!=lastframe:
 		lastframe=get_node("../AnimatedSprite2D").frame
-		if get_node("/root/Game/Ysortedthings/Inside").visible==true:
+		if get_node("/root/titlescreen/Game/Ysortedthings/Inside").visible==true:
 			get_node("Wood").pitch_scale=randf_range(0.5,1.5)
 			get_node("Wood").play(1)
 		else:

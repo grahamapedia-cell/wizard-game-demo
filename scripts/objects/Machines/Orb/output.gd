@@ -33,8 +33,7 @@ func _process(delta: float) -> void:
 		get_node("Alphaless").animation = "empty"
 		get_node("AnimatedSprite2D").modulate = Color(1,1,1)
 	else:
-		if itemdata[1]=="Scroll":
-			print("wahoo")
+		if itemdata[2][0]=="Scrolls":
 			get_node("AnimatedSprite2D").animation = "Scroll"
 			get_node("Alphaless").animation = "paper"
 			get_node("AnimatedSprite2D").modulate = itemalpha

@@ -8,8 +8,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if get_node("/root/Game/Ysortedthings/player").health<=0:
-		get_node("/root/Game/Ysortedthings/player").health=0
-		get_node("/root/Game/Ysortedthings/player").modulate=Color(0.8,0.8,0.8,0.4)
-		get_node("/root/Game/Ysortedthings/player").movetype="Stop"
-	scale.x=0.125*get_node("/root/Game/Ysortedthings/player").health
+	if get_node("/root/titlescreen/Game/Ysortedthings/player").health<=0:
+		get_node("/root/titlescreen/Game/Ysortedthings/player").health=0
+		get_node("/root/titlescreen/Game/Ysortedthings/player").modulate=Color(0.8,0.8,0.8,0.4)
+		get_node("/root/titlescreen/Game/Ysortedthings/player").movetype="Stop"
+	scale.x=0.125*get_node("/root/titlescreen/Game/Ysortedthings/player").health

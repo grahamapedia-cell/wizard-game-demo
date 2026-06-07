@@ -17,10 +17,10 @@ func _process(_delta: float) -> void:
 	distx=mouse_position.x-self.global_position.x
 	disty=mouse_position.y-self.global_position.y
 	dist=sqrt(pow(distx,2)+pow(disty,2))
-	if get_node("/root/Game/World/GUI/Inventory_things/Spellbook").pages.is_empty()==true:
+	if get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Spellbook").pages.is_empty()==true:
 		selected_spell=""
 	else:
-		selected_spell=get_node("/root/Game/World/GUI/Inventory_things/Spellbook").pages[get_node("/root/Game/World/GUI/Inventory_things/Spellbook").page-1]
+		selected_spell=get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Spellbook").pages[get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Spellbook").page-1]
 
 
 

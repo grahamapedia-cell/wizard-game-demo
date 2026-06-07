@@ -32,24 +32,23 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	self.visible=get_node("../../Hotbar").visible
-	if get_node("../../Inventory").hotbardata[title].size()>=2:
-			if get_node("../../Inventory").hotbardata[title][1]=="Essence":
+	if get_node("../../Inventory").hotbar[title].size()>=2:
+			if get_node("../../Inventory").hotbar[title][2][0]=="Essence":
 				get_node("./AnimatedSprite2D").animation = "Potion"
-				get_node("./AnimatedSprite2D").modulate = get_node("../../Inventory").hotbaralpha[title]
+				get_node("./AnimatedSprite2D").modulate = get_node("../../Inventory").hotbar[title][2][1]
 				get_node("./Alphaless").animation = "bottle"
-			elif get_node("../../Inventory").hotbardata[title][1]=="Scroll":
+			elif get_node("../../Inventory").hotbar[title][2][0]=="Scrolls":
 				get_node("./AnimatedSprite2D").animation = "Scroll"
-				get_node("./AnimatedSprite2D").modulate = get_node("../../Inventory").hotbaralpha[title]
+				get_node("./AnimatedSprite2D").modulate = get_node("../../Inventory").hotbar[title][2][1]
 				get_node("./Alphaless").animation = "paper"
-	if get_node("./AnimatedSprite2D").sprite_frames.has_animation(get_node("../../Inventory").hotbar[title]):
-		if get_node("../../Inventory").hotbardata[title][1]=="Spellbook":
-			get_node("./AnimatedSprite2D").animation = "Spellbook"
-			get_node("./AnimatedSprite2D").modulate = get_node("../../Inventory").hotbaralpha[title]
-			get_node("./Alphaless").animation = "pages"
-		else:
-			get_node("./AnimatedSprite2D").animation = get_node("../../Inventory").hotbar[title]
-			get_node("./Alphaless").animation = "empty"
-			get_node("./AnimatedSprite2D").modulate = get_node("../../Inventory").hotbaralpha[title]
+			elif get_node("../../Inventory").hotbar[title][2][0]=="Spellbook":
+				get_node("./AnimatedSprite2D").animation = "Spellbook"
+				get_node("./AnimatedSprite2D").modulate = get_node("../../Inventory").hotbar[title][2][1]
+				get_node("./Alphaless").animation = "pages"
+			elif get_node("./AnimatedSprite2D").sprite_frames.has_animation(get_node("../../Inventory").hotbar[title][1]):
+				get_node("./AnimatedSprite2D").animation = get_node("../../Inventory").hotbar[title][1]
+				get_node("./Alphaless").animation = "empty"
+				get_node("./AnimatedSprite2D").modulate = get_node("../../Inventory").hotbar[title][2][1]
 	if get_node("../../Inventory").hotbarnumber[title] >= 2:
 		killswitch=true
 		num = amount.instantiate()

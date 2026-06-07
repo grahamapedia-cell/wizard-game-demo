@@ -13,17 +13,17 @@ func _process(delta: float) -> void:
 		get_node("Dooropen").set_deferred("disabled", true)
 	else:
 		get_node("Dooropen").set_deferred("disabled", false)
-	if abs(get_node("/root/Game/Ysortedthings/player").global_position.x-self.global_position.x)<=16:
-		if abs(get_node("/root/Game/Ysortedthings/player").global_position.y-self.global_position.y)<=16:
+	if abs(get_node("/root/titlescreen/Game/Ysortedthings/player").global_position.x-self.global_position.x)<=16:
+		if abs(get_node("/root/titlescreen/Game/Ysortedthings/player").global_position.y-self.global_position.y)<=16:
 			self.visible=false
 			open=true
-			if abs(get_node("/root/Game/Ysortedthings/player").global_position.y-self.global_position.y)<=8:
-				if get_node("/root/Game/World/Area").area_time==false and get_node("../..").visible==true:
-					get_node("/root/Game/World/Area").area_time=true
-					get_node("/root/Game/World/Area").leaving="Outside"
-					get_node("/root/Game/World/Area").entering="Inside"
-					get_node("/root/Game/World/Area").xpos=0
-					get_node("/root/Game/World/Area").ypos=50
+			if abs(get_node("/root/titlescreen/Game/Ysortedthings/player").global_position.y-self.global_position.y)<=8:
+				if get_node("/root/titlescreen/Game/World/Area").area_time==false and get_node("../..").visible==true:
+					get_node("/root/titlescreen/Game/World/Area").area_time=true
+					get_node("/root/titlescreen/Game/World/Area").leaving="Outside"
+					get_node("/root/titlescreen/Game/World/Area").entering="Inside"
+					get_node("/root/titlescreen/Game/World/Area").xpos=0
+					get_node("/root/titlescreen/Game/World/Area").ypos=50
 					print("rood")
 		else:
 			self.visible=true

@@ -5,7 +5,7 @@ extends Sprite2D
 func _ready() -> void:
 	if get_node("../..").machine=="ORB":
 		show()
-		get_node("/root/Game/Ysortedthings/Inside/InTower/OrbMenuTrack").OrbOpen=true
+		get_node("/root/titlescreen/Game/Ysortedthings/Inside/InTower/OrbMenuTrack").OrbOpen=true
 	else:
 		hide()
 		queue_free()
@@ -15,5 +15,5 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if get_node("../../../Inventory").visible==false:
 		hide()
-		get_node("/root/Game/Ysortedthings/Inside/InTower/OrbMenuTrack").OrbOpen=false
+		get_node("/root/titlescreen/Game/Ysortedthings/Inside/InTower/OrbMenuTrack").OrbOpen=false
 		queue_free()

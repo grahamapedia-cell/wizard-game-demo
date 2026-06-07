@@ -32,5 +32,5 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	print("yeah")
-	get_node("/root/Game/Ysortedthings/player").health-=damage
+	get_node("/root/titlescreen/Game/Ysortedthings/player").health-=damage
 	get_node("../../..").deathtime=true

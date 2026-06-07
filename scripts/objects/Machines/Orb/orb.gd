@@ -18,16 +18,16 @@ func _process(delta: float) -> void:
 	self.input_pickable=get_node("..").visible
 	if self.input_pickable==false:
 		mousein=false
-	if Input.is_action_just_pressed("open_inventory") and mousein==true and get_node("/root/Game/World/GUI/Inventory_things/Inventory").visible==false:
+	if Input.is_action_just_pressed("open_inventory") and mousein==true and get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory").visible==false:
 		go = window.instantiate()
 		go.path=String(self.get_path())
 		go.machine="ORB"
-		get_node("/root/Game/World/GUI/Inventory_things").add_child(go)
+		get_node("/root/titlescreen/Game/World/GUI/Inventory_things").add_child(go)
 	if inventory[0]=="Fire Essence":
 		inventory[1]="Flame Shot Scroll"
 		inventorynumber[1]=inventorynumber[0]
 		inventoryalpha[1]=inventoryalpha[0]
-		inventorydata[1]=["Spellbook","Scroll",["Flame Shot"]]
+		inventorydata[1]=["Spellbook","Flame Shot Scroll",["Scrolls",Color(255,102,0),1,["Flame Shot"]]]
 		inventory[0]=""
 		inventorynumber[0]=0
 		inventoryalpha[0]=Color(1,1,1)
@@ -36,7 +36,7 @@ func _process(delta: float) -> void:
 		inventory[3]="Wind Slice Scroll"
 		inventorynumber[3]=inventorynumber[2]
 		inventoryalpha[3]=inventoryalpha[2]
-		inventorydata[3]=["Spellbook","Scroll",["Wind Slice"]]
+		inventorydata[3]=["Spellbook","Wind Slice Scroll",["Scrolls",Color(130,255,204),3,["Wind Slice"]]]
 		inventory[2]=""
 		inventorynumber[2]=0
 		inventoryalpha[2]=Color(1,1,1)
@@ -45,7 +45,7 @@ func _process(delta: float) -> void:
 		inventory[5]="Water Gun Scroll"
 		inventorynumber[5]=inventorynumber[4]
 		inventoryalpha[5]=inventoryalpha[4]
-		inventorydata[5]=["Spellbook","Scroll",["Water Gun"]]
+		inventorydata[5]=["Spellbook","Water Gun Scroll",["Scrolls",Color(26,102,153),5,["Water Gun"]]]
 		inventory[4]=""
 		inventorynumber[4]=0
 		inventoryalpha[4]=Color(1,1,1)
@@ -54,7 +54,7 @@ func _process(delta: float) -> void:
 		inventory[7]="Rock Throw Scroll"
 		inventorynumber[7]=inventorynumber[6]
 		inventoryalpha[7]=inventoryalpha[6]
-		inventorydata[7]=["Spellbook","Scroll",["Rock Throw"]]
+		inventorydata[7]=["Spellbook","Rock Throw Scroll",["Scrolls",Color(130,77,0),7,["Rock Throw"]]]
 		inventory[6]=""
 		inventorynumber[6]=0
 		inventoryalpha[6]=Color(1,1,1)

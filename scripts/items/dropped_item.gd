@@ -11,32 +11,34 @@ var velocity_y = 0
 @export var quantity = 1
 var physical = true
 var donehere = false
+var item_name="test"
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	velocity_x=get_node("../..").velx
-	velocity_y=get_node("../..").vely
-	just_thrown = get_node("../..").just_thrown
-	quantity = get_node("../..").quantity
-	print(get_node("/root/Game/Ysortedthings/player").global_position.x)
-	if get_node("../..").itemtype == "Essence Extractor":
-		self.visible=true
-		print(self.visible)
-		physical=true
-	else:
-		self.visible=false
-		physical=false
+	velocity_x=get_node("..").velx
+	velocity_y=get_node("..").vely
+	just_thrown = get_node("..").just_thrown
+	quantity = get_node("..").quantity
+	print(get_node("/root/titlescreen/Game/Ysortedthings/player").global_position.x)
+	if get_node("./AnimatedSprite2D").sprite_frames.has_animation(get_node("..").itemtype):
+		item_name=get_node("..").itemtype
+		get_node("./AnimatedSprite2D").animation=item_name
+	elif get_node("..").data[2][0]=="Seeds":
+		item_name=get_node("..").data[2][4]+" Seeds"
+		get_node("./AnimatedSprite2D").animation="Seeds"
+		self.modulate=get_node("..").data[2][3]
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	get_node("CollisionShape2D").set_deferred("disabled",!get_node("../../..").visible)
-	physical=get_node("../../..").visible
+	get_node("CollisionShape2D").set_deferred("disabled",!get_node("..").visible)
+	physical=get_node("..").visible
 	if just_thrown == true:
 		await get_tree().create_timer(3).timeout
 		just_thrown=false
 	if physical == true:
-		player_dist_x = get_node("/root/Game/Ysortedthings/player").global_position.x-self.global_position.x
-		player_dist_y = get_node("/root/Game/Ysortedthings/player").global_position.y-self.global_position.y
+		player_dist_x = get_node("/root/titlescreen/Game/Ysortedthings/player").global_position.x-self.global_position.x
+		player_dist_y = get_node("/root/titlescreen/Game/Ysortedthings/player").global_position.y-self.global_position.y
 		player_dist = sqrt(pow(player_dist_x,2)+pow(player_dist_y,2))
 		if player_dist<=30 and player_dist !=0 and just_thrown==false:
 			attract=true
@@ -59,27 +61,27 @@ func _process(delta: float) -> void:
 			queue_free()
 		global_position.x+=velocity_x
 		global_position.y+=velocity_y
-		player_dist_x = get_node("/root/Game/Ysortedthings/player").global_position.x-self.global_position.x
-		player_dist_y = get_node("/root/Game/Ysortedthings/player").global_position.y-self.global_position.y
+		player_dist_x = get_node("/root/titlescreen/Game/Ysortedthings/player").global_position.x-self.global_position.x
+		player_dist_y = get_node("/root/titlescreen/Game/Ysortedthings/player").global_position.y-self.global_position.y
 		player_dist = sqrt(pow(player_dist_x,2)+pow(player_dist_y,2))
 		if player_dist<5 and just_thrown==false:
-			for i in get_node("/root/Game/World/GUI/Inventory_things/Inventory").hotbar.size():
-				if get_node("/root/Game/World/GUI/Inventory_things/Inventory").hotbar[i]=="" and donehere==false:
-					get_node("/root/Game/World/GUI/Inventory_things/Inventory").hotbar[i]="Essence Extractor"
-					get_node("/root/Game/World/GUI/Inventory_things/Inventory").hotbarnumber[i]+=quantity
-					get_node("/root/Game/World/GUI/Inventory_things/Inventory").hotbardata[i]=["Placeables","Essence Extractor",["Machines"]]
-					get_node("/root/Game/World/GUI/Inventory_things/Inventory").hotbarlimit[i]=1
+			for i in get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory").hotbar.size():
+				if get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory").hotbar[i]=="" and donehere==false:
+					get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory").hotbar[i]="Essence Extractor"
+					get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory").hotbarnumber[i]+=quantity
+					get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory").hotbardata[i]=["Placeables","Essence Extractor",["Machines"]]
+					get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory").hotbarlimit[i]=1
 					donehere=true
 					queue_free()
-			for i in get_node("/root/Game/World/GUI/Inventory_things/Inventory").twentyfive.size():
-				if get_node("/root/Game/World/GUI/Inventory_things/Inventory").twentyfive[i]=="" and donehere==false:
-					get_node("/root/Game/World/GUI/Inventory_things/Inventory").twentyfive[i]="Essence Extractor"
-					get_node("/root/Game/World/GUI/Inventory_things/Inventory").twentyfivenumber[i]+=quantity
-					get_node("/root/Game/World/GUI/Inventory_things/Inventory").twentyfivedata[i]=["Placeables","Essence Extractor",["Machines"]]
-					get_node("/root/Game/World/GUI/Inventory_things/Inventory").twentyfivelimit[i]=1
+			for i in get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory").twentyfive.size():
+				if get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory").twentyfive[i]=="" and donehere==false:
+					get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory").twentyfive[i]="Essence Extractor"
+					get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory").twentyfivenumber[i]+=quantity
+					get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory").twentyfivedata[i]=["Placeables","Essence Extractor",["Machines"]]
+					get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory").twentyfivelimit[i]=1
 					donehere=true
 					queue_free()
 			if donehere==true:
-				get_node("/root/Game/World/GUI/Inventory_things/Inventory/Pickup").play()
+				get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory/Pickup").play()
 	else:
 		queue_free()

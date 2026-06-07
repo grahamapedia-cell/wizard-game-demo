@@ -1,5 +1,7 @@
-[gd_scene load_steps=96 format=3 uid="uid://cb2155646r14c"]
+[gd_scene load_steps=99 format=3 uid="uid://cb2155646r14c"]
 
+[ext_resource type="Script" uid="uid://ceicj2vobysyx" path="res://scripts/camera_2d.gd" id="1_5hglh"]
+[ext_resource type="Script" uid="uid://b2w6ngjymvevs" path="res://scripts/items/item_data_list.gd" id="1_e68xj"]
 [ext_resource type="Script" uid="uid://bcs783ev3h1wh" path="res://scripts/process/gui.gd" id="1_rga7q"]
 [ext_resource type="Texture2D" uid="uid://cpt2tut7xbp1j" path="res://assets/sprites/GUI/cooler_inventory.png" id="1_w7kh3"]
 [ext_resource type="Script" uid="uid://5em8sl0l8fb1" path="res://scripts/process/inventory.gd" id="2_4wyf3"]
@@ -29,6 +31,7 @@
 [ext_resource type="Script" uid="uid://k1rv0a5f7cu1" path="res://scripts/process/Millions of inventory/equipboxes.gd" id="18_37qwj"]
 [ext_resource type="Texture2D" uid="uid://drd2x1lxmsatc" path="res://assets/sprites/Items/Spellbooks/spell_holders.png" id="18_eo1xk"]
 [ext_resource type="Texture2D" uid="uid://blh0xdo7gvnfj" path="res://assets/sprites/GUI/inventorytabs.png" id="19_7iits"]
+[ext_resource type="Texture2D" uid="uid://b0y6mrifm6ie2" path="res://assets/sprites/Items/Materials/Crops/seeds.png" id="20_1dgkn"]
 [ext_resource type="PackedScene" uid="uid://d1cyup4fming" path="res://scenes/items/materials.tscn" id="20_2lf6f"]
 [ext_resource type="Script" uid="uid://cr7wd77k3aw8n" path="res://scripts/process/inventory_sidebar.gd" id="20_oo54l"]
 [ext_resource type="Texture2D" uid="uid://dnrheunicuhbe" path="res://assets/sprites/GUI/Inventory_book.png" id="21_kpybi"]
@@ -143,6 +146,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"Scroll",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_1dgkn")
+}],
+"loop": true,
+"name": &"Seeds",
 "speed": 5.0
 }, {
 "frames": [{
@@ -426,7 +437,17 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="World" type="Node2D"]
+[node name="World" type="Camera2D"]
+zoom = Vector2(4, 4)
+script = ExtResource("1_5hglh")
+
+[node name="Item_data_list" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_e68xj")
+materials = [["Category", "Name", ["Subcategory", Color(1, 1, 1, 1), "Element", ["Related item and number", 1], [1, 1]]], ["Materials", "Stone", ["Stone", Color(1, 1, 1, 1), 7]], ["Materials", "Metal Ore", ["Metals", Color(1, 1, 1, 1), 8]]]
 
 [node name="GUI" type="Node2D" parent="."]
 script = ExtResource("1_rga7q")
@@ -465,6 +486,13 @@ position = Vector2(-38, 68)
 texture = ExtResource("3_4wyf3")
 script = ExtResource("4_k0juu")
 
+[node name="Hotbar_Selector" type="Sprite2D" parent="GUI/Inventory_things"]
+self_modulate = Color(1, 1, 1, 0.196078)
+z_index = 2
+position = Vector2(0, 68)
+texture = ExtResource("9_w7kh3")
+script = ExtResource("16_7t5mc")
+
 [node name="Hotbar_Numbers" type="Sprite2D" parent="GUI/Inventory_things"]
 z_index = 3
 position = Vector2(-38, 68)
@@ -485,7 +513,7 @@ shape = SubResource("RectangleShape2D_i7141")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Inventory_things/Hell/H1"]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_o8fc1")
-animation = &"empty"
+animation = &"Seeds"
 
 [node name="Alphaless" type="AnimatedSprite2D" parent="GUI/Inventory_things/Hell/H1"]
 scale = Vector2(0.5, 0.5)
@@ -1390,13 +1418,6 @@ animation = &"empty"
 [node name="Equip" type="AudioStreamPlayer2D" parent="GUI/Inventory_things/Equiphell/SpellbookSlot"]
 stream = ExtResource("24_d46x8")
 
-[node name="Hotbar_Selector" type="Sprite2D" parent="GUI/Inventory_things"]
-self_modulate = Color(1, 1, 1, 0.196078)
-z_index = 2
-position = Vector2(0, 68)
-texture = ExtResource("9_w7kh3")
-script = ExtResource("16_7t5mc")
-
 [node name="InventoryBG" type="Area2D" parent="GUI/Inventory_things"]
 z_index = 4
 script = ExtResource("17_pm21f")
@@ -1433,7 +1454,10 @@ script = ExtResource("20_oo54l")
 position = Vector2(107, 51)
 texture = ExtResource("21_kpybi")
 script = ExtResource("23_xgqkh")
+pages = null
+page = null
 spellicon = ExtResource("24_munwf")
+iconshere = null
 
 [node name="PageL" type="Area2D" parent="GUI/Inventory_things/Spellbook"]
 position = Vector2(-20, -6)
@@ -1550,6 +1574,7 @@ script = ExtResource("45_eo1xk")
 script = ExtResource("49_x28ej")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Tutorial"]
+visible = false
 sprite_frames = SubResource("SpriteFrames_pq8jk")
 animation = &"Big Arrow"
 offset = Vector2(20, 0)

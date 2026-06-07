@@ -43,8 +43,8 @@ func _process(_delta: float) -> void:
 		var facing = "front"
 		get_node("Hitbox").set_deferred("disabled",!get_node("../..").visible)
 		if get_node("../..").visible==true:
-			var distx=get_node("/root/Game/Ysortedthings/player").global_position.x-self.global_position.x
-			var disty=get_node("/root/Game/Ysortedthings/player").global_position.y-self.global_position.y
+			var distx=get_node("/root/titlescreen/Game/Ysortedthings/player").global_position.x-self.global_position.x
+			var disty=get_node("/root/titlescreen/Game/Ysortedthings/player").global_position.y-self.global_position.y
 			var dist=sqrt(pow(distx,2)+pow(disty,2))
 			if distx==0:
 				angle=(PI/2)*disty/abs(disty)
@@ -146,14 +146,12 @@ func _process(_delta: float) -> void:
 			defeat.emit
 			$Hitbox.set_deferred("disabled", true)
 			var drop = drop_One.instantiate()
-			drop.category="Stone"
-			drop.itemtype="Stone"
+			drop.data=["Materials","Stone",["Stone",Color(1,1,1),7]]
 			drop.position.x=position.x
 			drop.position.y=position.y
 			add_sibling(drop)
 			drop = drop_One.instantiate()
-			drop.category="Stone"
-			drop.itemtype="Stone"
+			drop.data=["Materials","Stone",["Stone",Color(1,1,1),7]]
 			drop.position.x=position.x
 			drop.position.y=position.y
 			add_sibling(drop)

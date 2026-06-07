@@ -10,7 +10,7 @@ func _ready() -> void:
 	if type=="Inventory":
 		self.scale.x=0.5
 		self.scale.y=0.5
-		title=get_node("/root/Game/World/GUI/Inventory_things/Inventory_Selector").title
+		title=get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory_Selector").title
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,5 +19,5 @@ func _process(delta: float) -> void:
 	if done==true:
 		queue_free()
 	if type=="Inventory":
-		if get_node("/root/Game/World/GUI/Inventory_things/Inventory_Selector").title!=title:
+		if get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory_Selector").title!=title:
 			done=true

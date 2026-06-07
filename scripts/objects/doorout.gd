@@ -16,10 +16,10 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.has_signal("cast"):
-		if get_node("/root/Game/World/Area").area_time==false:
-				get_node("/root/Game/World/Area").area_time=true
-				get_node("/root/Game/World/Area").leaving="Inside"
-				get_node("/root/Game/World/Area").entering="Outside"
-				get_node("/root/Game/World/Area").xpos=0
-				get_node("/root/Game/World/Area").ypos=60
+		if get_node("/root/titlescreen/Game/World/Area").area_time==false:
+				get_node("/root/titlescreen/Game/World/Area").area_time=true
+				get_node("/root/titlescreen/Game/World/Area").leaving="Inside"
+				get_node("/root/titlescreen/Game/World/Area").entering="Outside"
+				get_node("/root/titlescreen/Game/World/Area").xpos=0
+				get_node("/root/titlescreen/Game/World/Area").ypos=60
 				print("door")

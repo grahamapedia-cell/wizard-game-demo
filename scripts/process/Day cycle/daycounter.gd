@@ -24,7 +24,7 @@ func _process(delta: float) -> void:
 			hoursdone=0
 			frames=0
 			hourhand=24*12
-			get_node("/root/Game/World/Time").day+=1
+			get_node("/root/titlescreen/Game/World/Time").day+=1
 		if hourhand==576:
 			hourhand=0
 		if floor(frames)<=6:

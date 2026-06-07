@@ -205,7 +205,7 @@ shape = SubResource("RectangleShape2D_6cbkc")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Item"]
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_60rbn")
-animation = &"Seeds"
+animation = &"empty"
 
 [node name="Alphaless" type="AnimatedSprite2D" parent="Item"]
 scale = Vector2(0.25, 0.25)

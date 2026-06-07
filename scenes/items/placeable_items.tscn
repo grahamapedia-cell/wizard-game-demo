@@ -1,41 +1,214 @@
-[gd_scene load_steps=7 format=3 uid="uid://38aa7gdbka8f"]
+[gd_scene load_steps=25 format=3 uid="uid://38aa7gdbka8f"]
 
 [ext_resource type="Script" uid="uid://drngg4qjyt1mq" path="res://scripts/items/Placeable items/placeable_items.gd" id="1_1rqx1"]
 [ext_resource type="Script" uid="uid://cfhaa2rjmd2gl" path="res://scripts/items/dropped_item.gd" id="2_j7q4w"]
 [ext_resource type="Texture2D" uid="uid://854l57n1iqx6" path="res://assets/sprites/Objects/Placeables/Machines/essence_extractor.png" id="3_p4enl"]
+[ext_resource type="Texture2D" uid="uid://0g6r5pcv4q6r" path="res://assets/sprites/Items/Materials/Crops/basic_crops.png" id="3_ty6vq"]
+[ext_resource type="Texture2D" uid="uid://dbrvs1u2kd0ir" path="res://assets/sprites/Items/Materials/Metals/real_metal_ore.png" id="5_muo2s"]
+[ext_resource type="Texture2D" uid="uid://cdkpw7dg6w5x7" path="res://assets/sprites/Items/Consumables/potion_bottle.png" id="6_jcip5"]
+[ext_resource type="Texture2D" uid="uid://drd2x1lxmsatc" path="res://assets/sprites/Items/Spellbooks/spell_holders.png" id="7_nwf4f"]
+[ext_resource type="Texture2D" uid="uid://b0y6mrifm6ie2" path="res://assets/sprites/Items/Materials/Crops/seeds.png" id="8_dhpn3"]
+[ext_resource type="Texture2D" uid="uid://bncphk22vqool" path="res://assets/sprites/Items/Materials/Stone/real_stone_item.png" id="9_kt4pb"]
+[ext_resource type="Texture2D" uid="uid://dj2yv1n2faqq8" path="res://assets/sprites/Items/blank.png" id="10_31cga"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m4oda"]
 size = Vector2(6, 6)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wxci6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_f17e3"]
+atlas = ExtResource("3_ty6vq")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_817gm"]
 atlas = ExtResource("3_p4enl")
 region = Rect2(0, 0, 16, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_q3epu"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ggc52"]
+atlas = ExtResource("3_ty6vq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8ah6"]
+atlas = ExtResource("3_ty6vq")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iexy4"]
+atlas = ExtResource("6_jcip5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6ckp"]
+atlas = ExtResource("7_nwf4f")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvg0v"]
+atlas = ExtResource("7_nwf4f")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e75v4"]
+atlas = ExtResource("3_ty6vq")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8dlgn"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wxci6")
+"texture": SubResource("AtlasTexture_f17e3")
 }],
 "loop": true,
-"name": &"default",
+"name": &"Air Berry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_817gm")
+}],
+"loop": true,
+"name": &"Essence Extractor",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_muo2s")
+}],
+"loop": true,
+"name": &"Metal Ore",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ggc52")
+}],
+"loop": true,
+"name": &"Pepper",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8ah6")
+}],
+"loop": true,
+"name": &"Potato",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iexy4")
+}],
+"loop": true,
+"name": &"Potion",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6ckp")
+}],
+"loop": true,
+"name": &"Scroll",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_dhpn3")
+}],
+"loop": true,
+"name": &"Seeds",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mvg0v")
+}],
+"loop": true,
+"name": &"Spellbook",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_kt4pb")
+}],
+"loop": true,
+"name": &"Stone",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e75v4")
+}],
+"loop": true,
+"name": &"Watermelon",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_31cga")
+}],
+"loop": true,
+"name": &"empty",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npbic"]
+atlas = ExtResource("6_jcip5")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3odw"]
+atlas = ExtResource("7_nwf4f")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hl1e"]
+atlas = ExtResource("7_nwf4f")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_26elv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npbic")
+}],
+"loop": true,
+"name": &"bottle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_31cga")
+}],
+"loop": true,
+"name": &"empty",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3odw")
+}],
+"loop": true,
+"name": &"pages",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5hl1e")
+}],
+"loop": true,
+"name": &"paper",
 "speed": 5.0
 }]
 
 [node name="Placeable items" type="Node2D"]
 script = ExtResource("1_1rqx1")
 
-[node name="Machines" type="Node2D" parent="."]
-
-[node name="Essence Extractor" type="Area2D" parent="Machines"]
+[node name="Item" type="Area2D" parent="."]
 collision_layer = 8
 collision_mask = 0
 script = ExtResource("2_j7q4w")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Machines/Essence Extractor"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Item"]
 shape = SubResource("RectangleShape2D_m4oda")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Machines/Essence Extractor"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Item"]
 scale = Vector2(0.25, 0.25)
-sprite_frames = SubResource("SpriteFrames_q3epu")
-offset = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_8dlgn")
+animation = &"empty"
+
+[node name="Alphaless" type="AnimatedSprite2D" parent="Item"]
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_26elv")
+animation = &"empty"

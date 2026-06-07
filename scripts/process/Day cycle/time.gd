@@ -8,7 +8,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	self.global_position=get_node("/root/Game/Ysortedthings/player").global_position
+	self.global_position=get_node("/root/titlescreen/Game/Ysortedthings/player").global_position
 	hour=get_node("../GUI/Daycounter").hoursdone
 	if hour<1:
 		get_node("DayCycle").modulate=Color(1,0.3,0,0.05)
@@ -26,5 +26,5 @@ func _process(delta: float) -> void:
 		get_node("DayCycle").modulate=Color(0.1,0.1,0.2,0.4)
 	else:
 		get_node("DayCycle").modulate=Color(0.1,0.1,0.2,0.6)
-	if get_node("../Area").area=="/root/Game/Ysortedthings/Inside":
+	if get_node("../Area").area=="/root/titlescreen/Game/Ysortedthings/Inside":
 		get_node("DayCycle").modulate=Color(1,1,1,0)

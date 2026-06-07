@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dkk6abfqi5d8y"]
+[gd_scene load_steps=33 format=3 uid="uid://dkk6abfqi5d8y"]
 
 [ext_resource type="Script" uid="uid://d2hpc6uc5bfjk" path="res://scripts/game.gd" id="1_gee14"]
 [ext_resource type="PackedScene" uid="uid://bws0mf5rhxycc" path="res://scenes/player.tscn" id="1_yqjtg"]
@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://cocnls8f8f316" path="res://scenes/objects/placed_item.tscn" id="9_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://15bxeip6dg58" path="res://scenes/objects/bed.tscn" id="10_dinhu"]
 [ext_resource type="PackedScene" uid="uid://cgjv7higsgkx8" path="res://scenes/objects/crops.tscn" id="11_kvuet"]
-[ext_resource type="Script" uid="uid://ceicj2vobysyx" path="res://scripts/camera_2d.gd" id="12_ca42v"]
 [ext_resource type="PackedScene" uid="uid://bxvdjmf6xunfe" path="res://scenes/objects/Forest/forest_tree.tscn" id="14_sww3w"]
 [ext_resource type="Script" uid="uid://bu78hi44yf0qg" path="res://scripts/objects/in_tower.gd" id="15_264po"]
 [ext_resource type="PackedScene" uid="uid://imy7bw16bhao" path="res://scenes/objects/tower.tscn" id="15_ir15t"]
@@ -358,9 +357,12 @@ offset = Vector2(0, -16)
 position = Vector2(0, -16)
 shape = SubResource("CircleShape2D_bt5mj")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)
-script = ExtResource("12_ca42v")
+[node name="World" parent="." instance=ExtResource("8_gee14")]
+
+[node name="Spellbook" parent="World/GUI/Inventory_things" index="12"]
+pages = null
+page = null
+iconshere = null
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 2
@@ -384,8 +386,6 @@ shape = SubResource("WorldBoundaryShape2D_yqjtg")
 position = Vector2(288, 0)
 rotation = -1.5708
 shape = SubResource("WorldBoundaryShape2D_yqjtg")
-
-[node name="World" parent="." instance=ExtResource("8_gee14")]
 
 [connection signal="body_entered" from="Ysortedthings/player/Spells/Typeless/Manablade" to="Ysortedthings/player/Spells/Typeless/Manablade" method="_on_body_entered"]
 [connection signal="body_entered" from="Ysortedthings/Inside/Door" to="Ysortedthings/Inside/Door" method="_on_body_entered"]

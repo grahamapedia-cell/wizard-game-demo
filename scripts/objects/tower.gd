@@ -8,8 +8,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if abs(get_node("/root/Game/Ysortedthings/player").global_position.x-self.global_position.x)<=64:
-		if get_node("/root/Game/Ysortedthings/player").global_position.y-self.global_position.y<0 and get_node("/root/Game/Ysortedthings/player").global_position.y-self.global_position.y>=-400:
+	if abs(get_node("/root/titlescreen/Game/Ysortedthings/player").global_position.x-self.global_position.x)<=64:
+		if get_node("/root/titlescreen/Game/Ysortedthings/player").global_position.y-self.global_position.y<0 and get_node("/root/titlescreen/Game/Ysortedthings/player").global_position.y-self.global_position.y>=-400:
 			get_node("Tower/Sprite2D").modulate=Color(1,1,1,0.5)
 		else:
 			get_node("Tower/Sprite2D").modulate=Color(1,1,1,1)

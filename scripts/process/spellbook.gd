@@ -42,7 +42,8 @@ func _process(delta: float) -> void:
 		hide()
 	else:
 		show()
-	if get_node("/root/Game/Ysortedthings/player/Spells").currentlyCasting==true:
+	if get_node("/root/titlescreen/Game/Ysortedthings/player/Spells").currentlyCasting==true:
+		#If we're casting a spell, the spell is darkened to show it's on cooldown.
 		if licon.spell=="Empty":
 			licon.modulate=Color(1,1,1)
 		else:
@@ -54,13 +55,14 @@ func _process(delta: float) -> void:
 	else:
 		licon.modulate=Color(1,1,1)
 		ricon.modulate=Color(1,1,1)
-	get_node("SpellbookCover").modulate=get_node("../Inventory").spellbookalpha
+	if get_node("../Inventory").spellbook.size()>=2:w
+		get_node("SpellbookCover").modulate=get_node("../Inventory").spellbook[2][1]
 	if pages.size()<page:
 		page=pages.size()
 	if page==0 and pages.is_empty()==false:
 		page=1
-	if get_node("../Inventory").spells.size()>=3:
-		pages=get_node("../Inventory").spells[2]
+	if get_node("../Inventory").spellbook.size()>=3:
+		pages=get_node("../Inventory").spellbook[2][3]
 	else:
 		pages = []
 	if pages.size()>0:
