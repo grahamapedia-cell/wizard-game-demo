@@ -104,7 +104,7 @@ func _process(delta: float) -> void:
 				drop.vely=disty/dist
 			add_sibling(drop)
 		#Spellbooks and placeable items have different scenes for them so we need to instantiate different scenes.
-		elif mousestore[0]=="Spellbook":
+		elif mousestore[0]=="Spellbooks":
 			distx = get_viewport().get_mouse_position().x
 			disty = get_viewport().get_mouse_position().y
 			dist = sqrt(pow(distx,2)+pow(disty,2))
@@ -267,7 +267,7 @@ func _process(delta: float) -> void:
 					drop.velx=distx/dist
 					drop.vely=disty/dist
 				add_sibling(drop)
-			elif mousestore[0]=="Spellbook":
+			elif mousestore[0]=="Spellbooks":
 				distx = get_viewport().get_mouse_position().x
 				disty = get_viewport().get_mouse_position().y
 				dist = sqrt(pow(distx,2)+pow(disty,2))

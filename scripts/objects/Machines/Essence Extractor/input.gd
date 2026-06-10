@@ -2,10 +2,8 @@ extends Area2D
 @export var amount: PackedScene
 var num
 var killswitch=false
-var item=""
+var item=[]
 var itemnumber=0
-var itemalpha=Color(1,1,1)
-var itemdata=[]
 var path
 
 # Called when the node enters the scene tree for the first time.
@@ -19,16 +17,14 @@ func _process(delta: float) -> void:
 	path=get_node("../../..").path
 	item=get_node(path).inventory[0]
 	itemnumber=get_node(path).inventorynumber[0]
-	itemalpha=get_node(path).inventoryalpha[0]
-	itemdata=get_node(path).inventorydata[0]
 	if itemnumber==0:
 		get_node("./AnimatedSprite2D").animation = "empty"
 		get_node("./Alphaless").animation = "empty"
 		get_node("./AnimatedSprite2D").modulate = Color(1,1,1)
-	elif get_node("./AnimatedSprite2D").sprite_frames.has_animation(item):
-		get_node("./AnimatedSprite2D").animation = item
+	elif get_node("./AnimatedSprite2D").sprite_frames.has_animation(item[1]):
+		get_node("./AnimatedSprite2D").animation = item[1]
 		get_node("./Alphaless").animation = "empty"
-		get_node("./AnimatedSprite2D").modulate = itemalpha
+		get_node("./AnimatedSprite2D").modulate = item[2][1]
 	else:
 		get_node("./AnimatedSprite2D").animation = "empty"
 		get_node("./Alphaless").animation = "empty"

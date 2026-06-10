@@ -55,7 +55,7 @@ func _process(delta: float) -> void:
 	else:
 		licon.modulate=Color(1,1,1)
 		ricon.modulate=Color(1,1,1)
-	if get_node("../Inventory").spellbook.size()>=2:w
+	if get_node("../Inventory").spellbook.size()>=2:
 		get_node("SpellbookCover").modulate=get_node("../Inventory").spellbook[2][1]
 	if pages.size()<page:
 		page=pages.size()

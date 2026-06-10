@@ -7,7 +7,7 @@ extends Node2D
 @export var just_thrown = false
 @export var velx = 0
 @export var vely = 0
-@export var data = ["Placeable Items","Name/Type",["More data"]]
+@export var data = ["Placeable Items","Name/Type",["Subcategory",Color(1,1,1),0]]
 # More data is typically: Subcategory, Element, a number (like how much essence a crop makes), color, and a related item name.
 # I should clean this up.
 # Called when the node enters the scene tree for the first time.

@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=3 uid="uid://cb2155646r14c"]
+[gd_scene load_steps=100 format=3 uid="uid://cb2155646r14c"]
 
 [ext_resource type="Script" uid="uid://ceicj2vobysyx" path="res://scripts/camera_2d.gd" id="1_5hglh"]
 [ext_resource type="Script" uid="uid://b2w6ngjymvevs" path="res://scripts/items/item_data_list.gd" id="1_e68xj"]
@@ -53,6 +53,7 @@
 [ext_resource type="Texture2D" uid="uid://b2vxbqbklqlpl" path="res://assets/sprites/solid_color.png" id="45_18clu"]
 [ext_resource type="Script" uid="uid://dkplxcj7q4gx0" path="res://scripts/process/area stuff/fade_to_black.gd" id="45_eo1xk"]
 [ext_resource type="Texture2D" uid="uid://bmfiybchxgpk" path="res://assets/sprites/GUI/Tutorial/tutorial.png" id="49_3l05q"]
+[ext_resource type="Texture2D" uid="uid://lhcuwwy87cxe" path="res://assets/sprites/GUI/Tutorial/proto_death_screen.png" id="49_qg546"]
 [ext_resource type="Script" uid="uid://myply2cgji4s" path="res://scripts/process/tutorial.gd" id="49_x28ej"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i7141"]
@@ -1454,10 +1455,7 @@ script = ExtResource("20_oo54l")
 position = Vector2(107, 51)
 texture = ExtResource("21_kpybi")
 script = ExtResource("23_xgqkh")
-pages = null
-page = null
 spellicon = ExtResource("24_munwf")
-iconshere = null
 
 [node name="PageL" type="Area2D" parent="GUI/Inventory_things/Spellbook"]
 position = Vector2(-20, -6)
@@ -1536,6 +1534,12 @@ position = Vector2(0, -72)
 scale = Vector2(6.25, 0.25)
 texture = ExtResource("45_18clu")
 script = ExtResource("45_1jxku")
+
+[node name="Dead" type="Sprite2D" parent="GUI"]
+z_index = 30
+position = Vector2(1.50001, -4.57764e-05)
+scale = Vector2(0.675781, 0.75)
+texture = ExtResource("49_qg546")
 
 [node name="Time" type="Control" parent="."]
 layout_mode = 3

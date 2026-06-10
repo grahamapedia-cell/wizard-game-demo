@@ -8,6 +8,7 @@ extends Node2D
 @export var just_thrown = false
 @export var velx = 0
 @export var vely = 0
+@export var data = ["Spellbooks","Spellbook",["Spellbook",Color(0.4,0.2,0),0,["Manablade","Manahammer"]]]
 @export var generic = "generic"
 @export var named = "Spellbook"
 #@export var color = Color(0.3569,0.4314,0.8824)

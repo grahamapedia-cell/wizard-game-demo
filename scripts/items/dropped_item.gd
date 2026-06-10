@@ -20,11 +20,10 @@ func _ready() -> void:
 	just_thrown = get_node("..").just_thrown
 	quantity = get_node("..").quantity
 	print(get_node("/root/titlescreen/Game/Ysortedthings/player").global_position.x)
-	if get_node("./AnimatedSprite2D").sprite_frames.has_animation(get_node("..").itemtype):
+	if get_node("./AnimatedSprite2D").sprite_frames.has_animation(get_node("..").data[1]):
 		item_name=get_node("..").itemtype
 		get_node("./AnimatedSprite2D").animation=item_name
 	elif get_node("..").data[2][0]=="Seeds":
-		item_name=get_node("..").data[2][4]+" Seeds"
 		get_node("./AnimatedSprite2D").animation="Seeds"
 		self.modulate=get_node("..").data[2][3]
 
@@ -67,18 +66,14 @@ func _process(delta: float) -> void:
 		if player_dist<5 and just_thrown==false:
 			for i in get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory").hotbar.size():
 				if get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory").hotbar[i]=="" and donehere==false:
-					get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory").hotbar[i]="Essence Extractor"
+					get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory").hotbar[i]=get_node("..").data
 					get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory").hotbarnumber[i]+=quantity
-					get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory").hotbardata[i]=["Placeables","Essence Extractor",["Machines"]]
-					get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory").hotbarlimit[i]=1
 					donehere=true
 					queue_free()
 			for i in get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory").twentyfive.size():
 				if get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory").twentyfive[i]=="" and donehere==false:
-					get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory").twentyfive[i]="Essence Extractor"
+					get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory").twentyfive[i]=get_node("..").data
 					get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory").twentyfivenumber[i]+=quantity
-					get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory").twentyfivedata[i]=["Placeables","Essence Extractor",["Machines"]]
-					get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory").twentyfivelimit[i]=1
 					donehere=true
 					queue_free()
 			if donehere==true:

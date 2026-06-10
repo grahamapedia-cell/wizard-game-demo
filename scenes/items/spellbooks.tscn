@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cb4112i3t0yo2"]
+[gd_scene load_steps=16 format=3 uid="uid://cb4112i3t0yo2"]
 
 [ext_resource type="Script" uid="uid://rbpsrvyl3dig" path="res://scripts/items/Spellbooks/spellbooks.gd" id="1_aa34i"]
 [ext_resource type="Script" uid="uid://rn6uvfy8hxld" path="res://scripts/items/Spellbooks/book.gd" id="2_ld7fi"]
@@ -12,6 +12,10 @@ size = Vector2(16, 16)
 atlas = ExtResource("3_65buf")
 region = Rect2(0, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ld7fi"]
+atlas = ExtResource("3_65buf")
+region = Rect2(32, 32, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_ld7fi"]
 animations = [{
 "frames": [{
@@ -19,13 +23,25 @@ animations = [{
 "texture": SubResource("AtlasTexture_aa34i")
 }],
 "loop": true,
-"name": &"default",
+"name": &"book",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ld7fi")
+}],
+"loop": true,
+"name": &"scroll",
 "speed": 5.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_scoa1"]
 atlas = ExtResource("3_65buf")
 region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ns2he"]
+atlas = ExtResource("3_65buf")
+region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ns2he"]
 animations = [{
@@ -34,7 +50,15 @@ animations = [{
 "texture": SubResource("AtlasTexture_scoa1")
 }],
 "loop": true,
-"name": &"default",
+"name": &"book",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ns2he")
+}],
+"loop": true,
+"name": &"scroll",
 "speed": 5.0
 }]
 
@@ -81,10 +105,12 @@ shape = SubResource("RectangleShape2D_aa34i")
 [node name="Book" type="AnimatedSprite2D" parent="Genericbook"]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_ld7fi")
+animation = &"book"
 
 [node name="Pages" type="AnimatedSprite2D" parent="Genericbook"]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_ns2he")
+animation = &"scroll"
 
 [node name="Scroll" type="Area2D" parent="."]
 scale = Vector2(0.5, 0.5)

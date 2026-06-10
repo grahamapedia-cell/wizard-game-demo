@@ -359,11 +359,6 @@ shape = SubResource("CircleShape2D_bt5mj")
 
 [node name="World" parent="." instance=ExtResource("8_gee14")]
 
-[node name="Spellbook" parent="World/GUI/Inventory_things" index="12"]
-pages = null
-page = null
-iconshere = null
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 2
 collision_mask = 2

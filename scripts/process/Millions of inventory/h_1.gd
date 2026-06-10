@@ -129,7 +129,7 @@ func _process(delta: float) -> void:
 				get_node("./AnimatedSprite2D").animation = "Scroll"
 				get_node("./AnimatedSprite2D").modulate = get_node("../../Inventory").hotbar[title][2][1]
 				get_node("./Alphaless").animation = "paper"
-			elif get_node("../../Inventory").hotbar[title][2][0]=="Spellbook":
+			elif get_node("../../Inventory").hotbar[title][2][0]=="Spellbooks":
 				get_node("./AnimatedSprite2D").animation = "Spellbook"
 				get_node("./AnimatedSprite2D").modulate = get_node("../../Inventory").hotbar[title][2][1]
 				get_node("./Alphaless").animation = "pages"

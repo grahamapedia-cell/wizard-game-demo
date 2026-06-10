@@ -48,9 +48,9 @@ func _process(delta: float) -> void:
 			get_node("./AnimatedSprite2D").modulate = Color(1,1,1)
 			get_node("./Alphaless").animation = "empty"
 		else:
-			get_node("./AnimatedSprite2D").animation = get_node("../../Inventory").spells[1]
+			get_node("./AnimatedSprite2D").animation = get_node("../../Inventory").spellbook[2][0]
 			get_node("./AnimatedSprite2D").modulate = get_node("../../Inventory").spellbookalpha
-			if get_node("../../Inventory").spells[1]=="Scroll":
+			if get_node("../../Inventory").spellbook[2][0]=="Scroll":
 				get_node("Alphaless").animation="paper"
 			else:
 				get_node("./Alphaless").animation = "pages"
