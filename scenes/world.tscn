@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=3 uid="uid://cb2155646r14c"]
+[gd_scene load_steps=108 format=3 uid="uid://cb2155646r14c"]
 
 [ext_resource type="Script" uid="uid://ceicj2vobysyx" path="res://scripts/camera_2d.gd" id="1_5hglh"]
 [ext_resource type="Script" uid="uid://b2w6ngjymvevs" path="res://scripts/items/item_data_list.gd" id="1_e68xj"]
@@ -48,7 +48,11 @@
 [ext_resource type="PackedScene" uid="uid://cocnls8f8f316" path="res://scenes/objects/placed_item.tscn" id="35_f17e3"]
 [ext_resource type="PackedScene" uid="uid://bhvmpmu7d5muw" path="res://scenes/Numbers/lettersarejustsillynumbers.tscn" id="38_18clu"]
 [ext_resource type="Script" uid="uid://c4ccvha2vtg7g" path="res://scripts/process/Day cycle/time.gd" id="38_e75v4"]
+[ext_resource type="Script" uid="uid://criyjamq7x8vw" path="res://scripts/process/pause.gd" id="38_pf35h"]
+[ext_resource type="Texture2D" uid="uid://bhsbk6taqkiet" path="res://assets/sprites/GUI/unpause_button.png" id="39_iexy4"]
 [ext_resource type="Script" uid="uid://c7jj5l5pk4118" path="res://scripts/process/Space/area.gd" id="39_l8ah6"]
+[ext_resource type="Script" uid="uid://d06pfj1caelr0" path="res://scripts/process/unpause.gd" id="40_npbic"]
+[ext_resource type="Script" uid="uid://drosx7apqtijr" path="res://scripts/process/quit.gd" id="41_e6ckp"]
 [ext_resource type="Script" uid="uid://dmd13t3qaphpf" path="res://scripts/process/hp.gd" id="45_1jxku"]
 [ext_resource type="Texture2D" uid="uid://b2vxbqbklqlpl" path="res://assets/sprites/solid_color.png" id="45_18clu"]
 [ext_resource type="Script" uid="uid://dkplxcj7q4gx0" path="res://scripts/process/area stuff/fade_to_black.gd" id="45_eo1xk"]
@@ -257,6 +261,27 @@ size = Vector2(28, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ts3gi"]
 size = Vector2(28, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_npbic"]
+size = Vector2(96, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iexy4"]
+size = Vector2(96, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kmvx"]
+atlas = ExtResource("39_iexy4")
+region = Rect2(0, 0, 96, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_myjip"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kmvx")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8u370"]
 atlas = ExtResource("33_e75v4")
@@ -1482,6 +1507,33 @@ offset = Vector2(5, 11)
 z_index = -1
 texture = ExtResource("28_navra")
 
+[node name="Pause" type="Node2D" parent="GUI"]
+process_mode = 3
+z_index = 31
+script = ExtResource("38_pf35h")
+
+[node name="Sprite2D" type="Sprite2D" parent="GUI/Pause"]
+texture = ExtResource("39_iexy4")
+
+[node name="Unpause" type="Area2D" parent="GUI/Pause"]
+script = ExtResource("40_npbic")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Pause/Unpause"]
+position = Vector2(0, -40)
+shape = SubResource("RectangleShape2D_npbic")
+
+[node name="Quit" type="Area2D" parent="GUI/Pause"]
+position = Vector2(0, 40)
+script = ExtResource("41_e6ckp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Pause/Quit"]
+shape = SubResource("RectangleShape2D_iexy4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/Pause"]
+modulate = Color(0, 0, 0, 0.196078)
+sprite_frames = SubResource("SpriteFrames_myjip")
+animation = &"new_animation"
+
 [node name="Cursor" type="Node2D" parent="GUI"]
 z_index = 32
 script = ExtResource("15_xo05s")
@@ -1660,3 +1712,7 @@ animation = &"E"
 [connection signal="mouse_exited" from="GUI/Inventory_things/Equiphell/SpellbookSlot" to="GUI/Inventory_things/Inventory_Selector" method="_on_spellbook_slot_mouse_exited"]
 [connection signal="mouse_entered" from="GUI/Inventory_things/InventoryBG" to="GUI/Inventory_things/InventoryBG" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="GUI/Inventory_things/InventoryBG" to="GUI/Inventory_things/InventoryBG" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/Pause/Unpause" to="GUI/Pause/Unpause" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Pause/Unpause" to="GUI/Pause/Unpause" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/Pause/Quit" to="GUI/Pause/Quit" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Pause/Quit" to="GUI/Pause/Quit" method="_on_mouse_exited"]

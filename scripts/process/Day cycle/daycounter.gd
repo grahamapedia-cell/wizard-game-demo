@@ -14,7 +14,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	frames+=delta
+	if get_tree().is_paused()==false:
+		frames+=delta
 	if checkframes!=floor(frames):
 		if floor(frames)>=48:
 			frames=0

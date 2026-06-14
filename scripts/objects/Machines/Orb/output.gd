@@ -26,9 +26,7 @@ func _process(delta: float) -> void:
 	path=get_node("../../..").path
 	item=get_node(path).inventory[number]
 	itemnumber=get_node(path).inventorynumber[number]
-	itemalpha=get_node(path).inventoryalpha[number]
-	itemdata=get_node(path).inventorydata[number]
-	if item=="":
+	if item==[]:
 		get_node("AnimatedSprite2D").animation = "empty"
 		get_node("Alphaless").animation = "empty"
 		get_node("AnimatedSprite2D").modulate = Color(1,1,1)

@@ -77,22 +77,23 @@ position = Vector2(-181, -49)
 position = Vector2(72, 60)
 
 [node name="Crops" parent="Ysortedthings/Outside" instance=ExtResource("11_kvuet")]
-position = Vector2(-200, 88)
+position = Vector2(-200, 72)
+data = ["Materials", "Pepper", ["Crops", Color(1, 1, 1, 1), 1, ["Fire Essence", 1, Color(1, 0.4, 0, 1)]]]
 
 [node name="Crops2" parent="Ysortedthings/Outside" instance=ExtResource("11_kvuet")]
-position = Vector2(-176, 88)
+position = Vector2(-176, 72)
 cropname = "Air Berry"
-data = ["Materials", "Air Berry", ["Crops", "Air", 1, Color(0.509804, 1, 0.8, 1)]]
+data = ["Materials", "Air Berry", ["Crops", Color(1, 1, 1, 1), 3, ["Air Essence", 1, Color(0.509804, 1, 0.8, 1)]]]
 
 [node name="Crops3" parent="Ysortedthings/Outside" instance=ExtResource("11_kvuet")]
-position = Vector2(-200, 56)
+position = Vector2(-200, 48)
 cropname = "Watermelon"
-data = ["Materials", "Watermelon", ["Crops", "Water", 2, Color(0.101961, 0.4, 0.6, 0.509804)]]
+data = ["Materials", "Watermelon", ["Crops", Color(1, 1, 1, 1), 5, ["Water Essence", 1, Color(0.101961, 0.4, 0.6, 0.509804)]]]
 
 [node name="Crops4" parent="Ysortedthings/Outside" instance=ExtResource("11_kvuet")]
-position = Vector2(-176, 56)
+position = Vector2(-176, 48)
 cropname = "Potato"
-data = ["Materials", "Potato", ["Crops", "Earth", 1, Color(0.509804, 0.301961, 0, 1)]]
+data = ["Materials", "Potato", ["Crops", Color(1, 1, 1, 1), 7, ["Earth Essence", 1, Color(0.509804, 0.301961, 0, 1)]]]
 
 [node name="Spellbooks" parent="Ysortedthings/Outside" instance=ExtResource("6_gee14")]
 position = Vector2(-176, 24)

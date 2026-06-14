@@ -65,13 +65,13 @@ func _process(delta: float) -> void:
 		player_dist = sqrt(pow(player_dist_x,2)+pow(player_dist_y,2))
 		if player_dist<5 and just_thrown==false:
 			for i in get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory").hotbar.size():
-				if get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory").hotbar[i]=="" and donehere==false:
+				if get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory").hotbar[i]==[] and donehere==false:
 					get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory").hotbar[i]=get_node("..").data
 					get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory").hotbarnumber[i]+=quantity
 					donehere=true
 					queue_free()
 			for i in get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory").twentyfive.size():
-				if get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory").twentyfive[i]=="" and donehere==false:
+				if get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory").twentyfive[i]==[] and donehere==false:
 					get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory").twentyfive[i]=get_node("..").data
 					get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory").twentyfivenumber[i]+=quantity
 					donehere=true

@@ -185,33 +185,32 @@ func _process(delta: float) -> void:
 								sparestore = []
 								sparestorenumber = 0
 					elif get_node("../Inventory_things/Inventory_Selector").type=="Essence":
-						if mousestorenumber==0 or mousestore[2][0]=="Essence":
-							if mousestore==get_node(path).inventory[title]:
-								if get_node(path).inventorynumber[title]<999:
-									if get_node(path).inventorynumber[title]+mousestorenumber>999:
-										mousestorenumber-=(999-get_node(path).inventorynumber[title])
-										get_node(path).inventorynumber[title]=999
-									else:
-										get_node(path).inventorynumber[title]+=mousestorenumber
-										mousestorenumber=0
-										mousestore=[]
-							else:
-								sparestore=get_node(path).inventory[title]
-								sparestorenumber=get_node(path).inventorynumber[title]
-								get_node(path).inventory[title]=mousestore
-								get_node(path).inventorynumber[title]=mousestorenumber
-								mousestore = sparestore
-								mousestorenumber = sparestorenumber
-								sparestore = []
-								sparestorenumber = 0
+						if mousestorenumber==0 or mousestore.size()>=3:
+							if mousestorenumber==0 or mousestore[2][0]=="Essence":
+								if mousestore==get_node(path).inventory[title]:
+									if get_node(path).inventorynumber[title]<999:
+										if get_node(path).inventorynumber[title]+mousestorenumber>999:
+											mousestorenumber-=(999-get_node(path).inventorynumber[title])
+											get_node(path).inventorynumber[title]=999
+										else:
+											get_node(path).inventorynumber[title]+=mousestorenumber
+											mousestorenumber=0
+											mousestore=[]
+								else:
+									sparestore=get_node(path).inventory[title]
+									sparestorenumber=get_node(path).inventorynumber[title]
+									get_node(path).inventory[title]=mousestore
+									get_node(path).inventorynumber[title]=mousestorenumber
+									mousestore = sparestore
+									mousestorenumber = sparestorenumber
+									sparestore = []
+									sparestorenumber = 0
 					elif get_node("../Inventory_things/Inventory_Selector").type=="Output":
 						if mousestorenumber==0:
 							mousestore=get_node(path).inventory[title]
 							mousestorenumber=get_node(path).inventorynumber[title]
-							get_node(path).inventory[title]=""
+							get_node(path).inventory[title]=[]
 							get_node(path).inventorynumber[title]=0
-							get_node(path).inventoryalpha[title]=Color(1,1,1)
-							get_node(path).inventorydata[title]=[]
 						elif mousestore==get_node(path).inventory[title]:
 							if mousestorenumber<get_node(path).itemlimit[title]:
 								if get_node(path).inventorynumber[title]+mousestorenumber>get_node(path).itemlimit[title]:
@@ -219,12 +218,10 @@ func _process(delta: float) -> void:
 										mousestorenumber=get_node(path).itemlimit[title]
 								else:
 									mousestorenumber+=get_node(path).inventorynumber[title]
-									get_node(path).inventory[title]=""
+									get_node(path).inventory[title]=[]
 									get_node(path).inventorynumber[title]=0
-									get_node(path).inventoryalpha[title]=Color(1,1,1)
-									get_node(path).inventorydata[title]=[]
 				elif get_node("../Inventory_things/Inventory_Selector").type=="Spellbook":
-					if mousestorenumber==0 or mousestore[0]=="Spellbook":
+					if mousestorenumber==0 or mousestore[0]=="Spellbooks":
 						sparestore=get_node("../Inventory_things/Inventory").spellbook
 						sparestorenumber=int(get_node("../Inventory_things/Inventory").spellbookfull)
 						get_node("../Inventory_things/Inventory").spellbook=mousestore
