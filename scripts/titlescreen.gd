@@ -6,7 +6,7 @@ var mousein=false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	get_node("Area2D").modulate = Color(0,0,0) # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -22,9 +22,9 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_mouse_entered() -> void:
 	mousein=true
-	get_node("Area2D").modulate = Color(1,1,1,0.7)
+	get_node("Area2D").modulate = Color(0.2,0.2,0.2)
 
 
 func _on_area_2d_mouse_exited() -> void:
 	mousein=false
-	get_node("Area2D").modulate = Color(1,1,1)
+	get_node("Area2D").modulate = Color(0,0,0)
