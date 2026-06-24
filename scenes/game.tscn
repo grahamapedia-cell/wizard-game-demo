@@ -1,10 +1,8 @@
-[gd_scene load_steps=33 format=3 uid="uid://dkk6abfqi5d8y"]
+[gd_scene load_steps=31 format=3 uid="uid://dkk6abfqi5d8y"]
 
 [ext_resource type="Script" uid="uid://d2hpc6uc5bfjk" path="res://scripts/game.gd" id="1_gee14"]
 [ext_resource type="PackedScene" uid="uid://bws0mf5rhxycc" path="res://scenes/player.tscn" id="1_yqjtg"]
-[ext_resource type="PackedScene" uid="uid://ddj8ihfu3b2ih" path="res://scenes/objects/testrock.tscn" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://dcxfmkw6okeos" path="res://scenes/chunk.tscn" id="3_ca42v"]
-[ext_resource type="Script" uid="uid://b3ksdy3ymer3" path="res://scripts/objects/testrock.gd" id="4_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://daejutkyehja0" path="res://scenes/enemies/enemies.tscn" id="4_p57ef"]
 [ext_resource type="PackedScene" uid="uid://ckeokgrrn2odj" path="res://scenes/objects/basic_ore.tscn" id="5_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://cb4112i3t0yo2" path="res://scenes/items/spellbooks.tscn" id="6_gee14"]
@@ -59,12 +57,6 @@ visible = false
 
 [node name="Outside" parent="Ysortedthings" instance=ExtResource("3_ca42v")]
 y_sort_enabled = true
-
-[node name="Testrock" parent="Ysortedthings/Outside" instance=ExtResource("2_lnu2h")]
-position = Vector2(186, -52)
-collision_layer = 8
-collision_mask = 0
-script = ExtResource("4_0tnpc")
 
 [node name="Enemies" parent="Ysortedthings/Outside" instance=ExtResource("4_p57ef")]
 y_sort_enabled = true
