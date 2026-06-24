@@ -98,15 +98,15 @@ func _process(delta: float) -> void:
 			drop.just_thrown=true
 			drop.quantity=mousestorenumber
 			drop.data=mousestore
-			drop.position.x=get_node("/root/titlescreen/Game/Ysortedthings/player").position.x
-			drop.position.y=get_node("/root/titlescreen/Game/Ysortedthings/player").position.y
+			drop.global_position.x=get_node("/root/titlescreen/Game/Ysortedthings/player").global_position.x
+			drop.global_position.y=get_node("/root/titlescreen/Game/Ysortedthings/player").global_position.y
 			if dist == 0:
 				drop.velx=0
 				drop.vely=0
 			else:
 				drop.velx=distx/dist
 				drop.vely=disty/dist
-			add_sibling(drop)
+			get_node("/root/titlescreen/Game/Ysortedthings/"+str(get_node("../../Area").entering)).add_child(drop)
 		#Spellbooks and placeable items have different scenes for them so we need to instantiate different scenes.
 		elif mousestore[0]=="Spellbooks":
 			distx = get_viewport().get_mouse_position().x
@@ -116,15 +116,15 @@ func _process(delta: float) -> void:
 			drop.just_thrown=true
 			drop.quantity=mousestorenumber
 			drop.data=mousestore
-			drop.position.x=get_node("/root/titlescreen/Game/Ysortedthings/player").position.x
-			drop.position.y=get_node("/root/titlescreen/Game/Ysortedthings/player").position.y
+			drop.global_position.x=get_node("/root/titlescreen/Game/Ysortedthings/player").global_position.x
+			drop.global_position.y=get_node("/root/titlescreen/Game/Ysortedthings/player").global_position.y
 			if dist == 0:
 				drop.velx=0
 				drop.vely=0
 			else:
 				drop.velx=distx/dist
 				drop.vely=disty/dist
-			add_sibling(drop)
+			get_node("/root/titlescreen/Game/Ysortedthings/"+str(get_node("../../Area").entering)).add_child(drop)
 		elif mousestore[0]=="Placeables":
 			distx = get_viewport().get_mouse_position().x
 			disty = get_viewport().get_mouse_position().y
@@ -141,7 +141,7 @@ func _process(delta: float) -> void:
 			else:
 				drop.velx=distx/dist
 				drop.vely=disty/dist
-			add_sibling(drop)
+			get_node("/root/titlescreen/Game/Ysortedthings/"+str(get_node("../../Area").entering)).add_child(drop)
 		mousestorenumber=0
 		mousestore=[]
 	#Transferring items!
@@ -259,15 +259,15 @@ func _process(delta: float) -> void:
 				drop.just_thrown=true
 				drop.quantity=mousestorenumber
 				drop.data=mousestore
-				drop.position.x=get_node("/root/titlescreen/Game/Ysortedthings/player").position.x
-				drop.position.y=get_node("/root/titlescreen/Game/Ysortedthings/player").position.y
+				drop.global_position.x=get_node("/root/titlescreen/Game/Ysortedthings/player").global_position.x
+				drop.global_position.y=get_node("/root/titlescreen/Game/Ysortedthings/player").global_position.y
 				if dist == 0:
 					drop.velx=0
 					drop.vely=0
 				else:
 					drop.velx=distx/dist
 					drop.vely=disty/dist
-				add_sibling(drop)
+				get_node("/root/titlescreen/Game/Ysortedthings/"+str(get_node("../../Area").entering)).add_child(drop)
 			elif mousestore[0]=="Spellbooks":
 				distx = get_viewport().get_mouse_position().x
 				disty = get_viewport().get_mouse_position().y
@@ -276,15 +276,15 @@ func _process(delta: float) -> void:
 				drop.just_thrown=true
 				drop.quantity=mousestorenumber
 				drop.data = mousestore
-				drop.position.x=get_node("/root/titlescreen/Game/Ysortedthings/player").position.x
-				drop.position.y=get_node("/root/titlescreen/Game/Ysortedthings/player").position.y
+				drop.global_position.x=get_node("/root/titlescreen/Game/Ysortedthings/player").global_position.x
+				drop.global_position.y=get_node("/root/titlescreen/Game/Ysortedthings/player").global_position.y
 				if dist == 0:
 					drop.velx=0
 					drop.vely=0
 				else:
 					drop.velx=distx/dist
 					drop.vely=disty/dist
-				add_sibling(drop)
+				get_node("/root/titlescreen/Game/Ysortedthings/"+str(get_node("../../Area").entering)).add_child(drop)
 			elif mousestore[0]=="Placeables":
 				distx = get_viewport().get_mouse_position().x
 				disty = get_viewport().get_mouse_position().y
@@ -293,15 +293,15 @@ func _process(delta: float) -> void:
 				drop.just_thrown=true
 				drop.quantity=mousestorenumber
 				drop.data=mousestore
-				drop.position.x=get_node("/root/titlescreen/Game/Ysortedthings/player").position.x
-				drop.position.y=get_node("/root/titlescreen/Game/Ysortedthings/player").position.y
+				drop.global_position.x=get_node("/root/titlescreen/Game/Ysortedthings/player").global_position.x
+				drop.global_position.y=get_node("/root/titlescreen/Game/Ysortedthings/player").global_position.y
 				if dist == 0:
 					drop.velx=0
 					drop.vely=0
 				else:
 					drop.velx=distx/dist
 					drop.vely=disty/dist
-				add_sibling(drop)
+				get_node("/root/titlescreen/Game/Ysortedthings/"+str(get_node("../../Area").entering)).add_child(drop)
 			mousestorenumber=0
 			mousestore=[]
 	if Input.is_action_just_pressed("use_item"):

@@ -39,8 +39,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("open_inventory"):
-		self.input_pickable=get_node("../../Inventory").visible
+	self.input_pickable=get_node("../../Inventory").visible
 	self.visible = self.input_pickable
 	if type == "Spellbook":
 		if get_node("../../Inventory").spellbookfull==false:

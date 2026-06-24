@@ -22,7 +22,7 @@ func _ready() -> void:
 	print(get_node("/root/titlescreen/Game/Ysortedthings/player").global_position.x)
 	if get_node("./AnimatedSprite2D").sprite_frames.has_animation(get_node("..").data[1]):
 		item_name=get_node("..").itemtype
-		get_node("./AnimatedSprite2D").animation=item_name
+		get_node("./AnimatedSprite2D").animation=get_node("..").data[1]
 	elif get_node("..").data[2][0]=="Seeds":
 		get_node("./AnimatedSprite2D").animation="Seeds"
 		self.modulate=get_node("..").data[2][1]
