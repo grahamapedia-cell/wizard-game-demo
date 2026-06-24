@@ -13,6 +13,7 @@ func _process(delta: float) -> void:
 	else:
 		get_node("CollisionShape2D").set_deferred("disabled",false)
 	if Input.is_action_just_pressed("use_item") and mousein==true and get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory").visible==false:
+		get_node("../BedTorial").visible=false
 		get_node("/root/titlescreen/Game/World/GUI/Daycounter").frames=0
 		get_node("/root/titlescreen/Game/World/GUI/Daycounter").hourhand=24*12
 		get_node("/root/titlescreen/Game/World/GUI/Daycounter").hoursdone=0

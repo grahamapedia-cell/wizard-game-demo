@@ -9,15 +9,22 @@ var process=[]
 var progress=0
 var windowarrow=-1
 var arrowon=false
+var here = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if get_node("../..").data[1]!="Essence Extractor":
+		hide()
+		get_node("Hitbox").disabled=true
+	else:
+		here=true
 	get_node("Damage").frame=randi_range(0,4) # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	get_node("Hitbox").disabled=!get_node("../../..").visible
+	if here==true:
+		get_node("Hitbox").disabled=!get_node("../../..").visible
 	if inventorynumber[0]<=0 and inventorynumber[1]<=0 and process==[]:
 		arrowon=false
 	else:
@@ -41,12 +48,13 @@ func _process(delta: float) -> void:
 		windowarrow=floor(progress)
 		if progress>=7:
 			get_node("EEEEE").stop()
-			inventory[1]=["Materials",process[2][3][0],["Essence",process[2][3][2],process[2][2]]]
+			inventory[1]=["Materials",process[2][3][0][1],["Essence",process[2][3][0][2][1],process[2][2]]]
 			inventorynumber[1]+=process[2][3][1]
 			process=[]
 			progress=0
 	if Input.is_action_just_pressed("open_inventory") and mousein==true and get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory").visible==false:
 		print("go")
+		get_node("/root/titlescreen/Game/Ysortedthings/Outside/ExtractorTorial").visible=false
 		go = window.instantiate()
 		go.path=String(self.get_path())
 		go.machine="Essence Extractor"
@@ -55,8 +63,11 @@ func _process(delta: float) -> void:
 
 func _on_mouse_entered() -> void:
 	mousein=true
+	if get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory").visible==false:
+		self.modulate=Color(1.2,1.2,1.2)
 	print("mousein") # Replace with function body.
 
 
 func _on_mouse_exited() -> void:
+	self.modulate=Color(1,1,1)
 	mousein=false # Replace with function body.

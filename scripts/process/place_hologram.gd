@@ -18,12 +18,18 @@ func _process(delta: float) -> void:
 	distx=global_position.x-16*floor(get_node("/root/titlescreen/Game/Ysortedthings/player").global_position.x/16)-8
 	disty=global_position.y-16*floor(get_node("/root/titlescreen/Game/Ysortedthings/player").global_position.y/16)-8
 	dist=sqrt(pow(distx,2)+pow(disty,2))
-	if dist/16>3:
-		self.modulate=Color(1,0.5,0.5,.25)
-	else:
-		self.modulate=Color(1,1,1,.5)
-	if item.size()>=2:
+	if item.size()>0:
+		if item[2][0]=="Seeds":
+			self.animation="Growing Crop"
+		elif self.sprite_frames.has_animation(item[1]) and item[0]=="Placeables":
+			self.animation=item[1]
+		if dist/16>3:
+			self.modulate=Color(1,0.5,0.5,.25)
+		else:
+			self.modulate=Color(item[2][1][0],item[2][1][1],item[2][1][2],.5)
 		if item[1]=="Essence Extractor":
 			offset.y=-8
+		elif item[2][0]=="Seeds":
+			offset.y=-4
 		else:
 			offset.y=0

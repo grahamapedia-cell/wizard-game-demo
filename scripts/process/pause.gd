@@ -12,6 +12,12 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
 		if get_node("../Inventory_things/Inventory").visible==true:
 			get_node("../Inventory_things/Inventory").visible=false
+		elif get_node("ControlsScreen").visible==true:
+			get_node("ControlsScreen").visible=false
+			get_node("Sprite2D").visible=true
+			get_node("Unpause").visible=true
+			get_node("Quit").visible=true
+			get_node("Controls").visible=true
 		else:
 			get_tree().paused=!get_tree().paused
 			print(get_tree().is_paused())

@@ -146,12 +146,12 @@ func _process(_delta: float) -> void:
 			defeat.emit
 			$Hitbox.set_deferred("disabled", true)
 			var drop = drop_One.instantiate()
-			drop.data=["Materials","Stone",["Stone",Color(1,1,1),7]]
+			drop.data=["Materials","Stone",["Stone",Color(1,1,1),"Earth"]]
 			drop.position.x=position.x
 			drop.position.y=position.y
 			add_sibling(drop)
 			drop = drop_One.instantiate()
-			drop.data=["Materials","Stone",["Stone",Color(1,1,1),7]]
+			drop.data=["Materials","Stone",["Stone",Color(1,1,1),"Earth"]]
 			drop.position.x=position.x
 			drop.position.y=position.y
 			add_sibling(drop)

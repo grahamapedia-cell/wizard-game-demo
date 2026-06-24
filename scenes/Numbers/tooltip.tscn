@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://dqlloprlj76u6"]
+
+[ext_resource type="Texture2D" uid="uid://bmfiybchxgpk" path="res://assets/sprites/GUI/Tutorial/tutorial.png" id="1_v1ren"]
+[ext_resource type="Texture2D" uid="uid://dj2yv1n2faqq8" path="res://assets/sprites/Items/blank.png" id="2_m73g7"]
+[ext_resource type="Script" uid="uid://l7x6b7cgqk3s" path="res://scripts/process/tooltip.gd" id="3_ifgij"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kp8mh"]
+atlas = ExtResource("1_v1ren")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fx58q"]
+atlas = ExtResource("1_v1ren")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j4gnt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kp8mh")
+}],
+"loop": true,
+"name": &"E",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_m73g7")
+}],
+"loop": true,
+"name": &"Empty",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fx58q")
+}],
+"loop": true,
+"name": &"R-Click",
+"speed": 5.0
+}]
+
+[node name="Tooltip" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_j4gnt")
+animation = &"Empty"
+script = ExtResource("3_ifgij")

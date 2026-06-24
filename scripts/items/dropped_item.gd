@@ -25,7 +25,7 @@ func _ready() -> void:
 		get_node("./AnimatedSprite2D").animation=item_name
 	elif get_node("..").data[2][0]=="Seeds":
 		get_node("./AnimatedSprite2D").animation="Seeds"
-		self.modulate=get_node("..").data[2][3]
+		self.modulate=get_node("..").data[2][1]
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -66,12 +66,12 @@ func _process(delta: float) -> void:
 		var drop = drop_One.instantiate()
 		drop.category="Metals"
 		drop.itemtype="Metal Ore"
-		drop.data=["Materials","Metal Ore",["Metals",Color(1,1,1),8]]
+		drop.data=["Materials","Metal Ore",["Metals",Color(1,1,1),"Metal"]]
 		drop.position.x=position.x
 		drop.position.y=position.y
 		add_sibling(drop)
 		drop = drop_One.instantiate()
-		drop.data=["Materials","Metal Ore",["Metals",Color(1,1,1),8]]
+		drop.data=["Materials","Metal Ore",["Metals",Color(1,1,1),"Metal"]]
 		drop.category="Metals"
 		drop.itemtype="Metal Ore"
 		drop.position.x=position.x

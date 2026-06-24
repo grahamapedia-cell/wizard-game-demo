@@ -125,7 +125,7 @@ func _process(delta: float) -> void:
 				get_node("./AnimatedSprite2D").animation = "Potion"
 				get_node("./AnimatedSprite2D").modulate = get_node("../../Inventory").hotbar[title][2][1]
 				get_node("./Alphaless").animation = "bottle"
-			elif get_node("../../Inventory").hotbar[title][2][0]=="Scrolls":
+			elif get_node("../../Inventory").hotbar[title][2][0]=="Scroll":
 				get_node("./AnimatedSprite2D").animation = "Scroll"
 				get_node("./AnimatedSprite2D").modulate = get_node("../../Inventory").hotbar[title][2][1]
 				get_node("./Alphaless").animation = "paper"
@@ -162,10 +162,14 @@ func _process(delta: float) -> void:
 				get_node("./AnimatedSprite2D").animation = "Spellbook"
 				get_node("./AnimatedSprite2D").modulate = get_node("../../Inventory").twentyfive[title][2][1]
 				get_node("./Alphaless").animation = "pages"
-			elif get_node("../../Inventory").twentyfive[title][2][0]=="Scrolls":
+			elif get_node("../../Inventory").twentyfive[title][2][0]=="Scroll":
 				get_node("./AnimatedSprite2D").animation = "Scroll"
 				get_node("./AnimatedSprite2D").modulate = get_node("../../Inventory").twentyfive[title][2][1]
 				get_node("./Alphaless").animation = "paper"
+			elif get_node("../../Inventory").twentyfive[title][2][0]=="Seeds":
+				get_node("./AnimatedSprite2D").animation = "Seeds"
+				get_node("./AnimatedSprite2D").modulate = get_node("../../Inventory").twentyfive[title][2][1]
+				get_node("./Alphaless").animation = "empty"
 			elif get_node("./AnimatedSprite2D").sprite_frames.has_animation(get_node("../../Inventory").twentyfive[title][1]):
 				get_node("./AnimatedSprite2D").animation = get_node("../../Inventory").twentyfive[title][1]
 				get_node("./Alphaless").animation = "empty"

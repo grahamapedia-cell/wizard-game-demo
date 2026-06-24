@@ -173,111 +173,111 @@ script = ExtResource("1_yo8bn")
 
 [node name="Fire" type="Node2D" parent="."]
 
-[node name="Pepper" type="Area2D" parent="Fire"]
+[node name="Pepper Seeds" type="Area2D" parent="Fire"]
 input_pickable = false
 script = ExtResource("2_blf6l")
 crop = ExtResource("3_blf6l")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fire/Pepper"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fire/Pepper Seeds"]
 sprite_frames = SubResource("SpriteFrames_l8ior")
 animation = &"Demo_Crop"
 offset = Vector2(0, -8)
 
-[node name="Finalcrop" type="AnimatedSprite2D" parent="Fire/Pepper"]
+[node name="Finalcrop" type="AnimatedSprite2D" parent="Fire/Pepper Seeds"]
 position = Vector2(0, -8)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_ljn1w")
 animation = &"Pepper"
 
-[node name="Hitbox" type="CollisionShape2D" parent="Fire/Pepper"]
+[node name="Hitbox" type="CollisionShape2D" parent="Fire/Pepper Seeds"]
 position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_lhnj5")
 
-[node name="Dirt" type="Sprite2D" parent="Fire/Pepper"]
+[node name="Dirt" type="Sprite2D" parent="Fire/Pepper Seeds"]
 z_index = -2
 texture = ExtResource("11_rv23c")
 
 [node name="Air" type="Node2D" parent="."]
 
-[node name="Air Berry" type="Area2D" parent="Air"]
+[node name="Air Berry Seeds" type="Area2D" parent="Air"]
 input_pickable = false
 script = ExtResource("2_blf6l")
 crop = ExtResource("3_blf6l")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Air/Air Berry"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Air/Air Berry Seeds"]
 sprite_frames = SubResource("SpriteFrames_l8ior")
 animation = &"Demo_Crop"
 offset = Vector2(0, -8)
 
-[node name="Finalcrop" type="AnimatedSprite2D" parent="Air/Air Berry"]
+[node name="Finalcrop" type="AnimatedSprite2D" parent="Air/Air Berry Seeds"]
 position = Vector2(0, -8)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_ljn1w")
 animation = &"Air Berry"
 
-[node name="Hitbox" type="CollisionShape2D" parent="Air/Air Berry"]
+[node name="Hitbox" type="CollisionShape2D" parent="Air/Air Berry Seeds"]
 position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_lhnj5")
 
-[node name="Dirt" type="Sprite2D" parent="Air/Air Berry"]
+[node name="Dirt" type="Sprite2D" parent="Air/Air Berry Seeds"]
 z_index = -2
 texture = ExtResource("11_rv23c")
 
 [node name="Water" type="Node2D" parent="."]
 
-[node name="Watermelon" type="Area2D" parent="Water"]
+[node name="Watermelon Seeds" type="Area2D" parent="Water"]
 script = ExtResource("2_blf6l")
 crop = ExtResource("3_blf6l")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Water/Watermelon"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Water/Watermelon Seeds"]
 sprite_frames = SubResource("SpriteFrames_l8ior")
 animation = &"Demo_Crop"
 offset = Vector2(0, -8)
 
-[node name="Finalcrop" type="AnimatedSprite2D" parent="Water/Watermelon"]
+[node name="Finalcrop" type="AnimatedSprite2D" parent="Water/Watermelon Seeds"]
 position = Vector2(0, -8)
 scale = Vector2(0.375, 0.375)
 sprite_frames = SubResource("SpriteFrames_ljn1w")
 animation = &"Watermelon"
 
-[node name="Hitbox" type="CollisionShape2D" parent="Water/Watermelon"]
+[node name="Hitbox" type="CollisionShape2D" parent="Water/Watermelon Seeds"]
 position = Vector2(0, -7)
 shape = SubResource("RectangleShape2D_rv23c")
 
-[node name="Dirt" type="Sprite2D" parent="Water/Watermelon"]
+[node name="Dirt" type="Sprite2D" parent="Water/Watermelon Seeds"]
 z_index = -2
 texture = ExtResource("11_rv23c")
 
 [node name="Earth" type="Node2D" parent="."]
 
-[node name="Potato" type="Area2D" parent="Earth"]
+[node name="Potato Seeds" type="Area2D" parent="Earth"]
 script = ExtResource("2_blf6l")
 crop = ExtResource("3_blf6l")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Earth/Potato"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Earth/Potato Seeds"]
 sprite_frames = SubResource("SpriteFrames_l8ior")
 animation = &"Demo_Crop"
 offset = Vector2(0, -8)
 
-[node name="Finalcrop" type="AnimatedSprite2D" parent="Earth/Potato"]
+[node name="Finalcrop" type="AnimatedSprite2D" parent="Earth/Potato Seeds"]
 position = Vector2(0, -8)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_ljn1w")
 animation = &"Potato"
 
-[node name="Hitbox" type="CollisionShape2D" parent="Earth/Potato"]
+[node name="Hitbox" type="CollisionShape2D" parent="Earth/Potato Seeds"]
 position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_lhnj5")
 
-[node name="Dirt" type="Sprite2D" parent="Earth/Potato"]
+[node name="Dirt" type="Sprite2D" parent="Earth/Potato Seeds"]
 z_index = -2
 texture = ExtResource("11_rv23c")
 
-[connection signal="mouse_entered" from="Fire/Pepper" to="Fire/Pepper" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Fire/Pepper" to="Fire/Pepper" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="Air/Air Berry" to="Air/Air Berry" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Air/Air Berry" to="Air/Air Berry" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="Water/Watermelon" to="Water/Watermelon" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Water/Watermelon" to="Water/Watermelon" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="Earth/Potato" to="Earth/Potato" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Earth/Potato" to="Earth/Potato" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Fire/Pepper Seeds" to="Fire/Pepper Seeds" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Fire/Pepper Seeds" to="Fire/Pepper Seeds" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Air/Air Berry Seeds" to="Air/Air Berry Seeds" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Air/Air Berry Seeds" to="Air/Air Berry Seeds" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Water/Watermelon Seeds" to="Water/Watermelon Seeds" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Water/Watermelon Seeds" to="Water/Watermelon Seeds" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Earth/Potato Seeds" to="Earth/Potato Seeds" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Earth/Potato Seeds" to="Earth/Potato Seeds" method="_on_mouse_exited"]

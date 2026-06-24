@@ -65,10 +65,14 @@ func _process(delta: float) -> void:
 				get_node("./AnimatedSprite2D").animation = "Spellbook"
 				get_node("./AnimatedSprite2D").modulate = mousestore[2][1]
 				get_node("./Alphaless").animation = "pages"
-			elif mousestore[2][0]=="Scrolls":
+			elif mousestore[2][0]=="Scroll":
 				get_node("./AnimatedSprite2D").animation = "Scroll"
 				get_node("./AnimatedSprite2D").modulate = mousestore[2][1]
 				get_node("./Alphaless").animation = "paper"
+			elif mousestore[2][0]=="Seeds":
+				get_node("./AnimatedSprite2D").animation = "Seeds"
+				get_node("./AnimatedSprite2D").modulate = mousestore[2][1]
+				get_node("./Alphaless").animation = "empty"
 			elif get_node("./AnimatedSprite2D").sprite_frames.has_animation(mousestore[1]):
 				get_node("./AnimatedSprite2D").animation = mousestore[1]
 				get_node("./Alphaless").animation = "empty"
@@ -246,7 +250,7 @@ func _process(delta: float) -> void:
 					mousestorenumber=sparestorenumber
 					sparestore=[]
 					sparestorenumber=0
-		elif get_node("../Inventory_things/Inventory").visible==true and get_node("../Inventory_things/InventoryBG").throwaway==true and mousestore != "":
+		elif get_node("../Inventory_things/Inventory").visible==true and get_node("../Inventory_things/InventoryBG").throwaway==true and mousestore != []:
 			if mousestore[0]=="Materials":
 				var distx = get_viewport().get_mouse_position().x
 				var disty = get_viewport().get_mouse_position().y
@@ -302,6 +306,7 @@ func _process(delta: float) -> void:
 			mousestore=[]
 	if Input.is_action_just_pressed("use_item"):
 		if get_node("../Inventory_things/Inventory").visible==true and title>=0:
+			print("uh oh")
 			if get_node("../Inventory_things/Inventory_Selector").hotbar==true:
 				if get_node("../Inventory_things/Inventory").hotbar[title]==mousestore or get_node("../Inventory_things/Inventory").hotbar[title]==[]:
 					get_node("../Inventory_things/Inventory").hotbar[title]=mousestore
@@ -315,9 +320,10 @@ func _process(delta: float) -> void:
 					get_node("../Inventory_things/Inventory").twentyfivenumber[title]+=int(ceil(float(mousestorenumber)/2))
 					mousestorenumber=floor(mousestorenumber/2)
 					if mousestorenumber==0:
-						mousestore=""
+						mousestore=[]
 		elif get_node("/root/titlescreen/Game/Ysortedthings/player/PlaceHologram").visible==true and get_node("/root/titlescreen/Game/Ysortedthings/player/PlaceHologram").dist/16<3:
 			object=place.instantiate()
+			object.data=get_node("../Inventory_things/Inventory").hotbar[get_node("../Inventory_things/Hotbar_Selector").slot]
 			object.global_position.x=get_node("/root/titlescreen/Game/Ysortedthings/player/PlaceHologram").global_position.x
 			object.global_position.y=4+get_node("/root/titlescreen/Game/Ysortedthings/player/PlaceHologram").global_position.y
 			get_node("/root/titlescreen/Game/Ysortedthings/"+str(get_node("../../Area").entering)).add_child(object)

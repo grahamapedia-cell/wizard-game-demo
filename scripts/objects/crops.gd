@@ -1,6 +1,6 @@
 extends Node2D
 @export var cropname="Pepper"
-@export var data=["Materials","Pepper",["Crops","Fire",1,["Fire Essence",1,Color(1,0.4,0)]]]
+@export var data=["Materials","Pepper",["Crops",Color(1,1,1),"Fire",["Fire Essence",1,Color(1,0.4,0)]]]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

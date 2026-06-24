@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 func _on_mouse_entered() -> void:
 	mouseIn=true
 	print("mouse")
-	get_node("../AnimatedSprite2D").position.y=40
+	get_node("../AnimatedSprite2D").position.y=44
 	get_node("../AnimatedSprite2D").visible=true
 
 
