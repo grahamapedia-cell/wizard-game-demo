@@ -16,7 +16,6 @@ func _process(delta: float) -> void:
 		add_child(play)
 		playing=true
 		get_node("Area2D").visible=false
-		get_node("Sprite2D").visible=false
 		get_node("BG").visible=false
 
 

@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dtbukmccgvmd7"]
+[gd_scene load_steps=6 format=3 uid="uid://dtbukmccgvmd7"]
 
 [ext_resource type="Script" uid="uid://68ylwli3lff6" path="res://scripts/titlescreen.gd" id="1_6d6rd"]
 [ext_resource type="PackedScene" uid="uid://dkk6abfqi5d8y" path="res://scenes/game.tscn" id="2_3jj3l"]
 [ext_resource type="Texture2D" uid="uid://be2aj31nm7sg0" path="res://assets/sprites/GUI/start_button.png" id="3_tt55a"]
-[ext_resource type="Texture2D" uid="uid://blsv7ytoqkwjw" path="res://assets/sprites/GUI/game_title_test.png" id="4_t7v6v"]
 [ext_resource type="Texture2D" uid="uid://ciw505te04r5v" path="res://assets/sprites/GUI/title_bg.png" id="5_vhbaf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t7v6v"]
@@ -22,11 +21,6 @@ shape = SubResource("RectangleShape2D_t7v6v")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 texture = ExtResource("3_tt55a")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(696, 112)
-scale = Vector2(4, 4)
-texture = ExtResource("4_t7v6v")
 
 [node name="BG" type="Sprite2D" parent="."]
 z_index = -1
