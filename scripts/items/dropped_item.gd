@@ -58,8 +58,8 @@ func _process(delta: float) -> void:
 				velocity_x=0
 		if player_dist>1000:
 			queue_free()
-		global_position.x+=velocity_x
-		global_position.y+=velocity_y
+		global_position.x+=velocity_x*delta*90
+		global_position.y+=velocity_y*delta*90
 		player_dist_x = get_node("/root/titlescreen/Game/Ysortedthings/player").global_position.x-self.global_position.x
 		player_dist_y = get_node("/root/titlescreen/Game/Ysortedthings/player").global_position.y-self.global_position.y
 		player_dist = sqrt(pow(player_dist_x,2)+pow(player_dist_y,2))

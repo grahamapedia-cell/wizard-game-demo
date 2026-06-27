@@ -36,5 +36,3 @@ func _process(delta: float) -> void:
 		print(hotbar[0])
 	if Input.is_action_just_pressed("open_inventory"):
 		self.visible = !self.visible
-	if get_node("/root/titlescreen/Game/Ysortedthings/player").health<=0:
-		get_node("..").visible=false

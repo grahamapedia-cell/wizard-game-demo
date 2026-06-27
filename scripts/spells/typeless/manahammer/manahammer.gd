@@ -27,6 +27,7 @@ func _process(delta: float) -> void:
 		get_node("../..").go=false
 		get_node("../..").currentlyCasting=true
 		stop.emit()
+		get_node("Thud").play()
 		get_node("../../..").movetypestore=get_node("../../..").movetype
 		get_node("../../..").movetype="Stop"
 		await get_tree().create_timer(0.2).timeout

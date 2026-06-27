@@ -26,6 +26,7 @@ func _process(_delta: float) -> void:
 		get_node("../..").go=false
 		get_node("../..").currentlyCasting=true
 		stop.emit()
+		get_node("Swing").play(0.1)
 		if get_node("../../..").direx==1&&notnow==false:
 			get_node("../../..").movetypestore=get_node("../../..").movetype
 			get_node("../../..").movetype="StrafeR"

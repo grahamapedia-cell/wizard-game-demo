@@ -1608,8 +1608,6 @@ script = ExtResource("45_1jxku")
 
 [node name="Dead" type="Sprite2D" parent="GUI"]
 z_index = 30
-position = Vector2(1.50001, -4.57764e-05)
-scale = Vector2(0.675781, 0.75)
 texture = ExtResource("49_qg546")
 
 [node name="Time" type="Control" parent="."]

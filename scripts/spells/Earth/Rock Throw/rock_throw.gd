@@ -21,6 +21,7 @@ func _process(delta: float) -> void:
 		shoot.spell="Rock Throw"
 		shoot.global_position.x=global_position.x
 		shoot.global_position.y=global_position.y-8
+		shoot.path=String(self.get_path())
 		if get_node("../..").distx==0:
 			if get_node("../..").disty>0:
 				shoot.ang=PI/2
@@ -32,6 +33,7 @@ func _process(delta: float) -> void:
 			shoot.ang=atan(get_node("../..").disty/get_node("../..").distx)
 		else:
 			shoot.ang=atan(get_node("../..").disty/get_node("../..").distx)+PI
+		get_node("Summon").play(1)
 		get_node("/root/titlescreen/Game/Ysortedthings").add_child(shoot)
 		await get_tree().create_timer(0.1).timeout
 		get_node("../..").currentlyCasting=false

@@ -32,6 +32,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.has_signal("hit"):
 		if body.iframes<=0 and self.visible==true:
 			print(body.name)
+			get_node(get_node("../..").path+"/Splash").play()
 			body.damaged=damage*body.elementmods[5]*body.damagequalmods[2]
 			body.iframesread=iframes
 			body.hitcolor=damagecolor

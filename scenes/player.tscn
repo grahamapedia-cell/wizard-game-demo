@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://bws0mf5rhxycc"]
+[gd_scene load_steps=76 format=3 uid="uid://bws0mf5rhxycc"]
 
 [ext_resource type="Script" uid="uid://dw38illjck5ir" path="res://scripts/player.gd" id="1_ur7pv"]
 [ext_resource type="Texture2D" uid="uid://d2ql7llm504d1" path="res://assets/sprites/Player/Overalls-spritesheet.png" id="2_ur7pv"]
@@ -27,14 +27,20 @@
 [ext_resource type="Script" uid="uid://cehqxiwclm8nn" path="res://scripts/spells/Fire/Flame Shot/flame_shot.gd" id="17_qfm1y"]
 [ext_resource type="PackedScene" uid="uid://dbrft704ppx4t" path="res://scenes/spells/spell_projectiles.tscn" id="18_fulsm"]
 [ext_resource type="Script" uid="uid://diskbuhxd7dy1" path="res://scripts/spells/Lightning/Static Bolt/static_bolt.gd" id="19_4r5pv"]
+[ext_resource type="AudioStream" uid="uid://dxrgfc0rh2npx" path="res://assets/sounds/Spells/freesound_community-sword-sound-2-36274.mp3" id="19_hax0n"]
 [ext_resource type="Script" uid="uid://bwl0bx8g7lkwh" path="res://scripts/spells/Air/Wind Slice/wind_slice.gd" id="20_60mlk"]
 [ext_resource type="Script" uid="uid://cpkv8gqipogfx" path="res://scripts/spells/Ice/Snowball Toss/snowball_toss.gd" id="21_i4ail"]
 [ext_resource type="Script" uid="uid://p2gp8ep6whjl" path="res://scripts/spells/Water/Water Gun/water_gun.gd" id="22_a38lo"]
 [ext_resource type="Script" uid="uid://bvb3st1aghmpc" path="res://scripts/spells/Ooze/Ooze Fling/ooze_fling.gd" id="23_4ni07"]
 [ext_resource type="Script" uid="uid://evktjaqp2mhi" path="res://scripts/spells/Earth/Rock Throw/rock_throw.gd" id="24_l71n6"]
 [ext_resource type="Script" uid="uid://cousjd1tp8pj1" path="res://scripts/spells/Metal/Steel Spike/steel_spike.gd" id="25_ke2ow"]
+[ext_resource type="AudioStream" uid="uid://b5jbqq7jyj7mf" path="res://assets/sounds/Spells/universfield-thud-291047.mp3" id="26_t4otl"]
+[ext_resource type="AudioStream" uid="uid://dv0du50nhxh0t" path="res://assets/sounds/Spells/summon_projectile.mp3" id="29_j2b1d"]
+[ext_resource type="AudioStream" uid="uid://mh7twy4nelen" path="res://assets/sounds/Spells/fire_hit.mp3" id="30_2dvfe"]
 [ext_resource type="Script" uid="uid://boq54gg1eacgd" path="res://scripts/process/walk! yay!/footsteps.gd" id="33_bj30b"]
+[ext_resource type="AudioStream" uid="uid://db6407dalbame" path="res://assets/sounds/Spells/wind_hit.mp3" id="33_giy8y"]
 [ext_resource type="AudioStream" uid="uid://g8dgm1xoevr8" path="res://assets/sounds/footsteps/walk-on-grass-3-291986.mp3" id="34_bj30b"]
+[ext_resource type="AudioStream" uid="uid://2rveecb2saxg" path="res://assets/sounds/Spells/splash.mp3" id="34_cs1tg"]
 [ext_resource type="AudioStream" uid="uid://6ca221hcb8cy" path="res://assets/sounds/footsteps/wood-step-sample-1-47664.mp3" id="35_hax0n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y4r1p"]
@@ -380,6 +386,9 @@ script = ExtResource("9_f1ej7")
 position = Vector2(1, 0)
 texture = ExtResource("6_ur7pv")
 
+[node name="Swing" type="AudioStreamPlayer2D" parent="Spells/Typeless/Manablade"]
+stream = ExtResource("19_hax0n")
+
 [node name="Manahammer" type="Area2D" parent="Spells/Typeless"]
 y_sort_enabled = true
 collision_layer = 4
@@ -421,11 +430,20 @@ script = ExtResource("15_4r5pv")
 rotation = 3.14159
 texture = ExtResource("11_3v2ag")
 
+[node name="Thud" type="AudioStreamPlayer2D" parent="Spells/Typeless/Manahammer"]
+stream = ExtResource("26_t4otl")
+
 [node name="Fire" type="Node2D" parent="Spells"]
 
 [node name="Flame Shot" type="Node2D" parent="Spells/Fire"]
 script = ExtResource("17_qfm1y")
 projectile = ExtResource("18_fulsm")
+
+[node name="Summon" type="AudioStreamPlayer2D" parent="Spells/Fire/Flame Shot"]
+stream = ExtResource("29_j2b1d")
+
+[node name="Sizzle" type="AudioStreamPlayer2D" parent="Spells/Fire/Flame Shot"]
+stream = ExtResource("30_2dvfe")
 
 [node name="Lightning" type="Node2D" parent="Spells"]
 
@@ -439,6 +457,12 @@ projectile = ExtResource("18_fulsm")
 script = ExtResource("20_60mlk")
 projectile = ExtResource("18_fulsm")
 
+[node name="Summon" type="AudioStreamPlayer2D" parent="Spells/Air/Wind Slice"]
+stream = ExtResource("29_j2b1d")
+
+[node name="Whoosh" type="AudioStreamPlayer2D" parent="Spells/Air/Wind Slice"]
+stream = ExtResource("33_giy8y")
+
 [node name="Ice" type="Node2D" parent="Spells"]
 
 [node name="Snowball Toss" type="Node2D" parent="Spells/Ice"]
@@ -451,6 +475,12 @@ projectile = ExtResource("18_fulsm")
 script = ExtResource("22_a38lo")
 projectile = ExtResource("18_fulsm")
 
+[node name="Summon" type="AudioStreamPlayer2D" parent="Spells/Water/Water Gun"]
+stream = ExtResource("29_j2b1d")
+
+[node name="Splash" type="AudioStreamPlayer2D" parent="Spells/Water/Water Gun"]
+stream = ExtResource("34_cs1tg")
+
 [node name="Ooze" type="Node2D" parent="Spells"]
 
 [node name="Ooze Fling" type="Node2D" parent="Spells/Ooze"]
@@ -462,6 +492,12 @@ projectile = ExtResource("18_fulsm")
 [node name="Rock Throw" type="Node2D" parent="Spells/Earth"]
 script = ExtResource("24_l71n6")
 projectile = ExtResource("18_fulsm")
+
+[node name="Summon" type="AudioStreamPlayer2D" parent="Spells/Earth/Rock Throw"]
+stream = ExtResource("29_j2b1d")
+
+[node name="Thud" type="AudioStreamPlayer2D" parent="Spells/Earth/Rock Throw"]
+stream = ExtResource("26_t4otl")
 
 [node name="Metal" type="Node2D" parent="Spells"]
 

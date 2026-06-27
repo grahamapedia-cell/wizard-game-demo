@@ -4,6 +4,7 @@ extends Node2D
 @export var summoned = true
 @export var ang = 0
 @export var distance = 0
+@export var path=""
 var deathtime = false
 
 # Called when the node enters the scene tree for the first time.

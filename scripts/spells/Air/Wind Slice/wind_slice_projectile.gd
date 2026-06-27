@@ -32,6 +32,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.has_signal("hit"):
 		if body.iframes<=0 and self.visible==true:
 			print(body.name)
+			get_node(get_node("../..").path+"/Whoosh").play(0.25)
 			if body.damagequalmods[2]<1:
 				body.damaged=int(damage*body.elementmods[3]*(1+body.damagequalmods[2])/2)
 			else:
