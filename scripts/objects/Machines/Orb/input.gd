@@ -30,10 +30,10 @@ func _process(delta: float) -> void:
 		get_node("AnimatedSprite2D").animation = "empty"
 		get_node("Alphaless").animation = "empty"
 		get_node("AnimatedSprite2D").modulate = Color(1,1,1)
-	elif itemdata[1]=="Essence":
+	elif item[1]=="Essence":
 		get_node("AnimatedSprite2D").animation = "Potion"
 		get_node("Alphaless").animation = "bottle"
-		get_node("AnimatedSprite2D").modulate = itemalpha
+		get_node("AnimatedSprite2D").modulate = ColorStruct(item[2][1])
 	else:
 		get_node("AnimatedSprite2D").animation = "empty"
 		get_node("Alphaless").animation = "empty"
@@ -64,3 +64,9 @@ func _on_mouse_exited() -> void:
 	get_node("../../../../Inventory_Selector").path=""
 	get_node("../../../../Inventory_Selector").z_index=8
 	get_node("../../../../Inventory_Selector").title=-1
+
+func ColorStruct(array):
+	if array.size()<4:
+		return Color(array[0],array[1],array[2])
+	else:
+		return Color(array[0],array[1],array[2],array[3])

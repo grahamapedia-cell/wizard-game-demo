@@ -62,15 +62,28 @@ func _process(_delta: float) -> void:
 		defeat.emit
 		$Hitbox.set_deferred("disabled", true)
 		var drop = drop_One.instantiate()
-		drop.data=["Materials","Stone",["Stone",Color(1,1,1),"Earth"]]
+		drop.data=["Materials","Stone",["Stone",[1,1,1],"Earth"]]
 		drop.position.x=position.x
 		drop.position.y=position.y
 		add_sibling(drop)
 		drop = drop_One.instantiate()
-		drop.data=["Materials","Stone",["Stone",Color(1,1,1),"Earth"]]
+		drop.data=["Materials","Stone",["Stone",[1,1,1],"Earth"]]
 		drop.position.x=position.x
 		drop.position.y=position.y
 		add_sibling(drop)
 		hide()
 func _on_body_entered(body: CollisionShape2D):
 	print(body.name)
+
+func save():
+	var save_dict = {
+		"filename": get_scene_file_path(),
+		"parent": get_parent().get_path(),
+		"pos_x": position.x,
+		"pos_y": position.y,
+		"health": health,
+		"speed": speed,
+		"maxHealth": maxHealth,
+		"dead": dead
+		}
+	return save_dict

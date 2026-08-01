@@ -61,7 +61,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Spellbooks" type="Node2D"]
+[node name="Spellbooks" type="Node2D" groups=["Persist"]]
 script = ExtResource("1_aa34i")
 
 [node name="Genericbook" type="Area2D" parent="."]

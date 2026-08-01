@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dkk6abfqi5d8y"]
+[gd_scene load_steps=30 format=3 uid="uid://dkk6abfqi5d8y"]
 
 [ext_resource type="Script" uid="uid://d2hpc6uc5bfjk" path="res://scripts/game.gd" id="1_gee14"]
 [ext_resource type="PackedScene" uid="uid://bws0mf5rhxycc" path="res://scenes/player.tscn" id="1_yqjtg"]
@@ -15,7 +15,6 @@
 [ext_resource type="Script" uid="uid://bu78hi44yf0qg" path="res://scripts/objects/in_tower.gd" id="15_264po"]
 [ext_resource type="PackedScene" uid="uid://imy7bw16bhao" path="res://scenes/objects/tower.tscn" id="15_ir15t"]
 [ext_resource type="Texture2D" uid="uid://3iy7yls8p348" path="res://assets/sprites/Objects/Test/test_tower.png" id="15_rysoc"]
-[ext_resource type="PackedScene" uid="uid://d1cyup4fming" path="res://scenes/items/materials.tscn" id="15_suyxu"]
 [ext_resource type="Texture2D" uid="uid://ll1r26jvpll2" path="res://assets/sprites/Big thing/a_lone_doorframe.png" id="16_ssvqc"]
 [ext_resource type="Script" uid="uid://d2ksboh2vqsnn" path="res://scripts/objects/doorout.gd" id="17_1kice"]
 [ext_resource type="Script" uid="uid://clgb2ykyouo78" path="res://scripts/objects/towerbasetrack.gd" id="17_e1j6l"]
@@ -39,6 +38,7 @@ radius = 24.0
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yqjtg"]
 
 [node name="Game" type="Node2D"]
+process_mode = 3
 y_sort_enabled = true
 script = ExtResource("1_gee14")
 
@@ -80,7 +80,7 @@ spells = ["Manablade", "Manahammer"]
 
 [node name="Placeable items" parent="Ysortedthings/Outside" instance=ExtResource("8_vtaks")]
 position = Vector2(-119, -35)
-data = ["Placeables", "Essence Extractor", ["Machines", Color(1, 1, 1, 1), "None"]]
+data = ["Placeables", "Essence Extractor", ["Machines", [1.0, 1.0, 1.0], "None"]]
 
 [node name="Tower" parent="Ysortedthings/Outside" instance=ExtResource("15_ir15t")]
 
@@ -267,25 +267,21 @@ position = Vector2(311, 131)
 [node name="Forest Tree58" parent="Ysortedthings/Outside/Trees" instance=ExtResource("14_sww3w")]
 position = Vector2(311, 163)
 
-[node name="Materials" parent="Ysortedthings/Outside" instance=ExtResource("15_suyxu")]
-position = Vector2(-251, -9)
-data = ["Materials", "Pepper Seeds", ["Seeds", "Fire", 1, Color(1, 0.4, 0, 1), "Pepper"]]
-
 [node name="Placeable items2" parent="Ysortedthings/Outside" instance=ExtResource("8_vtaks")]
 position = Vector2(-192, -24)
-data = ["Placeables", "Pepper Seeds", ["Seeds", Color(0.690913, 0.618897, 0.221293, 1), "Fire", [["Materials", "Pepper", ["Crops", Color(1, 1, 1, 1), "Fire", [["Materials", "Fire Essence", ["Essence", Color(1, 0.4, 0, 1), "Fire"]], 1]]], 1]]]
+data = ["Placeables", "Pepper Seeds", ["Seeds", [0.69, 0.61, 0.22], "Fire", [["Materials", "Pepper", ["Crops", [1.0, 1.0, 1.0], "Fire", [["Materials", "Fire Essence", ["Essence", [1.0, 0.4, 0.0], "Fire"]], 1]]], 1]]]
 
 [node name="Placeable items3" parent="Ysortedthings/Outside" instance=ExtResource("8_vtaks")]
 position = Vector2(-200, 16)
-data = ["Placeables", "Air Berry Seeds", ["Seeds", Color(0.129882, 0.327706, 0.207028, 1), "Air", [["Materials", "Air Berry", ["Crops", Color(1, 1, 1, 1), "Air", [["Materials", "Air Essence", ["Essence", Color(0.509804, 1, 0.8, 1), "Air"]], 1]]], 1]]]
+data = ["Placeables", "Air Berry Seeds", ["Seeds", [0.12, 0.32, 0.2], "Air", [["Materials", "Air Berry", ["Crops", [1.0, 1.0, 1.0], "Air", [["Materials", "Air Essence", ["Essence", [0.5, 1.0, 0.8], "Air"]], 1]]], 1]]]
 
 [node name="Placeable items4" parent="Ysortedthings/Outside" instance=ExtResource("8_vtaks")]
 position = Vector2(-208, 0)
-data = ["Placeables", "Watermelon Seeds", ["Seeds", Color(0.770121, 0.705858, 0.509078, 1), "Water", [["Materials", "Watermelon", ["Crops", Color(1, 1, 1, 1), "Water", [["Materials", "Water Essence", ["Essence", Color(0.101961, 0.4, 0.6, 0.509804), "Water"]], 2]]], 1]]]
+data = ["Placeables", "Watermelon Seeds", ["Seeds", [0.77, 0.7, 0.5], "Water", [["Materials", "Watermelon", ["Crops", [1.0, 1.0, 1.0], "Water", [["Materials", "Water Essence", ["Essence", [0.1, 0.4, 0.6, 0.5], "Water"]], 2]]], 1]]]
 
 [node name="Placeable items5" parent="Ysortedthings/Outside" instance=ExtResource("8_vtaks")]
 position = Vector2(-200, -8)
-data = ["Placeables", "Potato Seeds", ["Seeds", Color(0.373673, 0.226487, 0.122672, 1), "Earth", [["Materials", "Potato", ["Crops", Color(1, 1, 1, 1), "Earth", [["Materials", "Earth Essence", ["Essence", Color(0.509804, 0.301961, 0, 1), "Earth"]], 1]]], 1]]]
+data = ["Placeables", "Potato Seeds", ["Seeds", [0.37, 0.22, 0.12], "Earth", [["Materials", "Potato", ["Crops", [1.0, 1.0, 1.0], "Earth", [["Materials", "Earth Essence", ["Essence", [0.5, 0.3, 0.0], "Earth"]], 1]]], 1]]]
 
 [node name="Inside" parent="Ysortedthings" instance=ExtResource("3_ca42v")]
 y_sort_enabled = true
@@ -351,7 +347,7 @@ z_index = 1
 position = Vector2(0, -16)
 anim = "E"
 
-[node name="ORB" type="Area2D" parent="Ysortedthings/Inside"]
+[node name="ORB" type="Area2D" parent="Ysortedthings/Inside" groups=["Persist"]]
 position = Vector2(0, 16)
 script = ExtResource("20_bt5mj")
 window = ExtResource("21_e1j6l")

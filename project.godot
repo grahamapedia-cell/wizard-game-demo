@@ -10,10 +10,14 @@ config_version=5
 
 [application]
 
-config/name="Wizard game demo"
+config/name="Arcane Soil"
 run/main_scene="uid://dtbukmccgvmd7"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[global_group]
+
+Persist=""
 
 [gui]
 

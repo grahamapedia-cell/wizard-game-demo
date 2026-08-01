@@ -36,3 +36,15 @@ func _process(delta: float) -> void:
 			area_time=false
 			get_node("/root/titlescreen/Game/Ysortedthings/player").movetype=get_node("/root/titlescreen/Game/Ysortedthings/player").movetypestore
 			opaque=0
+
+
+func save():
+	var save_dict = {
+		"filename": get_scene_file_path(),
+		"parent": get_parent().get_path(),
+		"pos_x":position.x,
+		"pos_y":position.y,
+		"leaving": leaving,
+		"entering": entering
+		}
+	return save_dict

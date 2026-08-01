@@ -1,12 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://dtbukmccgvmd7"]
+[gd_scene load_steps=8 format=3 uid="uid://dtbukmccgvmd7"]
 
 [ext_resource type="Script" uid="uid://68ylwli3lff6" path="res://scripts/titlescreen.gd" id="1_6d6rd"]
 [ext_resource type="PackedScene" uid="uid://dkk6abfqi5d8y" path="res://scenes/game.tscn" id="2_3jj3l"]
 [ext_resource type="Texture2D" uid="uid://be2aj31nm7sg0" path="res://assets/sprites/GUI/start_button.png" id="3_tt55a"]
+[ext_resource type="Texture2D" uid="uid://b2iry26koyev8" path="res://assets/sprites/GUI/new_game.png" id="5_v6ms7"]
 [ext_resource type="Texture2D" uid="uid://ciw505te04r5v" path="res://assets/sprites/GUI/title_bg.png" id="5_vhbaf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t7v6v"]
 size = Vector2(96, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rpvs4"]
+size = Vector2(42, 29)
 
 [node name="titlescreen" type="Node2D"]
 script = ExtResource("1_6d6rd")
@@ -28,5 +32,18 @@ position = Vector2(576, 324)
 scale = Vector2(4, 4)
 texture = ExtResource("5_vhbaf")
 
+[node name="Newgame" type="Area2D" parent="."]
+position = Vector2(696, 312)
+scale = Vector2(4, 4)
+
+[node name="Sprite2D" type="Sprite2D" parent="Newgame"]
+texture = ExtResource("5_v6ms7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Newgame"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_rpvs4")
+
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="Newgame" to="." method="_on_newgame_mouse_entered"]
+[connection signal="mouse_exited" from="Newgame" to="." method="_on_newgame_mouse_exited"]

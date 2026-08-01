@@ -91,12 +91,12 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kjvrb"]
 size = Vector2(16, 8)
 
-[node name="Placed Item" type="Node2D"]
+[node name="Placed Item" type="Node2D" groups=["Persist"]]
 script = ExtResource("1_kw5ii")
 
 [node name="Machines" type="Node2D" parent="."]
 
-[node name="Essence Extractor" type="RigidBody2D" parent="Machines"]
+[node name="Essence Extractor" type="RigidBody2D" parent="Machines" groups=["Persist"]]
 collision_layer = 8
 input_pickable = true
 gravity_scale = 0.0
@@ -126,7 +126,7 @@ stream = ExtResource("5_cfdqb")
 max_distance = 500.0
 attenuation = 5.0
 
-[node name="Crops" parent="." instance=ExtResource("7_7mttm")]
+[node name="Crops" parent="." groups=["Persist"] instance=ExtResource("7_7mttm")]
 
 [connection signal="mouse_entered" from="Machines/Essence Extractor" to="Machines/Essence Extractor" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Machines/Essence Extractor" to="Machines/Essence Extractor" method="_on_mouse_exited"]

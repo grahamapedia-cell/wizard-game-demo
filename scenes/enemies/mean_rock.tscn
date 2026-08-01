@@ -35,7 +35,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Mean rock" type="RigidBody2D"]
+[node name="Mean rock" type="RigidBody2D" groups=["Persist"]]
 collision_layer = 2
 collision_mask = 14
 gravity_scale = 0.0

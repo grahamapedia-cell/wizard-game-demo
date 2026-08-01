@@ -48,35 +48,36 @@ func _process(delta: float) -> void:
 				text.type="Inventory"
 				text.text=get_node("../Inventory_things/Inventory").twentyfive[title][1]
 				add_child(text)
-	if get_node("../Inventory_things/Inventory").hotbar[get_node("../Inventory_things/Hotbar_Selector").slot].is_empty()==false:
-		if get_node("../Inventory_things/Inventory").visible==false and get_node("../Inventory_things/Inventory").hotbar[get_node("../Inventory_things/Hotbar_Selector").slot][0]=="Placeables":
-			get_node("/root/titlescreen/Game/Ysortedthings/player/PlaceHologram").visible=true
+	if get_node_or_null("../Inventory_things/Inventory")!=null:
+		if get_node("../Inventory_things/Inventory").hotbar[get_node("../Inventory_things/Hotbar_Selector").slot].is_empty()==false:
+			if get_node("../Inventory_things/Inventory").visible==false and get_node("../Inventory_things/Inventory").hotbar[get_node("../Inventory_things/Hotbar_Selector").slot][0]=="Placeables":
+				get_node("/root/titlescreen/Game/Ysortedthings/player/PlaceHologram").visible=true
+			else:
+				get_node("/root/titlescreen/Game/Ysortedthings/player/PlaceHologram").visible=false
 		else:
 			get_node("/root/titlescreen/Game/Ysortedthings/player/PlaceHologram").visible=false
-	else:
-		get_node("/root/titlescreen/Game/Ysortedthings/player/PlaceHologram").visible=false
 	#Making the sprite of the held item show up! Also the numbers
 	if mousestore.size()>=2:
 			if mousestore[2][0]=="Essence":
 				get_node("./AnimatedSprite2D").animation = "Potion"
-				get_node("./AnimatedSprite2D").modulate = mousestore[2][1]
+				get_node("./AnimatedSprite2D").modulate = ColorStruct(mousestore[2][1])
 				get_node("./Alphaless").animation = "bottle"
 			elif mousestore[2][0]=="Spellbook":
 				get_node("./AnimatedSprite2D").animation = "Spellbook"
-				get_node("./AnimatedSprite2D").modulate = mousestore[2][1]
+				get_node("./AnimatedSprite2D").modulate = ColorStruct(mousestore[2][1])
 				get_node("./Alphaless").animation = "pages"
 			elif mousestore[2][0]=="Scroll":
 				get_node("./AnimatedSprite2D").animation = "Scroll"
-				get_node("./AnimatedSprite2D").modulate = mousestore[2][1]
+				get_node("./AnimatedSprite2D").modulate = ColorStruct(mousestore[2][1])
 				get_node("./Alphaless").animation = "paper"
 			elif mousestore[2][0]=="Seeds":
 				get_node("./AnimatedSprite2D").animation = "Seeds"
-				get_node("./AnimatedSprite2D").modulate = mousestore[2][1]
+				get_node("./AnimatedSprite2D").modulate = ColorStruct(mousestore[2][1])
 				get_node("./Alphaless").animation = "empty"
 			elif get_node("./AnimatedSprite2D").sprite_frames.has_animation(mousestore[1]):
 				get_node("./AnimatedSprite2D").animation = mousestore[1]
 				get_node("./Alphaless").animation = "empty"
-				get_node("./AnimatedSprite2D").modulate = mousestore[2][1]
+				get_node("./AnimatedSprite2D").modulate = ColorStruct(mousestore[2][1])
 	if mousestorenumber >= 2:
 		killswitch=true
 		num = amount.instantiate()
@@ -331,3 +332,9 @@ func _process(delta: float) -> void:
 			if get_node("../Inventory_things/Inventory").hotbarnumber[get_node("../Inventory_things/Hotbar_Selector").slot]<=0:
 				get_node("../Inventory_things/Inventory").hotbarnumber[get_node("../Inventory_things/Hotbar_Selector").slot]=0
 				get_node("../Inventory_things/Inventory").hotbar[get_node("../Inventory_things/Hotbar_Selector").slot]=[]
+
+func ColorStruct(array):
+	if array.size()<4:
+		return Color(array[0],array[1],array[2])
+	else:
+		return Color(array[0],array[1],array[2],array[3])

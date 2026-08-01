@@ -100,5 +100,6 @@ func _process(delta: float) -> void:
 	num.scale.y=2
 	num.position.x=5
 	num.position.y=4
-	num.number=get_node("../../Time").day
+	if get_node_or_null("../../Time")!=null:
+		num.number=get_node("../../Time").day
 	add_child(num)

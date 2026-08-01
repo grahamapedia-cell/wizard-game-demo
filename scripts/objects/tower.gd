@@ -8,15 +8,16 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if abs(get_node("/root/titlescreen/Game/Ysortedthings/player").global_position.x-self.global_position.x)<=64:
-		if get_node("/root/titlescreen/Game/Ysortedthings/player").global_position.y-self.global_position.y<0 and get_node("/root/titlescreen/Game/Ysortedthings/player").global_position.y-self.global_position.y>=-400:
-			get_node("Tower/Sprite2D").modulate=Color(1,1,1,0.5)
+	if get_node_or_null("/root/titlescreen/Game/Ysortedthings/player")!=null:
+		if abs(get_node("/root/titlescreen/Game/Ysortedthings/player").global_position.x-self.global_position.x)<=64:
+			if get_node("/root/titlescreen/Game/Ysortedthings/player").global_position.y-self.global_position.y<0 and get_node("/root/titlescreen/Game/Ysortedthings/player").global_position.y-self.global_position.y>=-400:
+				get_node("Tower/Sprite2D").modulate=Color(1,1,1,0.5)
+			else:
+				get_node("Tower/Sprite2D").modulate=Color(1,1,1,1)
 		else:
 			get_node("Tower/Sprite2D").modulate=Color(1,1,1,1)
-	else:
-		get_node("Tower/Sprite2D").modulate=Color(1,1,1,1)
-	if get_node("..").visible==false:
-		hide()
-	else:
-		show()
+		if get_node("..").visible==false:
+			hide()
+		else:
+			show()
 	get_node("Tower/CollisionPolygon2D").set_deferred("disabled",!get_node("..").visible)

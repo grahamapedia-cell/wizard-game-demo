@@ -28,3 +28,15 @@ func _process(delta: float) -> void:
 		get_node("DayCycle").modulate=Color(0.1,0.1,0.2,0.6)
 	if get_node("../Area").area=="/root/titlescreen/Game/Ysortedthings/Inside":
 		get_node("DayCycle").modulate=Color(1,1,1,0)
+
+func save():
+	print("time")
+	var save_dict = {
+		"filename": get_scene_file_path(),
+		"parent": get_parent().get_path(),
+		"pos_x":position.x,
+		"pos_y":position.y,
+		"day": day,
+		"hour": hour
+		}
+	return save_dict

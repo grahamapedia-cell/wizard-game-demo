@@ -192,7 +192,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Placeable items" type="Node2D"]
+[node name="Placeable items" type="Node2D" groups=["Persist"]]
 script = ExtResource("1_1rqx1")
 
 [node name="Item" type="Area2D" parent="."]

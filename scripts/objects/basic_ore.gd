@@ -66,12 +66,12 @@ func _process(delta: float) -> void:
 		var drop = drop_One.instantiate()
 		drop.category="Metals"
 		drop.itemtype="Metal Ore"
-		drop.data=["Materials","Metal Ore",["Metals",Color(1,1,1),"Metal"]]
+		drop.data=["Materials","Metal Ore",["Metals",[1,1,1],"Metal"]]
 		drop.position.x=position.x
 		drop.position.y=position.y
 		add_sibling(drop)
 		drop = drop_One.instantiate()
-		drop.data=["Materials","Metal Ore",["Metals",Color(1,1,1),"Metal"]]
+		drop.data=["Materials","Metal Ore",["Metals",[1,1,1],"Metal"]]
 		drop.category="Metals"
 		drop.itemtype="Metal Ore"
 		drop.position.x=position.x
@@ -91,3 +91,15 @@ func _on_hit() -> void:
 	print("aaa")
 	
 	 # Replace with function body.
+
+func save():
+	var save_dict = {
+		"filename": get_scene_file_path(),
+		"parent": get_parent().get_path(),
+		"pos_x": position.x,
+		"pos_y": position.y,
+		"health": health,
+		"maxHealth": maxHealth,
+		"dead": dead
+		}
+	return save_dict

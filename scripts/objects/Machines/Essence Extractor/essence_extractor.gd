@@ -71,3 +71,17 @@ func _on_mouse_entered() -> void:
 func _on_mouse_exited() -> void:
 	self.modulate=Color(1,1,1)
 	mousein=false # Replace with function body.
+
+func save():
+	var save_dict={
+		"filename": get_scene_file_path(),
+		"parent": get_parent().get_path(),
+		"pos_x": position.x,
+		"pos_y": position.y,
+		"inventory": inventory,
+		"inventorynumber": inventorynumber,
+		"process": process,
+		"progress": progress,
+		"arrowon": arrowon
+	}
+	return save_dict

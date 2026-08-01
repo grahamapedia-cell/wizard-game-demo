@@ -16,6 +16,7 @@ var screen_size
 func _ready():
 	screen_size = get_viewport_rect().size
 	print(self.get_path())
+	print(self.name)
 	$AnimatedSprite2D.animation = "Frontwalk_overalls"
 	self.global_position.y=50
 	#hide()
@@ -95,3 +96,23 @@ func _process(delta):
 		direx = -1
 		direy = 0
 	move_and_slide()
+
+func save():
+	print("player")
+	var save_dict = {
+		"filename": get_scene_file_path(),
+		"parent": get_parent().get_path(),
+		"pos_x": position.x,
+		"pos_y": position.y,
+		"direx": direx,
+		"direy": direy,
+		"SPEED": SPEED,
+		"Speedmod": Speedmod,
+		"health": health,
+		"maxhealth": maxhealth,
+		"x": x,
+		"y": y,
+		"movetype": movetype,
+		"movetypestore": movetypestore,
+		}
+	return save_dict

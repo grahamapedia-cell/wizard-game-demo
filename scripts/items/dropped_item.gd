@@ -25,7 +25,7 @@ func _ready() -> void:
 		get_node("./AnimatedSprite2D").animation=get_node("..").data[1]
 	elif get_node("..").data[2][0]=="Seeds":
 		get_node("./AnimatedSprite2D").animation="Seeds"
-		self.modulate=get_node("..").data[2][1]
+		self.modulate=ColorStruct(get_node("..").data[2][1])
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -35,7 +35,7 @@ func _process(delta: float) -> void:
 	if just_thrown == true:
 		await get_tree().create_timer(3).timeout
 		just_thrown=false
-	if physical == true:
+	if physical == true and get_node_or_null("/root/titlescreen/Game/Ysortedthings/player")!=null:
 		player_dist_x = get_node("/root/titlescreen/Game/Ysortedthings/player").global_position.x-self.global_position.x
 		player_dist_y = get_node("/root/titlescreen/Game/Ysortedthings/player").global_position.y-self.global_position.y
 		player_dist = sqrt(pow(player_dist_x,2)+pow(player_dist_y,2))
@@ -80,3 +80,10 @@ func _process(delta: float) -> void:
 				get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory/Pickup").play()
 	else:
 		queue_free()
+
+
+func ColorStruct(array):
+	if array.size()<4:
+		return Color(array[0],array[1],array[2])
+	else:
+		return Color(array[0],array[1],array[2],array[3])

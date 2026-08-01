@@ -7,7 +7,7 @@ extends Node2D
 @export var just_thrown = false
 @export var velx = 0
 @export var vely = 0
-@export var data = ["Placeable Items","Name/Type",["Subcategory",Color(1,1,1),0]]
+@export var data = ["Placeable Items","Name/Type",["Subcategory",[1,1,1],0]]
 # More data is typically: Subcategory, Element, a number (like how much essence a crop makes), color, and a related item name.
 # I should clean this up.
 # Called when the node enters the scene tree for the first time.
@@ -21,3 +21,13 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+func save():
+	var save_dict = {
+		"filename": get_scene_file_path(),
+		"parent": get_parent().get_path(),
+		"pos_x": position.x,
+		"pos_y": position.y,
+		"data": data
+		}
+	return save_dict

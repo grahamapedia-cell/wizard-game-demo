@@ -42,27 +42,32 @@ func _process(delta: float) -> void:
 		hide()
 	else:
 		show()
-	if get_node("/root/titlescreen/Game/Ysortedthings/player/Spells").currentlyCasting==true:
-		#If we're casting a spell, the spell is darkened to show it's on cooldown.
-		if licon.spell=="Empty":
+	if get_node_or_null("/root/titlescreen/Game/Ysortedthings/player")!=null:
+		if get_node("/root/titlescreen/Game/Ysortedthings/player/Spells").currentlyCasting==true:
+			#If we're casting a spell, the spell is darkened to show it's on cooldown.
+			if licon.spell=="Empty":
+				licon.modulate=Color(1,1,1)
+			else:
+				licon.modulate=Color(0.7,0.7,0.7)
+			if ricon.spell=="Empty":
+				ricon.modulate=Color(1,1,1)
+			else:
+				ricon.modulate=Color(0.7,0.7,0.7)
+		else:
 			licon.modulate=Color(1,1,1)
-		else:
-			licon.modulate=Color(0.7,0.7,0.7)
-		if ricon.spell=="Empty":
 			ricon.modulate=Color(1,1,1)
-		else:
-			ricon.modulate=Color(0.7,0.7,0.7)
 	else:
-		licon.modulate=Color(1,1,1)
-		ricon.modulate=Color(1,1,1)
-	if get_node("../Inventory").spellbook.size()>=2:
-		get_node("SpellbookCover").modulate=get_node("../Inventory").spellbook[2][1]
+			licon.modulate=Color(1,1,1)
+			ricon.modulate=Color(1,1,1)
+	if get_node_or_null("../Inventory")!=null:
+		if get_node("../Inventory").spellbook.size()>=2:
+			get_node("SpellbookCover").modulate=ColorStruct(get_node("../Inventory").spellbook[2][1])
+		if get_node("../Inventory").spellbook.size()>=3:
+			pages=get_node("../Inventory").spellbook[2][3]
 	if pages.size()<page:
 		page=pages.size()
 	if page==0 and pages.is_empty()==false:
 		page=1
-	if get_node("../Inventory").spellbook.size()>=3:
-		pages=get_node("../Inventory").spellbook[2][3]
 	else:
 		pages = []
 	if pages.size()>0:
@@ -123,3 +128,9 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("spell_next"):
 		if page < pages.size() and pages.size()>1:
 			page +=1
+
+func ColorStruct(array):
+	if array.size()<4:
+		return Color(array[0],array[1],array[2])
+	else:
+		return Color(array[0],array[1],array[2],array[3])

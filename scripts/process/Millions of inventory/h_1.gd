@@ -116,30 +116,31 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	self.input_pickable=get_node("../../Inventory").visible
+	if get_node_or_null("../../Inventory")!=null:
+		self.input_pickable=get_node("../../Inventory").visible
 	self.visible = self.input_pickable
-	if hotbar==true:
+	if hotbar==true and get_node_or_null("../../Inventory")!=null:
 		if get_node("../../Inventory").hotbar[title].size()>=2:
 			if get_node("../../Inventory").hotbar[title][2][0]=="Essence":
 				get_node("./AnimatedSprite2D").animation = "Potion"
-				get_node("./AnimatedSprite2D").modulate = get_node("../../Inventory").hotbar[title][2][1]
+				get_node("./AnimatedSprite2D").modulate = ColorStruct(get_node("../../Inventory").hotbar[title][2][1])
 				get_node("./Alphaless").animation = "bottle"
 			elif get_node("../../Inventory").hotbar[title][2][0]=="Scroll":
 				get_node("./AnimatedSprite2D").animation = "Scroll"
-				get_node("./AnimatedSprite2D").modulate = get_node("../../Inventory").hotbar[title][2][1]
+				get_node("./AnimatedSprite2D").modulate = ColorStruct(get_node("../../Inventory").hotbar[title][2][1])
 				get_node("./Alphaless").animation = "paper"
 			elif get_node("../../Inventory").hotbar[title][2][0]=="Spellbook":
 				get_node("./AnimatedSprite2D").animation = "Spellbook"
-				get_node("./AnimatedSprite2D").modulate = get_node("../../Inventory").hotbar[title][2][1]
+				get_node("./AnimatedSprite2D").modulate = ColorStruct(get_node("../../Inventory").hotbar[title][2][1])
 				get_node("./Alphaless").animation = "pages"
 			elif get_node("../../Inventory").hotbar[title][2][0]=="Seeds":
 				get_node("./AnimatedSprite2D").animation = "Seeds"
-				get_node("./AnimatedSprite2D").modulate = get_node("../../Inventory").hotbar[title][2][1]
+				get_node("./AnimatedSprite2D").modulate = ColorStruct(get_node("../../Inventory").hotbar[title][2][1])
 				get_node("./Alphaless").animation = "empty"
 			elif get_node("./AnimatedSprite2D").sprite_frames.has_animation(get_node("../../Inventory").hotbar[title][1]):
 				get_node("./AnimatedSprite2D").animation = get_node("../../Inventory").hotbar[title][1]
 				get_node("./Alphaless").animation = "empty"
-				get_node("./AnimatedSprite2D").modulate = get_node("../../Inventory").hotbar[title][2][1]
+				get_node("./AnimatedSprite2D").modulate = ColorStruct(get_node("../../Inventory").hotbar[title][2][1])
 		if get_node("../../Inventory").hotbarnumber[title] >= 2:
 			killswitch=true
 			num = amount.instantiate()
@@ -151,28 +152,28 @@ func _process(delta: float) -> void:
 		elif get_node("../../Inventory").hotbarnumber[title]==0:
 			get_node("./AnimatedSprite2D").animation = "empty"
 			get_node("./Alphaless").animation = "empty"
-	if hotbar==false:
+	if hotbar==false and get_node_or_null("../../Inventory")!=null:
 		if get_node("../../Inventory").twentyfive[title].size()>=2:
 			if get_node("../../Inventory").twentyfive[title][2][0]=="Essence":
 				get_node("./AnimatedSprite2D").animation = "Potion"
-				get_node("./AnimatedSprite2D").modulate = get_node("../../Inventory").twentyfive[title][2][1]
+				get_node("./AnimatedSprite2D").modulate = ColorStruct(get_node("../../Inventory").twentyfive[title][2][1])
 				get_node("./Alphaless").animation = "bottle"
 			elif get_node("../../Inventory").twentyfive[title][2][0]=="Spellbook":
 				get_node("./AnimatedSprite2D").animation = "Spellbook"
-				get_node("./AnimatedSprite2D").modulate = get_node("../../Inventory").twentyfive[title][2][1]
+				get_node("./AnimatedSprite2D").modulate = ColorStruct(get_node("../../Inventory").twentyfive[title][2][1])
 				get_node("./Alphaless").animation = "pages"
 			elif get_node("../../Inventory").twentyfive[title][2][0]=="Scroll":
 				get_node("./AnimatedSprite2D").animation = "Scroll"
-				get_node("./AnimatedSprite2D").modulate = get_node("../../Inventory").twentyfive[title][2][1]
+				get_node("./AnimatedSprite2D").modulate = ColorStruct(get_node("../../Inventory").twentyfive[title][2][1])
 				get_node("./Alphaless").animation = "paper"
 			elif get_node("../../Inventory").twentyfive[title][2][0]=="Seeds":
 				get_node("./AnimatedSprite2D").animation = "Seeds"
-				get_node("./AnimatedSprite2D").modulate = get_node("../../Inventory").twentyfive[title][2][1]
+				get_node("./AnimatedSprite2D").modulate = ColorStruct(get_node("../../Inventory").twentyfive[title][2][1])
 				get_node("./Alphaless").animation = "empty"
 			elif get_node("./AnimatedSprite2D").sprite_frames.has_animation(get_node("../../Inventory").twentyfive[title][1]):
 				get_node("./AnimatedSprite2D").animation = get_node("../../Inventory").twentyfive[title][1]
 				get_node("./Alphaless").animation = "empty"
-				get_node("./AnimatedSprite2D").modulate = get_node("../../Inventory").twentyfivealpha[title][1]
+				get_node("./AnimatedSprite2D").modulate = ColorStruct(get_node("../../Inventory").twentyfive[title][2][1])
 		if get_node("../../Inventory").twentyfivenumber[title] >= 2:
 			killswitch=true
 			num = amount.instantiate()
@@ -200,3 +201,9 @@ func _on_mouse_exited() -> void:
 	get_node("../../Inventory_Selector").visible=false
 	get_node("../../Inventory_Selector").type=""
 	get_node("../../Inventory_Selector").title=-1
+
+func ColorStruct(array):
+	if array.size()<4:
+		return Color(array[0],array[1],array[2])
+	else:
+		return Color(array[0],array[1],array[2],array[3])

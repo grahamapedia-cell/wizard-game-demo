@@ -42,7 +42,7 @@ func _process(_delta: float) -> void:
 	if dead==false:
 		var facing = "front"
 		get_node("Hitbox").set_deferred("disabled",!get_node("../..").visible)
-		if get_node("../..").visible==true:
+		if get_node("../..").visible==true and get_node_or_null("/root/titlescreen/Game/Ysortedthings/player")!=null:
 			var distx=get_node("/root/titlescreen/Game/Ysortedthings/player").global_position.x-self.global_position.x
 			var disty=get_node("/root/titlescreen/Game/Ysortedthings/player").global_position.y-self.global_position.y
 			var dist=sqrt(pow(distx,2)+pow(disty,2))
@@ -146,12 +146,12 @@ func _process(_delta: float) -> void:
 			defeat.emit
 			$Hitbox.set_deferred("disabled", true)
 			var drop = drop_One.instantiate()
-			drop.data=["Materials","Stone",["Stone",Color(1,1,1),"Earth"]]
+			drop.data=["Materials","Stone",["Stone",[1,1,1],"Earth"]]
 			drop.position.x=position.x
 			drop.position.y=position.y
 			add_sibling(drop)
 			drop = drop_One.instantiate()
-			drop.data=["Materials","Stone",["Stone",Color(1,1,1),"Earth"]]
+			drop.data=["Materials","Stone",["Stone",[1,1,1],"Earth"]]
 			drop.position.x=position.x
 			drop.position.y=position.y
 			add_sibling(drop)
@@ -180,3 +180,17 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		rock.projectile="Rock"
 		add_child(rock)
 		get_node("AnimatedSprite2D").play()
+
+func save():
+	var save_dict = {
+		"filename": get_scene_file_path(),
+		"parent": get_parent().get_path(),
+		"pos_x": position.x,
+		"pos_y": position.y,
+		"health": health,
+		"speed": speed,
+		"maxHealth": maxHealth,
+		"damagequalmods": damagequalmods,
+		"dead": dead
+		}
+	return save_dict

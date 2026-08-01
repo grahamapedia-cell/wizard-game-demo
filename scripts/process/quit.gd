@@ -9,6 +9,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("cast_spell") and mouseIn==true:
+		await get_node("/root/titlescreen/Game").save_game()
 		get_tree().quit()
 
 

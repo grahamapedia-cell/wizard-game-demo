@@ -5,18 +5,14 @@ extends Sprite2D
 @onready var hotbarnumber = [0,0,0,0,0,0,0,0,0]
 @onready var twentyfive = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
 @onready var twentyfivenumber = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-@onready var charms = ["","",""]
+@onready var charms = [[],[],[]]
 @onready var charmsfull = [false,false,false]
-@onready var charmsdata = [[],[],[]]
-@onready var rings = ["",""]
+@onready var rings = [[],[]]
 @onready var ringsfull = [false,false]
-@onready var ringsdata = [[],[]]
-@onready var hat = ""
+@onready var hat = []
 @onready var hatfull = false
-@onready var hatdata = []
-@onready var robes = ""
+@onready var robes = []
 @onready var robesfull = false
-@onready var robesdata = []
 @onready var spellbook = []
 @onready var spellbookfull = false
 @onready var quantity = []
@@ -24,6 +20,7 @@ extends Sprite2D
 func _ready() -> void:
 	hide()
 	print(self.get_path()) # Replace with function body.
+	print(get_scene_file_path())
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -36,3 +33,27 @@ func _process(delta: float) -> void:
 		print(hotbar[0])
 	if Input.is_action_just_pressed("open_inventory"):
 		self.visible = !self.visible
+
+func save():
+	print("inventory")
+	var save_dict = {
+		"filename": get_scene_file_path(),
+		"parent": get_parent().get_path(),
+		"pos_x": position.x,
+		"pos_y": position.y,
+		"hotbar": hotbar,
+		"hotbarnumber": hotbarnumber,
+		"twentyfive": twentyfive,
+		"twentyfivenumber": twentyfivenumber,
+		"charms": charms,
+		"charmsfull": charmsfull,
+		"rings": rings,
+		"ringsfull": ringsfull,
+		"hat": hat,
+		"hatfull": hatfull,
+		"robes": robes,
+		"robesfull": robesfull,
+		"spellbook": spellbook,
+		"spellbookfull": spellbookfull
+		}
+	return save_dict

@@ -26,9 +26,10 @@ func _ready() -> void:
 		item_name=data[1]
 		get_node("./AnimatedSprite2D").animation=item_name
 	elif get_node("..").data[2][0]=="Essence":
-		item_name=data[2][1]+" Essence"
+		item_name=data[2][2]+" Essence"
 		get_node("./AnimatedSprite2D").animation="Potion"
 		get_node("./Alphaless").animation="bottle"
+	get_node("AnimatedSprite2D").modulate=ColorStruct(data[2][1])
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -101,3 +102,9 @@ func _process(delta: float) -> void:
 				get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory/Pickup").play()
 	else:
 		queue_free()
+
+func ColorStruct(array):
+	if array.size()<4:
+		return Color(array[0],array[1],array[2])
+	else:
+		return Color(array[0],array[1],array[2],array[3])

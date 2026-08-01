@@ -485,7 +485,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("2_6oujy")
 
-[node name="Inventory" type="Sprite2D" parent="GUI/Inventory_things"]
+[node name="Inventory" type="Sprite2D" parent="GUI/Inventory_things" groups=["Persist"]]
 z_index = 6
 texture = ExtResource("1_w7kh3")
 script = ExtResource("2_4wyf3")
@@ -1610,7 +1610,7 @@ script = ExtResource("45_1jxku")
 z_index = 30
 texture = ExtResource("49_qg546")
 
-[node name="Time" type="Control" parent="."]
+[node name="Time" type="Control" parent="." groups=["Persist"]]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -1624,7 +1624,7 @@ scale = Vector2(500, 500)
 sprite_frames = SubResource("SpriteFrames_iexy4")
 animation = &"Daylight"
 
-[node name="Area" type="Control" parent="."]
+[node name="Area" type="Control" parent="." groups=["Persist"]]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0

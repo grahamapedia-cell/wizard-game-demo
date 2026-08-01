@@ -10,11 +10,14 @@ var here=false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	print(self.name)
-	timecheck=get_node("/root/titlescreen/Game/World/Time").day
+	if get_node_or_null("/root/titlescreen/Game/World/Time")!=null:
+		timecheck=get_node("/root/titlescreen/Game/World/Time").day
 	self.input_pickable==false
 	if get_node("../../..").data[1]==self.name:
 		print(self.name)
-		get_node("AnimatedSprite2D").frame=0
+		grown=get_node("../..").grown
+		days=get_node("../..").days
+		get_node("AnimatedSprite2D").frame=days
 		get_node("Finalcrop").visible=false
 	else:
 		queue_free()
@@ -24,6 +27,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if here==true:
 		get_node("Hitbox").disabled=!self.visible
+	get_node("AnimatedSprite2D").frame=days
 	if Input.is_action_just_pressed("use_item") and self.visible==true and mousein==true and grown==true and get_node("/root/titlescreen/Game/World/GUI/Inventory_things/Inventory").visible==false:
 		harvest = crop.instantiate()
 		harvest.category="Crops"
@@ -36,11 +40,11 @@ func _process(delta: float) -> void:
 		queue_free()
 	if timecheck!=get_node("/root/titlescreen/Game/World/Time").day:
 		if grown==false:
-			get_node("AnimatedSprite2D").frame=get_node("AnimatedSprite2D").frame+1
-		if get_node("AnimatedSprite2D").sprite_frames.get_frame_count("Demo_Crop")-1==get_node("AnimatedSprite2D").frame:
-			get_node("Finalcrop").visible=true
-			self.input_pickable=true
-			grown=true
+			days+=1
+	if days-1==get_node("AnimatedSprite2D").frame:
+		get_node("Finalcrop").visible=true
+		self.input_pickable=true
+		grown=true
 	timecheck=get_node("/root/titlescreen/Game/World/Time").day
 
 

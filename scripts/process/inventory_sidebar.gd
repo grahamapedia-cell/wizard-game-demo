@@ -8,4 +8,5 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	self.visible = get_node("../Inventory").visible
+	if get_node_or_null("../../Inventory")!=null:
+		self.visible = get_node("../Inventory").visible

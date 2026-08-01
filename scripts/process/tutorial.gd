@@ -9,7 +9,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	self.global_position = get_node("/root/titlescreen/Game/Ysortedthings/player").global_position
+	if get_node_or_null("/root/titlescreen/Game/Ysortedthings/player")!=null:
+		self.global_position = get_node("/root/titlescreen/Game/Ysortedthings/player").global_position
 	if step==0:
 		if global_position.x==0:
 			if global_position.y<40:

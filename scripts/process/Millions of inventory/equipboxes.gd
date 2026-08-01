@@ -39,16 +39,17 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	self.input_pickable=get_node("../../Inventory").visible
+	if get_node_or_null("../../Inventory")!=null:
+		self.input_pickable=get_node("../../Inventory").visible
 	self.visible = self.input_pickable
-	if type == "Spellbook":
+	if type == "Spellbook" and get_node_or_null("../../Inventory")!=null:
 		if get_node("../../Inventory").spellbookfull==false:
 			get_node("./AnimatedSprite2D").animation = "empty"
 			get_node("./AnimatedSprite2D").modulate = Color(1,1,1)
 			get_node("./Alphaless").animation = "empty"
 		else:
 			get_node("./AnimatedSprite2D").animation = get_node("../../Inventory").spellbook[2][0]
-			get_node("./AnimatedSprite2D").modulate = get_node("../../Inventory").spellbook[2][1]
+			get_node("./AnimatedSprite2D").modulate = ColorStruct(get_node("../../Inventory").spellbook[2][1])
 			if get_node("../../Inventory").spellbook[2][0]=="Scroll":
 				get_node("Alphaless").animation="paper"
 			else:
@@ -58,3 +59,9 @@ func _process(delta: float) -> void:
 		if get_node("../../Inventory").spellbookfull!=equipped:
 			get_node("Equip").play()
 		equipped=get_node("../../Inventory").spellbookfull
+
+func ColorStruct(array):
+	if array.size()<4:
+		return Color(array[0],array[1],array[2])
+	else:
+		return Color(array[0],array[1],array[2],array[3])
